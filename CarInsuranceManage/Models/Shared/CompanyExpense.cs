@@ -9,7 +9,7 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string expense_type { get; set; }
+        public string? expense_type { get; set; }
 
         public DateTime expense_date { get; set; }
 

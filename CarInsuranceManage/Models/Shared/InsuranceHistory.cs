@@ -15,17 +15,17 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string change_type { get; set; }
-
-        public string old_value { get; set; }
-
-        public string new_value { get; set; }
+        public string? change_type { get; set; }
+        [Required]
+        public string? old_value { get; set; }
+        [Required]
+        public string? new_value { get; set; }
 
         [ForeignKey("User")]
         public int changed_by { get; set; }
 
-        public virtual InsurancePolicy InsurancePolicy { get; set; }
-        public virtual User User { get; set; }
+        public virtual InsurancePolicy? InsurancePolicy { get; set; }
+        public virtual User? User { get; set; }
     }
 
 }

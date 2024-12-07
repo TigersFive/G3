@@ -9,11 +9,11 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string report_type { get; set; }
+        public string? report_type { get; set; }
 
         public DateTime generated_at { get; set; } = DateTime.Now;
 
-        public string description { get; set; }
+        public string? description { get; set; }
     }
 
 }

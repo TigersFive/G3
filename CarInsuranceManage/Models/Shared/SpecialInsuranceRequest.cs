@@ -16,17 +16,17 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(100)]
-        public string request_type { get; set; }
-
-        public string request_description { get; set; }
+        public string? request_type { get; set; }
+        [Required]
+        public string? request_description { get; set; }
 
         public DateTime request_date { get; set; } = DateTime.Now;
 
+        [Required]
+        public string? status { get; set; }  // 'Pending', 'Approved', 'Denied'
 
-        public string status { get; set; }  // 'Pending', 'Approved', 'Denied'
-
-        public virtual Customer Customer { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
+        public virtual Customer? Customer { get; set; }
+        public virtual Vehicle? Vehicle { get; set; }
     }
 
 }

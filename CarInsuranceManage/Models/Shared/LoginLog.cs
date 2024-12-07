@@ -12,11 +12,11 @@ namespace CarInsuranceManage.Models
         public int user_id { get; set; }
 
         public DateTime login_time { get; set; } = DateTime.Now;
-
+        [Required]
         [StringLength(50)]
-        public string ip_address { get; set; }
+        public string? ip_address { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
     }
 
 }

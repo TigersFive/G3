@@ -6,7 +6,6 @@ namespace CarInsuranceManage.Controllers.Admin
     {
         public IActionResult Inbox()
         {
-            
             return View("~/Views/Admin/Email/Inbox.cshtml");  // Đường dẫn tuyệt đối đến view Inbox
         }
 

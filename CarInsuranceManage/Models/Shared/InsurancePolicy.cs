@@ -16,7 +16,7 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string policy_number { get; set; }
+        public string? policy_number { get; set; }
 
         public DateTime policy_start_date { get; set; }
 
@@ -24,12 +24,12 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string policy_type { get; set; }
+        public string? policy_type { get; set; }
 
         public decimal policy_amount { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
+        public virtual Customer? Customer { get; set; }
+        public virtual Vehicle? Vehicle { get; set; }
     }
 
 }

@@ -1,42 +1,31 @@
 ﻿<!DOCTYPE html>
 <html class="no-js" lang="en">
 
-
-<!-- Mirrored from themeim.com/demo/carsore/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 10:42:23 GMT -->
-
 <head>
     <meta charset="utf-8" />
     <title>Insurance Vehicle</title>
-    <!-- Stylesheets -->
-    <link href="~/assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/assets/css/niceselect.css" rel="stylesheet" />
-    <link href="~/assets/css/style.css" rel="stylesheet" />
-    <link href="~/assets/css/responsive.css" rel="stylesheet" />
-
-    <!-- Switcher Mockup -->
-    <link href="~/assets/css/color-switcher-design.css" rel="stylesheet" />
-
+    <link href="~/customer-assets/css/icon.css" rel="stylesheet" />
+    <link href="~/customer-assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/customer-assets/css/niceselect.css" rel="stylesheet" />
+    <link href="~/customer-assets/css/style.css" rel="stylesheet" />
+    <link href="~/customer-assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/customer-assets/css/color-switcher-design.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Ubuntu:wght@300;400;500;700&amp;display=swap"
         rel="stylesheet" />
 
-    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="~/assets/images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/customer-assets/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="~/customer-assets/images/favicon.png" type="image/x-icon" />
     @RenderSection("Styles", required: false)
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--[if lt IE 9
-      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
-    ><![endif]-->
-    <!--[if lt IE 9]><script src="~/assets/js/respond.js"></script><![endif]-->
 </head>
 
 <body class="aboutus-page">
     <div class="page-wrapper">
-        <!-- Loading -->
         <div class="loading-window-outer">
             <div class="loading-window">
                 <div class="car">
@@ -59,29 +48,22 @@
                 </div>
             </div>
         </div>
-        <!-- End Loading -->
-
-        <!-- Main Header-->
         <header class="main-header header-style-two">
-            <!-- Header Upper -->
             <div class="header-upper">
                 <div class="auto-container">
                     <div class="inner-container clearfix">
                         <div class="logo-box">
                             <div class="logo">
-                                <a asp-area="" asp-controller="Home" asp-action="IndexUser"><img src="~/assets/images/logo.png" alt="" title="" /></a>
+                                <a asp-area="" asp-controller="Home" asp-action="Index"><img
+                                        src="~/customer-assets/images/logo.png" alt="" title="" /></a>
                             </div>
                         </div>
-
                         <div class="nav-outer clearfix">
-                            <!--Mobile Navigation Toggler-->
                             <div class="mobile-nav-toggler">
                                 <span class="icon flaticon-menu-2"></span>
                             </div>
-                            <!-- Main Menu -->
                             <nav class="main-menu navbar-expand-md">
                                 <div class="navbar-header">
-                                    <!-- Toggle Button -->
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                         aria-expanded="false" aria-label="Toggle navigation">
@@ -90,118 +72,87 @@
                                         <span class="icon-bar"></span>
                                     </button>
                                 </div>
-
                                 <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li>
-                                            <a asp-area="" asp-controller="Home" asp-action="IndexUser">Home</a>
+                                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                        <li><a asp-area="" asp-controller="About" asp-action="Index">About Us</a>
                                         </li>
-
-                                        <li>
-                                            <a asp-area="" asp-controller="HomeUser" asp-action="about">About Us</a>
-                                        </li>
-
                                         <li class="dropdown">
                                             <a asp-area="" asp-controller="Insurance" asp-action="services">Services</a>
                                             <ul>
-                                                <li><a asp-area="" asp-controller="HomeUser" asp-action="">Bike Insurance</a></li>
-                                                       
-                                                <li><a asp-area="" asp-controller="HomeUser"asp-action="">Car Insurance</a> </li>
-                                                    
-                                                <li><a asp-area="" asp-controller="HomeUser" asp-action="">Bus/Truck Insurance</a></li>
+                                                <li><a asp-area="" asp-controller="Insurance" asp-action="Bike_Detail">Bike
+                                                        Insurance</a></li>
 
-                                                <li><a asp-area="" asp-controller="HomeUser" asp-action="insurance_form">Form Insurance</a></li>                                                                                                                                                                                                  
+                                                <li><a asp-area="" asp-controller="Insurance" asp-action="Car_Detail">Car
+                                                        Insurance</a>
+                                                </li>
+
+                                                <li><a asp-area="" asp-controller="Insurance" asp-action="Car_Detail">Bus/Truck
+                                                        Insurance</a></li>
+
+                                                @* <li><a asp-area="" asp-controller="Insurance" asp-action="Index">Form
+                                                        Insurance</a></li> *@
                                             </ul>
                                         </li>
-
+                                        <li><a asp-area="" asp-controller="Blog" asp-action="Index">Blog</a></li>
+                                        <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact
+                                                us</a></li>
                                         <li>
-                                            <a asp-area="" asp-controller="HomeUser" asp-action="privacy">Page</a>
-                                        </li>
-
-                                        <li>
-                                            <a asp-area="" asp-controller="HomeUser" asp-action="blog">Blog</a>
-                                        </li>
-
-
-                                        <li><a asp-area="" asp-controller="Feedback" asp-action="contact">Contact us</a> </li>
-                                       
-                                       <li >
-                                            <li style="padding-left: 60px;"> <a asp-area="" asp-controller="ProfileUser" asp-action="profile">
-                                                <img 
-                                                style="height: 40px;
-                                                width: 40px;
-                                                border-radius: 50%;
-                                                margin-top: -5px;"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm6PLJe9kcUX4umLQ5m_YJNu5mBlsPA5v8g&s" alt="">
-                                            </a></li>
-                                            <li class="dropdown" >
-                                            <a href="#">Đỗ Xuân Trường</a>
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                            <li style="padding-left: 60px;">
+                                                <a asp-area="" asp-controller="Account" asp-action="Profile">
+                                                    <img style="height: 40px; width: 40px; border-radius: 50%; margin-top: -5px;"
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm6PLJe9kcUX4umLQ5m_YJNu5mBlsPA5v8g&s"
+                                                        alt="User Image">
+                                                </a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#">@User.Identity.Name</a>
                                                 <ul>
-                                                <!-- <li><a href="login.html">Login</a></li>
-                                                <li><a href="signup.html">Sign Up</a></li> -->
-                                                <li><a asp-area="" asp-controller="ProfileUser" asp-action="profile">My Profile</a></li>
-                                                <li><a asp-area="" asp-controller="ProfileUser" asp-action="profile_booking">Info Insurance</a></li>
-                                                @* <li><a href="insurance-form.html">Insurance Form</a></li>                                               *@
-                                                <li><a asp-area="" asp-controller="Account" asp-action="sign_in">Sign Out</a></li>
+                                                    <li><a asp-area="" asp-controller="Account" asp-action="Profile">My
+                                                            Profile</a></li>
+                                                    <li><a asp-area="" asp-controller="Account"
+                                                            asp-action="Info_Insurance">Info Insurance</a></li>
+                                                    <li><a asp-area="" asp-controller="Account" asp-action="Logout">Sign
+                                                            Out</a></li>
                                                 </ul>
                                             </li>
+                                            }
+                                            else
+                                            {
+                                            <li>
+                                                <a asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                            </li>
+                                              <li>
+                                                <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                            </li>
+                                            }
                                         </li>
-
                                     </ul>
                                 </div>
                             </nav>
-
-                            <!-- Main Menu End-->
-                            @* <div class="outer-box clearfix">
-                                
-                                <div class="phone-box">
-                                   
-                                    <a asp-area="" asp-controller="Account" asp-action="sign_in"
-                                        class="btn btn-primary stretched-link">Sign In</a>
-                                </div>
-                            </div> *@
                         </div>
                     </div>
                 </div>
             </div>
-            <!--End Header Upper-->
-
-            <!-- Sticky Header  -->
             <div class="sticky-header">
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a asp-area="" asp-controller="HomeUser" asp-action="Index" title="">
-                            <img src="~/assets/images/logo-small.png" alt="" title="" />
+                        <a asp-area="" asp-controller="Home" asp-action="Index" title="">
+                            <img src="~/customer-assets/images/logo-small.png" alt="" title="" />
                         </a>
                     </div>
-                    <!--Right Col-->
                     <div class="pull-right">
-                        <!-- Mobile Navigation Toggler -->
                         <div class="mobile-nav-toggler">
                             <span class="icon flaticon-menu-2"></span>
                         </div>
-                        <!-- Main Menu -->
                         <nav class="main-menu">
-                            <!--Keep This Empty / Menu will come through Javascript-->
                         </nav>
-                        <!-- Main Menu End-->
-
-                        <!-- Main Menu End-->
-                        @* <div class="outer-box clearfix">
-                           
-                            <div class="phone-box">
-                               
-                                <a asp-area="" asp-controller="Account" asp-action="sign_in"
-                                    class="btn btn-primary stretched-link">Sign In</a>
-                            </div>
-                        </div> *@
                     </div>
                 </div>
             </div>
-            <!-- End Sticky Menu -->
-
-            <!-- Mobile Menu  -->
             <div class="mobile-menu">
                 <div class="menu-backdrop"></div>
                 <div class="close-btn">
@@ -210,190 +161,32 @@
 
                 <nav class="menu-box">
                     <div class="nav-logo">
-                        <a asp-area="" asp-controller="HomeUser" asp-action="Index"><img src="~/assets/images/logo.png" alt=""
-                                title="" /></a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img
+                                src="~/customer-assets/images/logo.png" alt="" title="" /></a>
                     </div>
                     <div class="menu-outer">
-                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                     </div>
                 </nav>
             </div>
-            <!-- End Mobile Menu -->
         </header>
-        <!-- End Main Header -->
         <div>
             @RenderBody()
         </div>
-        <!-- Main Footer -->
-        <footer class="main-footer" style="background-image: url('@Url.Content("~/assets/images/background/pattern-2.png")')">
-            <!-- <div
-          class="top-pattern-layer"
-          style="background-image: url(images/background/pattern-1.png)"
-        ></div> -->
-            <div class="auto-container">
-                <!-- Upper Box -->
-                <div class="upper-box">
-                    <div class="row clearfix">
-                        <!-- Info Column -->
-                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-column">
-                                <span class="icon flaticon-call-2"></span>
-                                call now<br />
-                                <a href="tel:+10909876534">+10909876534</a>
-                            </div>
-                        </div>
 
-                        <!-- Info Column -->
-                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-column">
-                                <span class="icon flaticon-email-2"></span>
-                                24*7 online Support<br />
-                                <a href="mailto:carsore@mail.com">carsore@mail.com</a>
-                            </div>
-                        </div>
-
-                        <!-- Info Column -->
-                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-column">
-                                <span class="icon flaticon-maps-and-flags"></span>
-                                Office Adress<br />
-                                <strong>4309 Terry Lane, USA</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Upper Box -->
-
-                <!-- Widgets Section -->
-                <div class="widgets-section">
-                    <div class="row clearfix">
-                        <!-- Footer Column -->
-                        <div class="footer-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="footer-widget logo-widget">
-                                <div class="logo">
-                                    <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/images/footer-logo.png" alt="" /></a>
-                                </div>
-                                <div class="text">
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's
-                                    standard dummy text.
-                                </div>
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li>
-                                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://google.com/" class="fab fa-google"></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/" class="fab fa-linkedin-in"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Footer Column -->
-                        <div class="footer-column col-lg-5 col-md-6 col-sm-12">
-                            <div class="footer-widget links-widget">
-                                <div class="row clearfix">
-                                    <!-- Column -->
-                                    <div class="column col-lg-6 col-md-6 col-sm-12">
-                                        <h3>Company</h3>
-                                        <ul class="list-links">
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">our team</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">insurance</a></li>
-                                            <li><a href="#">blog</a></li>
-                                            <li><a href="#">contact us</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Column -->
-                                    <div class="column col-lg-6 col-md-6 col-sm-12">
-                                        <h3>Insurance</h3>
-                                        <ul class="list-links">
-                                            <li><a href="#">car insurance</a></li>
-                                            <li><a href="#">bike insurance</a></li>
-                                            <li><a href="#">bus insurance</a></li>
-                                            <li><a href="#">mini truck insurance</a></li>
-                                            <li><a href="#">jeep insurance</a></li>
-                                            <li><a href="#">lorry insurance</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Footer Column -->
-                        <div class="footer-column col-lg-3 col-md-6 col-sm-12">
-                            <div class="footer-widget quote-widget">
-                                <h3>Request a Quote</h3>
-
-                                <!-- Quote Form -->
-                                <div class="quote-form">
-                                    <form method="post" action="https://themeim.com/demo/carsore/appointment.html">
-                                        <div class="clearfix">
-                                            <div class="form-group">
-                                                <input type="text" name="username" placeholder="Your Name *"
-                                                    required="" />
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="email" name="email" placeholder="Your Email" required="" />
-                                            </div>
-
-                                            <!--Form Group-->
-                                            <div class="form-group">
-                                                <select class="custom-select-box nice-select">
-                                                    <option>Your Subject</option>
-                                                    <option>Subject 01</option>
-                                                    <option>Subject 02</option>
-                                                    <option>Subject 03</option>
-                                                    <option>Subject 04</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <button class="theme-btn submit-btn" type="submit" name="submit-form">
-                                                    Submit Now
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </footer>
-        <!-- End Main Footer -->
-
-        <!-- Calculator Palate  -->
         <div class="calculator-palate">
             <div class="calculator-trigger">
                 <i class="flaticon-keys"></i>
             </div>
             <span class="palate-tag">Calculator</span>
             <div class="palate-content">
-                <!-- Styled Form -->
                 <div class="styled-form style-two">
                     <form>
-                        <!-- Form Group -->
                         <div class="form-group">
                             <label>What is your vehicle number*</label>
                             <span class="icon flaticon-user-2"></span>
                             <input type="text" placeholder="your policy number"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
                         </div>
-
-                        <!-- Form Group -->
                         <div class="form-group">
                             <label>What is your city*</label>
                             <span class="icon flaticon-edit"></span>
@@ -405,8 +198,6 @@
                                 <option>Perth</option>
                             </select>
                         </div>
-
-                        <!-- Form Group -->
                         <div class="form-group">
                             <label>What is your car model?*</label>
                             <span class="icon flaticon-edit"></span>
@@ -440,7 +231,6 @@
                         </div>
 
                         <div class="row clearfix">
-                            <!-- Column -->
                             <div class="column col-lg-6 col-md-6 col-sm-12">
                                 <h6>Vehicle for:</h6>
                                 <div class="form-group margin">
@@ -483,16 +273,12 @@
                 </div>
             </div>
         </div>
-        <!-- End Calculator Palate  -->
-
-        <!-- Contact Palate  -->
         <div class="cantact-palate">
             <div class="calculator-trigger">
                 <i class="flaticon-envelope"></i>
             </div>
             <span class="palate-tag">Contact Form</span>
             <div class="palate-content">
-                <!-- Contact Form -->
                 <div class="contact-form">
                     <form method="post" action="https://themeim.com/demo/carsore/contact.html">
                         <div class="form-group">
@@ -522,40 +308,160 @@
                         </div>
                     </form>
                 </div>
-                <!-- eND Contact Form -->
             </div>
         </div>
-        <!-- End Contact Palate  -->
-    </div>
-    </div>
-    <!-- End pagewrapper -->
+        <footer class="main-footer"
+            style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-2.png")')">
+            <div class="auto-container">
+                <!-- Upper Box -->
+                <div class="upper-box">
+                    <div class="row clearfix">
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-column">
+                                <span class="icon flaticon-call-2"></span>
+                                call now<br />
+                                <a href="tel:+10909876534">+10909876534</a>
+                            </div>
+                        </div>
 
-    <!-- Scroll To Top -->
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-column">
+                                <span class="icon flaticon-email-2"></span>
+                                24*7 online Support<br />
+                                <a href="mailto:carsore@mail.com">carsore@mail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-column">
+                                <span class="icon flaticon-maps-and-flags"></span>
+                                Office Adress<br />
+                                <strong>4309 Terry Lane, USA</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widgets-section">
+                    <div class="row clearfix">
+                        <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget logo-widget">
+                                <div class="logo">
+                                    <a asp-area="" asp-controller="Home" asp-action="Index"><img
+                                            src="~/customer-assets/images/footer-logo.png" alt="" /></a>
+                                </div>
+                                <div class="text">
+                                    Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's
+                                    standard dummy text.
+                                </div>
+                                <ul class="social-box">
+                                    <li>
+                                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://google.com/" class="fab fa-google"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/" class="fab fa-linkedin-in"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <div class="row clearfix">
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                        <h3>Company</h3>
+                                        <ul class="list-links">
+                                            <li><a href="#">About us</a></li>
+                                            <li><a href="#">our team</a></li>
+                                            <li><a href="#">Services</a></li>
+                                            <li><a href="#">insurance</a></li>
+                                            <li><a href="#">blog</a></li>
+                                            <li><a href="#">contact us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="column col-lg-6 col-md-6 col-sm-12">
+                                        <h3>Insurance</h3>
+                                        <ul class="list-links">
+                                            <li><a href="#">car insurance</a></li>
+                                            <li><a href="#">bike insurance</a></li>
+                                            <li><a href="#">bus insurance</a></li>
+                                            <li><a href="#">mini truck insurance</a></li>
+                                            <li><a href="#">jeep insurance</a></li>
+                                            <li><a href="#">lorry insurance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                            <div class="footer-widget quote-widget">
+                                <h3>Request a Quote</h3>
+                                <div class="quote-form">
+                                    <form method="post" action="https://themeim.com/demo/carsore/appointment.html">
+                                        <div class="clearfix">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Your Name *"
+                                                    required="" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="Your Email" required="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="custom-select-box nice-select">
+                                                    <option>Your Subject</option>
+                                                    <option>Subject 01</option>
+                                                    <option>Subject 02</option>
+                                                    <option>Subject 03</option>
+                                                    <option>Subject 04</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button class="theme-btn submit-btn" type="submit" name="submit-form">
+                                                    Submit Now
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
     <div class="scroll-to-top scroll-to-target" data-target="html">
         <span class="fa fa-arrow-up"></span>
     </div>
-
-    <script src="~/assets/js/jquery.js"></script>
-    <script src="~/assets/js/popper.min.js"></script>
-    <script src="~/assets/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/jquery.fancybox.js"></script>
-    <script src="~/assets/js/appear.js"></script>
-    <script src="~/assets/js/parallax.min.js"></script>
-    <script src="~/assets/js/tilt.jquery.min.js"></script>
-    <script src="~/assets/js/jquery.paroller.min.js"></script>
-    <script src="~/assets/js/owl.js"></script>
-    <script src="~/assets/js/wow.js"></script>
-    <script src="~/assets/js/nav-tool.js"></script>
-    <script src="~/assets/js/jquery-ui.js"></script>
-    <script src="~/assets/js/validate.js"></script>
-    <script src="~/assets/js/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="~/assets/js/script.js"></script>
-    <script src="~/assets/js/color-settings.js"></script>
+    <script src="~/customer-assets/js/jquery.js"></script>
+    <script src="~/customer-assets/js/popper.min.js"></script>
+    <script src="~/customer-assets/js/bootstrap.min.js"></script>
+    <script src="~/customer-assets/js/jquery.fancybox.js"></script>
+    <script src="~/customer-assets/js/appear.js"></script>
+    <script src="~/customer-assets/js/parallax.min.js"></script>
+    <script src="~/customer-assets/js/tilt.jquery.min.js"></script>
+    <script src="~/customer-assets/js/jquery.paroller.min.js"></script>
+    <script src="~/customer-assets/js/owl.js"></script>
+    <script src="~/customer-assets/js/wow.js"></script>
+    <script src="~/customer-assets/js/nav-tool.js"></script>
+    <script src="~/customer-assets/js/jquery-ui.js"></script>
+    <script src="~/customer-assets/js/validate.js"></script>
+    <script src="~/customer-assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/customer-assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/customer-assets/js/script.js"></script>
+    <script src="~/customer-assets/js/color-settings.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
-
-
-<!-- Mirrored from themeim.com/demo/carsore/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2024 10:42:11 GMT -->
 
 </html>

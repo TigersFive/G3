@@ -13,14 +13,14 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(100)]
-        public string full_name { get; set; }
-
+        public string? full_name { get; set; }
+        [Required]
         [StringLength(15)]
-        public string phone_number { get; set; }
-
+        public string? phone_number { get; set; }
+        [Required]
         [StringLength(255)]
-        public string address { get; set; }
+        public string? address { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
     }
 }

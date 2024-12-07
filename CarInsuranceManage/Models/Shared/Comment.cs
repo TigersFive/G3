@@ -10,16 +10,16 @@ namespace CarInsuranceManage.Models
 
         [ForeignKey("Customer")]
         public int customer_id { get; set; }
-
-        public string comment_text { get; set; }
-
+        [Required]
+        public string? comment_text { get; set; }
+        [Required]
         public int? rating { get; set; }
 
         public DateTime created_at { get; set; } = DateTime.Now;
+        [Required]
+        public string? status { get; set; }  // 'Active' or 'Archived'
 
-        public string status { get; set; }  // 'Active' or 'Archived'
-
-        public virtual Customer Customer { get; set; }
+        public virtual Customer? Customer { get; set; }
     }
 
 }

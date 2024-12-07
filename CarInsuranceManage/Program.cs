@@ -1,18 +1,35 @@
 using Microsoft.EntityFrameworkCore;
 using CarInsuranceManage.Models;
-using CarInsuranceManage.Database; // Thay đổi theo namespace của dự án của bạn.
+using CarInsuranceManage.Database;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Cấu hình DbContext với SQLite
-builder.Services.AddDbContext<CarInsuranceDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("CarInsuranceDb"))); // Sử dụng connection string từ appsettings.json hoặc trực tiếp
 
 // Thêm dịch vụ MVC vào container
 builder.Services.AddControllersWithViews();
 
 // Thêm cấu hình routing để URL luôn viết chữ thường
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+// Cấu hình DbContext để sử dụng MySQL
+builder.Services.AddDbContext<CarInsuranceDbContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+                     new MySqlServerVersion(new Version(8, 0, 33))));
+
+// Cấu hình xác thực Google
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+});
 
 // Xây dựng ứng dụng
 var app = builder.Build();
@@ -21,7 +38,14 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<CarInsuranceDbContext>();
-    dbContext.Database.Migrate();  // Áp dụng migrations và seed data
+    try
+    {
+        dbContext.Database.Migrate(); // Áp dụng migrations và seed data
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
 }
 
 // Cấu hình HTTP request pipeline
@@ -36,13 +60,14 @@ app.UseStaticFiles();  // Cấu hình cho phép phục vụ các tài nguyên t�
 
 app.UseRouting();
 
-// Cấu hình cho phép xác thực và ủy quyền (nếu có)
-app.UseAuthorization();  // Nếu sử dụng xác thực, cần gọi UseAuthentication() trước
+// Cấu hình xác thực và ủy quyền
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Cấu hình Route cho các controller
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=IndexUser}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // Chạy ứng dụng
 app.Run();

@@ -13,24 +13,24 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(100)]
-        public string vehicle_name { get; set; }
+        public string? vehicle_name { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string vehicle_model { get; set; }
-
+        public string? vehicle_model { get; set; }
+        [Required]
         [StringLength(100)]
-        public string vehicle_version { get; set; }
-
+        public string? vehicle_version { get; set; }
+        [Required]
         [StringLength(50)]
-        public string body_number { get; set; }
-
+        public string? body_number { get; set; }
+        [Required]
         [StringLength(50)]
-        public string engine_number { get; set; }
+        public string? engine_number { get; set; }
 
         public decimal vehicle_rate { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        public virtual Customer? Customer { get; set; }
     }
 
 }

@@ -9,10 +9,11 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(255)]
-        public string image { get; set; }
-
+        public string? image { get; set; }
+        
+        [Required]
         [StringLength(255)]
-        public string link { get; set; }
+        public string? link { get; set; }
 
         public int sort_order { get; set; }
 

@@ -12,17 +12,17 @@ namespace CarInsuranceManage.Models
         public int vehicle_id { get; set; }
 
         [Required]
-        public string image_type { get; set; }  // 'Vehicle', 'Insurance Document', 'Claim Document'
+        public string? image_type { get; set; }  // 'Vehicle', 'Insurance Document', 'Claim Document'
 
         [Required]
         [StringLength(255)]
-        public string image_path { get; set; }
-
-        public string description { get; set; }
+        public string? image_path { get; set; }
+        [Required]
+        public string? description { get; set; }
 
         public DateTime uploaded_at { get; set; } = DateTime.Now;
 
-        public virtual Vehicle Vehicle { get; set; }
+        public virtual Vehicle? Vehicle { get; set; }
     }
 
 }

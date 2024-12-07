@@ -16,14 +16,14 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string bill_number { get; set; }
+        public string? bill_number { get; set; }
 
         public DateTime payment_date { get; set; }
 
         public decimal payment_amount { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual InsurancePolicy InsurancePolicy { get; set; }
+        public virtual Customer? Customer { get; set; }
+        public virtual InsurancePolicy? InsurancePolicy { get; set; }
     }
 
 }

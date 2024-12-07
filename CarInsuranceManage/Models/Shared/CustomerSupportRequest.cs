@@ -13,23 +13,22 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(100)]
-        public string support_type { get; set; }
-
-        public string support_description { get; set; }
-
-        public string support_payment { get; set; }
-        
-        public string support_status { get; set; }  // 'Open', 'Closed', 'Pending'
+        public string? support_type { get; set; }
+        [Required]
+        public string? support_description { get; set; }
+        [Required]
+        public string? support_payment { get; set; }
+        [Required]
+        public string? support_status { get; set; }  // 'Open', 'Closed', 'Pending'
 
         public DateTime created_at { get; set; } = DateTime.Now;
-
         public DateTime? resolved_at { get; set; }
 
         [ForeignKey("User")]
         public int resolved_by { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual User User { get; set; }
+        public virtual Customer? Customer { get; set; }
+        public virtual User? User { get; set; }
     }
 
 }

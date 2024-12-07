@@ -13,15 +13,15 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(100)]
-        public string message_type { get; set; }
-
-        public string message_content { get; set; }
+        public string? message_type { get; set; }
+        [Required]
+        public string? message_content { get; set; }
 
         public DateTime sent_at { get; set; } = DateTime.Now;
 
         public bool is_read { get; set; } = false;
 
-        public virtual Customer Customer { get; set; }
+        public virtual Customer? Customer { get; set; }
     }
 
 }

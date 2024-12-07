@@ -16,17 +16,17 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(50)]
-        public string policy_type { get; set; }
-
+        public string? policy_type { get; set; }
+        [Required]
         [StringLength(50)]
-        public string warranty { get; set; }
+        public string? warranty { get; set; }
 
         public decimal estimate_amount { get; set; }
 
         public DateTime created_at { get; set; } = DateTime.Now;
 
-        public virtual Customer Customer { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
+        public virtual Customer? Customer { get; set; }
+        public virtual Vehicle? Vehicle { get; set; }
     }
 
 }
