@@ -1,0 +1,132 @@
+@{
+  ViewData["Title"] = "Login";
+}
+
+<!-- Page Title -->
+<section class="page-title">
+  <div class="background-container">
+    <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
+    <img class="right-image" class="right-image" src="~/customer-assets/images/background/4.jpg" alt="" />
+  </div>
+  <div class="service-container" style="
+            background-image: url('https://themeim.com/');
+          ">
+    <div class="section-icons-outer parallax-scene-1">
+      <div data-depth="0.20" class="pattern-layer"
+        style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
+      </div>
+    </div>
+
+    <div class="auto-container">
+      <h1>Login In</h1>
+      <ul class="page-breadcrumb">
+        <li><a href="index-2.html">home</a></li>
+        <li>Services</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Login Section -->
+<section class="login-section">
+  <div class="auto-container">
+    <div class="login-box">
+      <!-- Display Warning Message -->
+      @if (TempData["WarningMessage"] != null)
+      {
+        <div class="alert alert-warning">
+          @TempData["WarningMessage"]
+        </div>
+      }
+
+      <!-- Sec Title -->
+      <div class="title-box">
+        <h2>Login</h2>
+        <div class="text">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum
+        </div>
+      </div>
+      <div class="form-box">
+        <div class="styled-form">
+          <form method="post" asp-action="Login" asp-controller="Account">
+            <div class="form-group">
+              <label>Enter your Email</label>
+              <span class="icon flaticon-envelope"></span>
+              <input type="email" name="email" value="" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+              <label>Enter your Password</label>
+              <span class="icon flaticon-padlock-1"></span>
+              <input type="password" name="password" value="" placeholder="Password" required />
+              <span class="eye-icon flaticon-eye"></span>
+            </div>
+            <div class="form-group">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <div class="check-box">
+                    <input type="checkbox" name="remember-password" id="remember-me" />
+                    <label for="remember-me">Remember Me</label>
+                  </div>
+                </div>
+                <div class="pull-right">
+                  <a href="@Url.Action("ForgotPassword", "Account")" class="forgot">Forgot your Password?</a>
+                </div>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="theme-btn btn-style-one">
+                <span class="txt">Login</span>
+              </button>
+            </div>
+            <div class="form-group text-center" style="display: flex; justify-content: left">
+              <a href="@Url.Action("LoginWithGoogle", "Account")" class="social-btn google-btn">
+                <img src="~/customer-assets/images/google.svg" alt="Google Login" style="width: 100%; height: auto;" />
+              </a>
+            </div>
+            <div class="form-group text-center">
+              <div class="users">
+                Don't have an account?
+                <a asp-controller="Account" asp-action="Register">Register</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="auto-container">
+    <div class="inner-container"
+      style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
+      <div class="row clearfix">
+        <!-- Title Column -->
+        <div class="title-column col-lg-5 col-md-12 col-sm-12">
+          <div class="inner-column">
+            <h3>Let us take care about your veicle</h3>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="form-column col-lg-7 col-md-12 col-sm-12">
+          <div class="inner-column">
+            <div class="newsletter-form">
+              <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                <div class="form-group">
+                  <span class="icon fa fa-envelope"></span>
+                  <input type="email" name="email" value="" placeholder="Enter your mail" required="" />
+                  <button type="submit" class="theme-btn flaticon-send"></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End CTA Section -->

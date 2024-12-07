@@ -1,0 +1,14 @@
+  .social-btn {
+    margin: 10px 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .social-btn img {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .social-btn img:hover {
+    transform: scale(1.1);
+  }
