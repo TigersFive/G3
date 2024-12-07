@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dzAB+mg8irMIAFJ+BhVga3HuRM8DSO9dYUOcSA+NvlE=",
+  "Hash": "6jVytTJ7b+9UY7jFS4RthMvE19b/VLbXPBAV6ZHKcrw=",
   "Source": "CarInsuranceManage",
   "BasePath": "_content/CarInsuranceManage",
   "Mode": "Default",
@@ -13854,6 +13854,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\customer-assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Identity": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\checkform.js",
+      "SourceId": "CarInsuranceManage",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\",
+      "BasePath": "_content/CarInsuranceManage",
+      "RelativePath": "customer-assets/js/checkform#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zl303j7jid",
+      "Integrity": "ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\customer-assets\\js\\checkform.js"
     },
     {
       "Identity": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\color-settings.js",
@@ -68732,6 +68753,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8="
+        }
+      ]
+    },
+    {
+      "Route": "customer-assets/js/checkform.js",
+      "AssetFile": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\checkform.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8508"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 15:43:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0="
+        }
+      ]
+    },
+    {
+      "Route": "customer-assets/js/checkform.zl303j7jid.js",
+      "AssetFile": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\checkform.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8508"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 15:43:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zl303j7jid"
+        },
+        {
+          "Name": "label",
+          "Value": "customer-assets/js/checkform.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0="
         }
       ]
     },

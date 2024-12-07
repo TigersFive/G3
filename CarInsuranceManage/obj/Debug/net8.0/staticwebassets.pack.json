@@ -2633,6 +2633,10 @@
       "PackagePath": "staticwebassets\\customer-assets\\js\\bootstrap.min.js"
     },
     {
+      "Id": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\checkform.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\checkform.js"
+    },
+    {
       "Id": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\color-settings.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\color-settings.js"
     },
