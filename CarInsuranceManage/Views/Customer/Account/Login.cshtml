@@ -20,8 +20,8 @@
     <div class="auto-container">
       <h1>Login In</h1>
       <ul class="page-breadcrumb">
-        <li><a href="index-2.html">home</a></li>
-        <li>Services</li>
+        <li>Account</li>
+        <li>Login</li>
       </ul>
     </div>
   </div>
@@ -44,8 +44,7 @@
       <div class="title-box">
         <h2>Login</h2>
         <div class="text">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum
+          You Don't Have Email? It's okay, please log in with your phone number?  <a asp-action="Login_Phone" asp-controller="Account">Here</a>
         </div>
       </div>
       <div class="form-box">
@@ -71,7 +70,8 @@
                   </div>
                 </div>
                 <div class="pull-right">
-                  <a href="@Url.Action("ForgotPassword", "Account")" class="forgot">Forgot your Password?</a>
+                  
+                  <a href="@Url.Action("Forgot_Password", "Account")" class="forgot">Forgot your Password?</a>
                 </div>
               </div>
             </div>
@@ -80,53 +80,30 @@
                 <span class="txt">Login</span>
               </button>
             </div>
-            <div class="form-group text-center" style="display: flex; justify-content: left">
+            <div class="form-group text-center" style="display: flex; justify-content: space-between">
               <a href="@Url.Action("LoginWithGoogle", "Account")" class="social-btn google-btn">
                 <img src="~/customer-assets/images/google.svg" alt="Google Login" style="width: 100%; height: auto;" />
               </a>
+              <a href="@Url.Action("LoginWithFacebook", "Account")" class="social-btn facebook-btn">
+                <img src="~/customer-assets/images/facebook.svg" alt="Facebook Login"
+                  style="width: 100%; height: auto;" />
+              </a>
             </div>
             <div class="form-group text-center">
-              <div class="users">
+              <div class="users" style="display: flex; justify-content: space-between;">
                 Don't have an account?
                 <a asp-controller="Account" asp-action="Register">Register</a>
               </div>
             </div>
           </form>
+          <!-- Phone Login Form -->
+          
         </div>
       </div>
     </div>
   </div>
 </section>
 
+@await Html.PartialAsync("_SendMail")
 
-<section class="cta-section">
-  <div class="auto-container">
-    <div class="inner-container"
-      style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
-      <div class="row clearfix">
-        <!-- Title Column -->
-        <div class="title-column col-lg-5 col-md-12 col-sm-12">
-          <div class="inner-column">
-            <h3>Let us take care about your veicle</h3>
-          </div>
-        </div>
-
-        <!-- Form Column -->
-        <div class="form-column col-lg-7 col-md-12 col-sm-12">
-          <div class="inner-column">
-            <div class="newsletter-form">
-              <form method="post" action="https://themeim.com/demo/carsore/contact.html">
-                <div class="form-group">
-                  <span class="icon fa fa-envelope"></span>
-                  <input type="email" name="email" value="" placeholder="Enter your mail" required="" />
-                  <button type="submit" class="theme-btn flaticon-send"></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- End CTA Section -->

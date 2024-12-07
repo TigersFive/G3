@@ -35,8 +35,8 @@ namespace CarInsuranceManage.Database
 
             // Seed data for Users table
             modelBuilder.Entity<User>().HasData(
-                new User { user_id = 1, username = "john_doe", password = "hashed_password1", full_name = "John Doe", email = "john.doe@example.com", phone_number = "1234567890", address = "123 Main St", user_logs = "Email", role = "Customer", created_at = currentDate },
-                new User { user_id = 2, username = "jane_admin", password = "hashed_password2", full_name = "Jane Admin", email = "jane.admin@example.com", phone_number = "0987654321", address = "456 Elm St", user_logs = "Google",role = "Employee", created_at = currentDate }
+                new User { user_id = 1, username = "john_doe", password = "hashed_password1", full_name = "John Doe", email = "john.doe@example.com", phone_number = "1234567890", address = "123 Main St", user_logs = "Google", role = "User", created_at = currentDate },
+                new User { user_id = 2, username = "jane_admin", password = "hashed_password2", full_name = "Jane Admin", email = "vusena3107@gmail.com", phone_number = "0384804325", address = "456 Elm St", user_logs = "Email",role = "Admin", created_at = currentDate }
             );
 
             // Seed data for Customers table

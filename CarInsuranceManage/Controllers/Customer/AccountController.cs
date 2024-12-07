@@ -20,6 +20,67 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
         [HttpGet]
+        public IActionResult Login_Phone()
+        {
+            return View("~/Views/Customer/Account/Login_Phone.cshtml");
+        }
+        [HttpPost]
+        public async Task<IActionResult> LoginWithPhone(string phoneNumber)
+        {
+            // Kiểm tra nếu số điện thoại hợp lệ
+            if (string.IsNullOrEmpty(phoneNumber))
+            {
+                TempData["WarningMessage"] = "Please enter a valid phone number.";
+                return View();
+            }
+
+            // Tạo mã OTP (ví dụ: 6 chữ số ngẫu nhiên)
+            string otp = new Random().Next(100000, 999999).ToString();
+
+            // Gửi OTP qua SMS hoặc Email (Sử dụng dịch vụ gửi OTP)
+            // Ví dụ: Sử dụng Twilio hoặc một API gửi SMS khác để gửi OTP
+            await SendOtpAsync(phoneNumber, otp);
+
+            // Lưu OTP vào session hoặc cơ sở dữ liệu tạm thời để xác minh sau này
+            HttpContext.Session.SetString("OtpCode", otp);
+            HttpContext.Session.SetString("PhoneNumber", phoneNumber);
+
+            // Chuyển hướng tới trang nhập OTP
+            return RedirectToAction("verify_phone");
+        }
+
+        private async Task SendOtpAsync(string phoneNumber, string otp)
+        {
+            // Sử dụng API gửi OTP (ví dụ Twilio, SendGrid, hoặc dịch vụ khác)
+            // Gửi mã OTP qua SMS hoặc Email
+            await Task.CompletedTask; // Giả lập việc gửi OTP
+        }
+
+        [HttpGet]
+        public IActionResult verify_phone()
+        {
+            return View("~/Views/Customer/Account/Verify_Phone.cshtml");
+        }
+        [HttpPost]
+        public IActionResult verify_phone(string otp)
+        {
+            // Lấy mã OTP đã lưu trong session
+            var sessionOtp = HttpContext.Session.GetString("OtpCode");
+            var phoneNumber = HttpContext.Session.GetString("PhoneNumber");
+
+            if (sessionOtp != otp)
+            {
+                TempData["WarningMessage"] = "Invalid OTP. Please try again.";
+                return View();
+            }
+
+            // OTP hợp lệ, thực hiện đăng nhập hoặc chuyển hướng
+            // Ví dụ: Lưu thông tin đăng nhập người dùng
+            TempData["SuccessMessage"] = "Login successful!";
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public IActionResult Login()
         {
             return View("~/Views/Customer/Account/Login.cshtml");
@@ -55,8 +116,8 @@ namespace CarInsuranceManage.Controllers.Customer
                 return View("~/Views/Customer/Account/Login.cshtml");
             }
 
-                    // Create claims for the user
-                    var claims = new List<Claim>
+            // Create claims for the user
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.username),
                 new Claim(ClaimTypes.Email, user.email),
@@ -159,9 +220,9 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
 
-        public IActionResult ForgotPassword()
+        public IActionResult Forgot_Password()
         {
-            return View("~/Views/Customer/Account/ForgotPassword.cshtml");
+            return View("~/Views/Customer/Account/Forgot_Password.cshtml");
         }
 
         [HttpPost]

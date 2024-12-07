@@ -1833,14 +1833,6 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\color-switcher-design.css"
     },
     {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\coloring.css",
-      "PackagePath": "staticwebassets\\customer-assets\\css\\coloring.css"
-    },
-    {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\colors\\scheme-01.css",
-      "PackagePath": "staticwebassets\\customer-assets\\css\\colors\\scheme-01.css"
-    },
-    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\custom-animate.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\custom-animate.css"
     },
@@ -1873,10 +1865,6 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\jquery-ui.css"
     },
     {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery.countdown.css",
-      "PackagePath": "staticwebassets\\customer-assets\\css\\jquery.countdown.css"
-    },
-    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery.fancybox.min.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\jquery.fancybox.min.css"
     },
@@ -1907,10 +1895,6 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\style.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\style.css"
-    },
-    {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\styleprofile.css",
-      "PackagePath": "staticwebassets\\customer-assets\\css\\styleprofile.css"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fa-brands-400.eot",
@@ -2149,6 +2133,10 @@
       "PackagePath": "staticwebassets\\customer-assets\\images\\cross-out.png"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\facebook.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\facebook.svg"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\favicon.png",
       "PackagePath": "staticwebassets\\customer-assets\\images\\favicon.png"
     },
@@ -2175,10 +2163,6 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\gallery\\left-bg-rect.png",
       "PackagePath": "staticwebassets\\customer-assets\\images\\gallery\\left-bg-rect.png"
-    },
-    {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\google.png",
-      "PackagePath": "staticwebassets\\customer-assets\\images\\google.png"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\google.svg",
