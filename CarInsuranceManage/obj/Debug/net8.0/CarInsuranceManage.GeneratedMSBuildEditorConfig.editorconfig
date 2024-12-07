@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\laragon\www\G3\CarInsuranceManage
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/laragon/www/G3/CarInsuranceManage/wwwroot/customer-assets/css/_layoutProfileUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxjdXN0b21lci1hc3NldHNcY3NzXF9sYXlvdXRQcm9maWxlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/laragon/www/G3/CarInsuranceManage/Views/Admin/App/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXBwXENhbGVuZGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -240,6 +244,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Bike_Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXEJpa2VfRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Bike_Insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXEJpa2VfSW5zdXJhbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9EZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_Insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9JbnN1cmFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Index.cshtml]

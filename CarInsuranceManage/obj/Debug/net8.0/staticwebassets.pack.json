@@ -1829,8 +1829,20 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\bootstrap.min2.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\bootstrap.min2.css"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\color-switcher-design.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\color-switcher-design.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\coloring.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\coloring.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\colors\\scheme-01.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\colors\\scheme-01.css"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\custom-animate.css",
@@ -1861,8 +1873,20 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\icon.css"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\import0bda.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\import0bda.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\importd08b.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\importd08b.css"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery-ui.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\jquery-ui.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery.countdown.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\jquery.countdown.css"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery.fancybox.min.css",
@@ -1893,8 +1917,64 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\responsive.css"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\responsive33a7.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\responsive33a7.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\responsive9a04.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\responsive9a04.css"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\style.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\style33a7.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\style33a7.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\style9a04.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\style9a04.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\styleprofile.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\styleprofile.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Bd.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Bd.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Bd.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Bd.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Blk.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Blk.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Blk.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Blk.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Md.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Md.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Md.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Md.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Roman.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Roman.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Roman.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\HelveticaVn-Roman.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\HelveticaVn\\stylesheet.css",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\HelveticaVn\\stylesheet.css"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fa-brands-400.eot",
@@ -1987,6 +2067,130 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\flaticond41d.eot",
       "PackagePath": "staticwebassets\\customer-assets\\fonts\\flaticond41d.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400d41d.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-brands-400d41d.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.ttf",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.ttf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900d41d.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-duotone-900d41d.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.ttf",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.ttf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300d41d.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-light-300d41d.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400d41d.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-regular-400d41d.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900d41d.eot",
+      "PackagePath": "staticwebassets\\customer-assets\\fonts\\fontawesome\\webfonts\\fa-solid-900d41d.eot"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\fonts\\glyphicons-halflings-regular.eot",
@@ -2109,6 +2313,10 @@
       "PackagePath": "staticwebassets\\customer-assets\\images\\background\\planes-group.png"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\cau_hoi_thuong_gap.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\cau_hoi_thuong_gap.png"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\clients\\1.png",
       "PackagePath": "staticwebassets\\customer-assets\\images\\clients\\1.png"
     },
@@ -2165,12 +2373,36 @@
       "PackagePath": "staticwebassets\\customer-assets\\images\\gallery\\left-bg-rect.png"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\google.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\google.png"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\google.svg",
       "PackagePath": "staticwebassets\\customer-assets\\images\\google.svg"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\home-2-footer-logo.png",
       "PackagePath": "staticwebassets\\customer-assets\\images\\home-2-footer-logo.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icon_download.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\icon_download.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icon_phone.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\icon_phone.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icon_share.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\icon_share.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icon_tai_lieu_bieu_mau.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\icon_tai_lieu_bieu_mau.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icon_tu_van.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\icon_tu_van.png"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\icons\\icon-1.png",
@@ -2377,12 +2609,36 @@
       "PackagePath": "staticwebassets\\customer-assets\\images\\resource\\testimonial.jpg"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\tai_lieu_bieu_mau.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\tai_lieu_bieu_mau.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\tai_lieu_bieu_mau_m.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\tai_lieu_bieu_mau_m.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\thong-tin-lien-he.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\thong-tin-lien-he.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\ycgl_note.png",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\ycgl_note.png"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\appear.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\appear.js"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\checkform.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\checkform.js"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\color-settings.js",
@@ -2413,12 +2669,20 @@
       "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.mCustomScrollbar.concat.min.js"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.min.js"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery.nice-select.min.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.nice-select.min.js"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery.paroller.min.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.paroller.min.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery.scrollTo.min.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.scrollTo.min.js"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\nav-tool.js",
@@ -2449,8 +2713,92 @@
       "PackagePath": "staticwebassets\\customer-assets\\js\\validate.js"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\validate\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\validate\\jquery.validate.js"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\wow.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\wow.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\467e2210559b53bbae7bdf569e421e7b.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\467e2210559b53bbae7bdf569e421e7b.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\5c376618b322ad01eb087a6ee1965357.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\5c376618b322ad01eb087a6ee1965357.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\6558d8c0a4286b6d79b20bbfab3ddec3.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\6558d8c0a4286b6d79b20bbfab3ddec3.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\a28f0c31be4a2ff2618c17a0a1365970.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\a28f0c31be4a2ff2618c17a0a1365970.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\da43442160f56501857f51256255246a.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\da43442160f56501857f51256255246a.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\attachment\\da4ed369bece685f3b962d524569d3fb.pdf",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\attachment\\da4ed369bece685f3b962d524569d3fb.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\019310e7808afe2f3b13e982a08239e7.jpg",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\019310e7808afe2f3b13e982a08239e7.jpg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\1f3bd342943f7b8156b33b3498f98f6c.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\1f3bd342943f7b8156b33b3498f98f6c.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\4dc366f2ac9a8beac3232ba9443b0d57.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\4dc366f2ac9a8beac3232ba9443b0d57.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\647e191728440cecde9bd7922c851ced.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\647e191728440cecde9bd7922c851ced.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\8d11847f1e8868dd5485219c173bd4d7.jpg",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\8d11847f1e8868dd5485219c173bd4d7.jpg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\9efc82a60a86f6b1860a9c59f3cd0875.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\9efc82a60a86f6b1860a9c59f3cd0875.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\a626bf688ea55c12b46efeddf83de274.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\a626bf688ea55c12b46efeddf83de274.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\b71a519423cdd7ef6c65079f05aaaccd.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\b71a519423cdd7ef6c65079f05aaaccd.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\b9c5e12b18f2899a979e5f5e4b4a68ec.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\b9c5e12b18f2899a979e5f5e4b4a68ec.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\bb638d5e46bd97ed25dd001359b36bdb.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\bb638d5e46bd97ed25dd001359b36bdb.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\bf000035e486e6abf31d122d723bd6c0.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\bf000035e486e6abf31d122d723bd6c0.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\d2d404217200470b798af01117a4bf90.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\d2d404217200470b798af01117a4bf90.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\d54784a7ff332db9fa6303308e953bee.png",
+      "PackagePath": "staticwebassets\\customer-assets\\uploads\\product\\d54784a7ff332db9fa6303308e953bee.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CarInsuranceManage.Microsoft.AspNetCore.StaticWebAssets.props",
