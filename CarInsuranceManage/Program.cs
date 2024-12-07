@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using CarInsuranceManage.Models;
 using CarInsuranceManage.Database;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;

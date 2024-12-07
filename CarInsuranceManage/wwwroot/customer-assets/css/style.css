@@ -2436,12 +2436,7 @@
   right: -170px;
   bottom: 0px;
   width: 275px;
-<<<<<<< HEAD
   background: url(../images/background/pattern-7.png) no-repeat;
-=======
-  background: url(../images/background/pattern-7.png)
-    no-repeat;
->>>>>>> truong
 }
 
 .page-title .auto-container {
@@ -2739,12 +2734,7 @@
   width: 30px;
   height: 25px;
   z-index: 1;
-<<<<<<< HEAD
   background: url(https://themeim.com/) no-repeat;
-=======
-  background: url(https://themeim.com/)
-    no-repeat;
->>>>>>> truong
 }
 
 .insurance-block .inner-box:after {
@@ -2984,11 +2974,7 @@
   position: relative;
   color: var(--main-color-two);
   font-size: var(--font-16);
-<<<<<<< HEAD
-  
-=======
   text-align: center;
->>>>>>> truong
 }
 
 .styled-form .form-group .users a {
@@ -3312,7 +3298,7 @@
   .radio-box-two
   input[type="radio"]:checked
   + label::before {
-  border-color: #5d5d5d !important;
+  border-color: #1da1f2 !important;
 }
 
 .styled-form .form-group .form-group .radio-box-two label {
@@ -4734,12 +4720,7 @@
   top: 0px;
   bottom: 0px;
   width: 167px;
-<<<<<<< HEAD
   background: url(https://themeim.com/) no-repeat;
-=======
-  background: url(https://themeim.com/)
-    no-repeat;
->>>>>>> truong
 }
 
 .help-widget .image .overlay-box {
@@ -9923,11 +9904,6 @@ select.custom-select-box {
   padding: 6px 20px 6px 70px;
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> truong
 .nice-select {
   height: 55px;
   line-height: 45px;
@@ -9956,12 +9932,8 @@ select.custom-select-box {
   transform-origin: 50% 0;
   -webkit-transform: scale(0.75) translateY(-21px);
   transform: scale(0.75) translateY(-21px);
-<<<<<<< HEAD
   -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25),
     opacity 0.15s ease-out;
-=======
-  -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
->>>>>>> truong
   transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
   z-index: 9;
   min-height: 50px;
@@ -9989,17 +9961,10 @@ select.custom-select-box {
   max-height: 200px;
   overflow-y: scroll;
   width: 100%;
-<<<<<<< HEAD
-  font: 1em sans-serif;
 }
 
 .nice-select .option.focus,
 .nice-select .option.selected.focus {
-=======
-}
-
-.nice-select .option.focus, .nice-select .option.selected.focus {
->>>>>>> truong
   color: black !important;
 }
 
@@ -10045,7 +10010,6 @@ select.custom-select-box {
   display: block;
 }
 
-<<<<<<< HEAD
 .main-footer .nice-select {
   position: relative;
   display: block;
@@ -10070,29 +10034,3 @@ select.custom-select-box {
 .nice-select.custom-select-box.insurence-form-border {
   border: 1px solid #d8e4f1;
 }
-=======
-.main-footer .nice-select{
-  position: relative;
-    display: block;
-    width: 100%;
-    line-height: 20px;
-    font-weight: 400;
-    padding: 14px 22px;
-    border-radius: 4px;
-    z-index: 1;
-    height: 50px;
-    background: none;
-    -webkit-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    transition: all 300ms ease;
-    font-size: var(--font-14);
-    background: transparent;
-    color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.nice-select.custom-select-box.insurence-form-border {
-  border: 1px solid #d8e4f1;
-}
->>>>>>> truong
