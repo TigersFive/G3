@@ -50,7 +50,7 @@
             </div>
             <div class="form-box">
                 <div class="styled-form">
-                    <form method="post" asp-action="Login" asp-controller="Account">
+                    <form method="post" asp-action="Login" asp-controller="LoginDB">
                         <div class="form-group">
                             <label>Enter your Email</label>
                             <span class="icon flaticon-envelope"></span>
@@ -84,11 +84,11 @@
                             </button>
                         </div>
                         <div class="form-group text-center" style="display: flex; justify-content: space-between">
-                            <a href="@Url.Action("LoginWithGoogle", "Account")" class="social-btn google-btn">
+                            <a href="@Url.Action("LoginWithGoogle", "LoginGoogle")" class="social-btn google-btn">
                                 <img src="~/customer-assets/images/google.svg" alt="Google Login"
                                     style="width: 100%; height: auto;" />
                             </a>
-                            <a href="@Url.Action("LoginWithFacebook", "Account")" class="social-btn facebook-btn">
+                            <a href="@Url.Action("LoginWithFacebook", "LoginFacebook")" class="social-btn facebook-btn">
                                 <img src="~/customer-assets/images/facebook.svg" alt="Facebook Login"
                                     style="width: 100%; height: auto;" />
                             </a>

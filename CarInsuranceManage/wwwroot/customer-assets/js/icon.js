@@ -1,28 +1,24 @@
-const BtnShowPass = document.querySelector("#show-pass");
-const inputPass = document.querySelector("#input-pass");
-const BtnShowConfirmPass = document.querySelector("#show-confirm-pass");
-const inputConfirmPass = document.querySelector("#input-confirm-pass");
+document.addEventListener("DOMContentLoaded", function () {
+  // Select elements
+  const BtnShowPass = document.querySelector("#show-pass");
+  const inputPass = document.querySelector("#input-pass");
+  const BtnShowConfirmPass = document.querySelector("#show-confirm-pass");
+  const inputConfirmPass = document.querySelector("#input-confirm-pass");
 
-BtnShowPass.addEventListener("click", function () {
-  // Toggle lớp 'active' cho biểu tượng mắt
-  BtnShowPass.classList.toggle("active");
+  // Function to toggle password visibility
+  function togglePasswordVisibility(button, input) {
+    if (button && input) {
+      button.addEventListener("click", function () {
+        // Toggle 'active' class on the button
+        button.classList.toggle("active");
 
-  // Kiểm tra và thay đổi type của input
-  if (inputPass.type === "password") {
-    inputPass.type = "text"; // Hiển thị mật khẩu
-  } else {
-    inputPass.type = "password"; // Ẩn mật khẩu
+        // Toggle the input type between password and text
+        input.type = input.type === "password" ? "text" : "password";
+      });
+    }
   }
-});
 
-BtnShowConfirmPass.addEventListener("click", function () {
-  // Toggle lớp 'active' cho biểu tượng mắt
-  BtnShowConfirmPass.classList.toggle("active");
-
-  // Kiểm tra và thay đổi type của input
-  if (inputConfirmPass.type === "password") {
-    inputConfirmPass.type = "text"; // Hiển thị mật khẩu
-  } else {
-    inputConfirmPass.type = "password"; // Ẩn mật khẩu
-  }
+  // Apply toggle function to both password fields
+  togglePasswordVisibility(BtnShowPass, inputPass);
+  togglePasswordVisibility(BtnShowConfirmPass, inputConfirmPass);
 });

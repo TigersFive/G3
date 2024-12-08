@@ -3,8 +3,15 @@ using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.EntityFrameworkCore;
 using CarInsuranceManage.Database;
 using Microsoft.AspNetCore.Authentication.Google;
+using CarInsuranceManage.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<TwilioSettings>(builder.Configuration.GetSection("Twilio").Get<TwilioSettings>());
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian hết hạn session
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

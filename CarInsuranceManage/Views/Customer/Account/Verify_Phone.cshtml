@@ -10,24 +10,23 @@
       }
 
       <!-- Sec Title -->
-        <div class="title-box">
-          <h2>Verify OTP</h2>
-          <div class="text">
-            Enter the 4-digit OTP sent to your phone number.
-          </div>
+      <div class="title-box">
+        <h2>Verify OTP</h2>
+        <div class="text">
+          Enter the 4-digit OTP sent to your phone number.
         </div>
+      </div>
       <div class="form-box">
         <div class="styled-form">
           <!-- OTP Verification Form -->
-          <form method="post" asp-action="VerifyOtp" asp-controller="Account">
+          <form method="post" asp-action="VerifyOtp" asp-controller="LoginPhone">
             <div class="form-group">
               <label>Enter OTP</label>
               <div class="otp-inputs">
-                <!-- 4 separate input fields for OTP -->
-                <input style="50px" type="text" name="otp1" maxlength="1" pattern="\d" title="OTP must be a digit" required class="otp-field" />
-                <input style="50px" type="text" name="otp2" maxlength="1" pattern="\d" title="OTP must be a digit" required class="otp-field" />
-                <input style="50px" type="text" name="otp3" maxlength="1" pattern="\d" title="OTP must be a digit" required class="otp-field" />
-                <input style="50px" type="text" name="otp4" maxlength="1" pattern="\d" title="OTP must be a digit" required class="otp-field" />
+                <input style="50px" type="text" name="otp1" maxlength="1" pattern="\d" required class="otp-field" />
+                <input style="50px" type="text" name="otp2" maxlength="1" pattern="\d" required class="otp-field" />
+                <input style="50px" type="text" name="otp3" maxlength="1" pattern="\d" required class="otp-field" />
+                <input style="50px" type="text" name="otp4" maxlength="1" pattern="\d" required class="otp-field" />
               </div>
             </div>
             <div class="form-group text-center">
@@ -36,6 +35,7 @@
               </button>
             </div>
           </form>
+
         </div>
       </div>
     </div>
@@ -49,6 +49,7 @@
     justify-content: space-between;
     gap: 10px;
   }
+
   .otp-field {
     width: 50px;
     height: 50px;
@@ -58,6 +59,7 @@
     border-radius: 5px;
     outline: none;
   }
+
   .otp-field:focus {
     border-color: #007bff;
   }
