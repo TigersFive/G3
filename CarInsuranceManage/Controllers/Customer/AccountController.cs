@@ -7,6 +7,7 @@ using CarInsuranceManage.Database;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Claim = System.Security.Claims.Claim;
+using Microsoft.AspNetCore.Authentication.Facebook;
 
 namespace CarInsuranceManage.Controllers.Customer
 {
@@ -19,66 +20,6 @@ namespace CarInsuranceManage.Controllers.Customer
             _context = context;
         }
 
-        [HttpGet]
-        public IActionResult Login_Phone()
-        {
-            return View("~/Views/Customer/Account/Login_Phone.cshtml");
-        }
-        [HttpPost]
-        public async Task<IActionResult> LoginWithPhone(string phoneNumber)
-        {
-            // Kiểm tra nếu số điện thoại hợp lệ
-            if (string.IsNullOrEmpty(phoneNumber))
-            {
-                TempData["WarningMessage"] = "Please enter a valid phone number.";
-                return View();
-            }
-
-            // Tạo mã OTP (ví dụ: 6 chữ số ngẫu nhiên)
-            string otp = new Random().Next(100000, 999999).ToString();
-
-            // Gửi OTP qua SMS hoặc Email (Sử dụng dịch vụ gửi OTP)
-            // Ví dụ: Sử dụng Twilio hoặc một API gửi SMS khác để gửi OTP
-            await SendOtpAsync(phoneNumber, otp);
-
-            // Lưu OTP vào session hoặc cơ sở dữ liệu tạm thời để xác minh sau này
-            HttpContext.Session.SetString("OtpCode", otp);
-            HttpContext.Session.SetString("PhoneNumber", phoneNumber);
-
-            // Chuyển hướng tới trang nhập OTP
-            return RedirectToAction("verify_phone");
-        }
-
-        private async Task SendOtpAsync(string phoneNumber, string otp)
-        {
-            // Sử dụng API gửi OTP (ví dụ Twilio, SendGrid, hoặc dịch vụ khác)
-            // Gửi mã OTP qua SMS hoặc Email
-            await Task.CompletedTask; // Giả lập việc gửi OTP
-        }
-
-        [HttpGet]
-        public IActionResult verify_phone()
-        {
-            return View("~/Views/Customer/Account/Verify_Phone.cshtml");
-        }
-        [HttpPost]
-        public IActionResult verify_phone(string otp)
-        {
-            // Lấy mã OTP đã lưu trong session
-            var sessionOtp = HttpContext.Session.GetString("OtpCode");
-            var phoneNumber = HttpContext.Session.GetString("PhoneNumber");
-
-            if (sessionOtp != otp)
-            {
-                TempData["WarningMessage"] = "Invalid OTP. Please try again.";
-                return View();
-            }
-
-            // OTP hợp lệ, thực hiện đăng nhập hoặc chuyển hướng
-            // Ví dụ: Lưu thông tin đăng nhập người dùng
-            TempData["SuccessMessage"] = "Login successful!";
-            return RedirectToAction("Index", "Home");
-        }
 
         [HttpGet]
         public IActionResult Login()
@@ -121,7 +62,7 @@ namespace CarInsuranceManage.Controllers.Customer
             {
                 new Claim(ClaimTypes.Name, user.username),
                 new Claim(ClaimTypes.Email, user.email),
-                new Claim(ClaimTypes.Role, user.user_logs ?? "User") // Default role
+                new Claim(ClaimTypes.Role, user.user_logs ?? "user") // Default role
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -148,15 +89,18 @@ namespace CarInsuranceManage.Controllers.Customer
             return RedirectToAction("Index", "Home");
         }
 
-
-
-
-
         public IActionResult LoginWithGoogle()
         {
             var redirectUrl = Url.Action("GoogleResponse", "Account");
             var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
             return Challenge(properties, GoogleDefaults.AuthenticationScheme);
+        }
+        // Action to initiate login with Facebook
+        public IActionResult LoginWithFacebook()
+        {
+            var redirectUrl = Url.Action("FacebookResponse", "Account");
+            var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+            return Challenge(properties, FacebookDefaults.AuthenticationScheme);
         }
 
         public async Task<IActionResult> GoogleResponse()
@@ -187,7 +131,8 @@ namespace CarInsuranceManage.Controllers.Customer
                         user_logs = "Google", // Indicate Google login
                         password = "N/A", // Set default value as password is not needed for Google login
                         address = "N/A", // Default value for address
-                        created_at = DateTime.Now
+                        created_at = DateTime.Now,
+                        role = "user"
                     };
 
                     _context.Users.Add(user);
@@ -211,8 +156,54 @@ namespace CarInsuranceManage.Controllers.Customer
 
             return RedirectToAction("Login");
         }
+        // Handle Facebook login response
+        public async Task<IActionResult> FacebookResponse()
+        {
+            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            if (result?.Principal != null)
+            {
+                var claims = result.Principal.Identities.FirstOrDefault()?.Claims.Select(claim => new { claim.Type, claim.Value });
+                var email = claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
+                var name = claims?.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
+                if (email == null || name == null)
+                {
+                    return RedirectToAction("Login");
+                }
 
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.email == email);
+                if (user == null)
+                {
+                    user = new User
+                    {
+                        username = name,
+                        email = email,
+                        user_logs = "Facebook", // Store Facebook login type
+                        password = "N/A",
+                        address = "N/A",
+                        created_at = DateTime.Now,
+                        role = "user"
+                    };
+
+                    _context.Users.Add(user);
+                    await _context.SaveChangesAsync();
+                }
+
+                var loginLog = new LoginLog
+                {
+                    user_id = user.user_id,
+                    ip_address = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                    login_time = DateTime.Now
+                };
+
+                _context.LoginLogs.Add(loginLog);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Login");
+        }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -287,7 +278,8 @@ namespace CarInsuranceManage.Controllers.Customer
                 email = email,
                 password = password, // Lưu trực tiếp mật khẩu
                 created_at = DateTime.Now,
-                user_logs = "Email" // Default user type
+                user_logs = "Email",
+                role = "user"
             };
 
             _context.Users.Add(user);
@@ -296,9 +288,6 @@ namespace CarInsuranceManage.Controllers.Customer
             TempData["Message"] = "Registration successful. Please login.";
             return RedirectToAction("Login");
         }
-
-
-
         public IActionResult Blog()
         {
             return View("~/Views/Customer/Account/Blog.cshtml");
@@ -312,7 +301,6 @@ namespace CarInsuranceManage.Controllers.Customer
             }
             return View("~/Views/Customer/Account/Profile.cshtml");
         }
-
 
         public IActionResult Info_Insurance()
         {

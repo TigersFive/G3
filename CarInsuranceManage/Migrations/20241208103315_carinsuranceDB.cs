@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace CarInsuranceManage.Migrations
 {
     /// <inheritdoc />
@@ -524,100 +522,6 @@ namespace CarInsuranceManage.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.InsertData(
-                table: "BannerImages",
-                columns: new[] { "id", "image", "link", "sort_order", "status" },
-                values: new object[] { 1, "/images/banner1.jpg", "https://example.com", 1, true });
-
-            migrationBuilder.InsertData(
-                table: "CompanyExpenses",
-                columns: new[] { "expense_id", "created_at", "expense_amount", "expense_date", "expense_type" },
-                values: new object[] { 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5000m, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Marketing" });
-
-            migrationBuilder.InsertData(
-                table: "Reports",
-                columns: new[] { "report_id", "description", "generated_at", "report_type" },
-                values: new object[] { 1, "Annual performance report", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Annual Report" });
-
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "user_id", "address", "created_at", "email", "full_name", "password", "phone_number", "role", "user_logs", "username" },
-                values: new object[,]
-                {
-                    { 1, "123 Main St", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john.doe@example.com", "John Doe", "hashed_password1", "1234567890", "Customer", "Email", "john_doe" },
-                    { 2, "456 Elm St", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "jane.admin@example.com", "Jane Admin", "hashed_password2", "0987654321", "Employee", "Google", "jane_admin" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Customers",
-                columns: new[] { "customer_id", "address", "full_name", "phone_number", "user_id" },
-                values: new object[] { 1, "123 Main St", "John Doe", "1234567890", 1 });
-
-            migrationBuilder.InsertData(
-                table: "LoginLogs",
-                columns: new[] { "log_id", "ip_address", "login_time", "user_id" },
-                values: new object[] { 1, "192.168.1.1", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 });
-
-            migrationBuilder.InsertData(
-                table: "Comments",
-                columns: new[] { "comment_id", "comment_text", "created_at", "customer_id", "rating", "status" },
-                values: new object[] { 1, "Excellent service!", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 5, "Active" });
-
-            migrationBuilder.InsertData(
-                table: "Contacts",
-                columns: new[] { "id", "customer_id", "date_added", "date_modified", "email", "full_name", "message", "phone", "status", "subject" },
-                values: new object[] { 1, 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john.doe@example.com", "John Doe", "What is covered under the policy?", "1234567890", true, "Policy Query" });
-
-            migrationBuilder.InsertData(
-                table: "CustomerSupportRequests",
-                columns: new[] { "support_id", "created_at", "customer_id", "resolved_at", "resolved_by", "support_description", "support_payment", "support_status", "support_type" },
-                values: new object[] { 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, 1, "Question about policy details", "Paid", "Open", "Policy Inquiry" });
-
-            migrationBuilder.InsertData(
-                table: "Notifications",
-                columns: new[] { "notification_id", "customer_id", "is_read", "message_content", "message_type", "sent_at" },
-                values: new object[] { 1, 1, false, "Your payment is due soon", "Payment Reminder", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
-
-            migrationBuilder.InsertData(
-                table: "Vehicles",
-                columns: new[] { "vehicle_id", "body_number", "customer_id", "engine_number", "vehicle_model", "vehicle_name", "vehicle_rate", "vehicle_version" },
-                values: new object[] { 1, "1234ABCD", 1, "ENG5678", "2020", "Toyota Corolla", 20000m, "LE" });
-
-            migrationBuilder.InsertData(
-                table: "Estimates",
-                columns: new[] { "estimate_id", "created_at", "customer_id", "estimate_amount", "policy_type", "vehicle_id", "warranty" },
-                values: new object[] { 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1500m, "Comprehensive", 1, "1 Year" });
-
-            migrationBuilder.InsertData(
-                table: "InsurancePolicies",
-                columns: new[] { "policy_id", "customer_id", "policy_amount", "policy_end_date", "policy_number", "policy_start_date", "policy_type", "vehicle_id" },
-                values: new object[] { 1, 1, 1500m, new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "POL123456", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comprehensive", 1 });
-
-            migrationBuilder.InsertData(
-                table: "SpecialInsuranceRequests",
-                columns: new[] { "request_id", "customer_id", "request_date", "request_description", "request_type", "status", "vehicle_id" },
-                values: new object[] { 1, 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Extend policy coverage by 6 months", "Extended Coverage", "Pending", 1 });
-
-            migrationBuilder.InsertData(
-                table: "VehicleImages",
-                columns: new[] { "image_id", "description", "image_path", "image_type", "uploaded_at", "vehicle_id" },
-                values: new object[] { 1, "Front view of Toyota Corolla", "/images/vehicle1.jpg", "Vehicle", new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 });
-
-            migrationBuilder.InsertData(
-                table: "Claims",
-                columns: new[] { "claim_id", "CreatedAt", "accident_date", "claim_number", "claimable_amount", "insured_amount", "place_of_accident", "policy_id" },
-                values: new object[] { 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "CLAIM001", 1400m, 1500m, "Highway 1", 1 });
-
-            migrationBuilder.InsertData(
-                table: "InsuranceHistories",
-                columns: new[] { "history_id", "change_date", "change_type", "changed_by", "new_value", "old_value", "policy_id" },
-                values: new object[] { 1, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Policy Created", 1, "Comprehensive Policy - $1500", "", 1 });
-
-            migrationBuilder.InsertData(
-                table: "Payments",
-                columns: new[] { "payment_id", "bill_number", "customer_id", "payment_amount", "payment_date", "policy_id" },
-                values: new object[] { 1, "BILL123", 1, 1500m, new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Claims_policy_id",

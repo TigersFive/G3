@@ -49,16 +49,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasKey("id");
 
                     b.ToTable("BannerImages");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            image = "/images/banner1.jpg",
-                            link = "https://example.com",
-                            sort_order = 1,
-                            status = true
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Claim", b =>
@@ -98,19 +88,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("policy_id");
 
                     b.ToTable("Claims");
-
-                    b.HasData(
-                        new
-                        {
-                            claim_id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            accident_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            claim_number = "CLAIM001",
-                            claimable_amount = 1400m,
-                            insured_amount = 1500m,
-                            place_of_accident = "Highway 1",
-                            policy_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Comment", b =>
@@ -144,17 +121,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("customer_id");
 
                     b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            comment_id = 1,
-                            comment_text = "Excellent service!",
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            customer_id = 1,
-                            rating = 5,
-                            status = "Active"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.CompanyExpense", b =>
@@ -182,16 +148,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasKey("expense_id");
 
                     b.ToTable("CompanyExpenses");
-
-                    b.HasData(
-                        new
-                        {
-                            expense_id = 1,
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            expense_amount = 5000m,
-                            expense_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            expense_type = "Marketing"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Contact", b =>
@@ -243,21 +199,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("customer_id");
 
                     b.ToTable("Contacts");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            customer_id = 1,
-                            date_added = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            date_modified = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            email = "john.doe@example.com",
-                            full_name = "John Doe",
-                            message = "What is covered under the policy?",
-                            phone = "1234567890",
-                            status = true,
-                            subject = "Policy Query"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Customer", b =>
@@ -291,16 +232,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("user_id");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            customer_id = 1,
-                            address = "123 Main St",
-                            full_name = "John Doe",
-                            phone_number = "1234567890",
-                            user_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.CustomerSupportRequest", b =>
@@ -347,19 +278,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("resolved_by");
 
                     b.ToTable("CustomerSupportRequests");
-
-                    b.HasData(
-                        new
-                        {
-                            support_id = 1,
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            customer_id = 1,
-                            resolved_by = 1,
-                            support_description = "Question about policy details",
-                            support_payment = "Paid",
-                            support_status = "Open",
-                            support_type = "Policy Inquiry"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Estimate", b =>
@@ -399,18 +317,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("vehicle_id");
 
                     b.ToTable("Estimates");
-
-                    b.HasData(
-                        new
-                        {
-                            estimate_id = 1,
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            customer_id = 1,
-                            estimate_amount = 1500m,
-                            policy_type = "Comprehensive",
-                            vehicle_id = 1,
-                            warranty = "1 Year"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.InsuranceHistory", b =>
@@ -450,18 +356,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("policy_id");
 
                     b.ToTable("InsuranceHistories");
-
-                    b.HasData(
-                        new
-                        {
-                            history_id = 1,
-                            change_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            change_type = "Policy Created",
-                            changed_by = 1,
-                            new_value = "Comprehensive Policy - $1500",
-                            old_value = "",
-                            policy_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.InsurancePolicy", b =>
@@ -504,19 +398,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("vehicle_id");
 
                     b.ToTable("InsurancePolicies");
-
-                    b.HasData(
-                        new
-                        {
-                            policy_id = 1,
-                            customer_id = 1,
-                            policy_amount = 1500m,
-                            policy_end_date = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            policy_number = "POL123456",
-                            policy_start_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            policy_type = "Comprehensive",
-                            vehicle_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.LoginLog", b =>
@@ -543,15 +424,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("user_id");
 
                     b.ToTable("LoginLogs");
-
-                    b.HasData(
-                        new
-                        {
-                            log_id = 1,
-                            ip_address = "192.168.1.1",
-                            login_time = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            user_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Notification", b =>
@@ -585,17 +457,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("customer_id");
 
                     b.ToTable("Notifications");
-
-                    b.HasData(
-                        new
-                        {
-                            notification_id = 1,
-                            customer_id = 1,
-                            is_read = false,
-                            message_content = "Your payment is due soon",
-                            message_type = "Payment Reminder",
-                            sent_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Payment", b =>
@@ -630,17 +491,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("policy_id");
 
                     b.ToTable("Payments");
-
-                    b.HasData(
-                        new
-                        {
-                            payment_id = 1,
-                            bill_number = "BILL123",
-                            customer_id = 1,
-                            payment_amount = 1500m,
-                            payment_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            policy_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Report", b =>
@@ -665,15 +515,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasKey("report_id");
 
                     b.ToTable("Reports");
-
-                    b.HasData(
-                        new
-                        {
-                            report_id = 1,
-                            description = "Annual performance report",
-                            generated_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            report_type = "Annual Report"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.SpecialInsuranceRequest", b =>
@@ -713,18 +554,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("vehicle_id");
 
                     b.ToTable("SpecialInsuranceRequests");
-
-                    b.HasData(
-                        new
-                        {
-                            request_id = 1,
-                            customer_id = 1,
-                            request_date = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            request_description = "Extend policy coverage by 6 months",
-                            request_type = "Extended Coverage",
-                            status = "Pending",
-                            vehicle_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.User", b =>
@@ -777,34 +606,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasKey("user_id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            user_id = 1,
-                            address = "123 Main St",
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            email = "john.doe@example.com",
-                            full_name = "John Doe",
-                            password = "hashed_password1",
-                            phone_number = "1234567890",
-                            role = "Customer",
-                            user_logs = "Email",
-                            username = "john_doe"
-                        },
-                        new
-                        {
-                            user_id = 2,
-                            address = "456 Elm St",
-                            created_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            email = "jane.admin@example.com",
-                            full_name = "Jane Admin",
-                            password = "hashed_password2",
-                            phone_number = "0987654321",
-                            role = "Employee",
-                            user_logs = "Google",
-                            username = "jane_admin"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Vehicle", b =>
@@ -851,19 +652,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("customer_id");
 
                     b.ToTable("Vehicles");
-
-                    b.HasData(
-                        new
-                        {
-                            vehicle_id = 1,
-                            body_number = "1234ABCD",
-                            customer_id = 1,
-                            engine_number = "ENG5678",
-                            vehicle_model = "2020",
-                            vehicle_name = "Toyota Corolla",
-                            vehicle_rate = 20000m,
-                            vehicle_version = "LE"
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.VehicleImage", b =>
@@ -898,17 +686,6 @@ namespace CarInsuranceManage.Migrations
                     b.HasIndex("vehicle_id");
 
                     b.ToTable("VehicleImages");
-
-                    b.HasData(
-                        new
-                        {
-                            image_id = 1,
-                            description = "Front view of Toyota Corolla",
-                            image_path = "/images/vehicle1.jpg",
-                            image_type = "Vehicle",
-                            uploaded_at = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            vehicle_id = 1
-                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Claim", b =>

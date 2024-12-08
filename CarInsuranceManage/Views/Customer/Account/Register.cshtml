@@ -13,8 +13,8 @@
     <div class="auto-container">
       <h1>Register</h1>
       <ul class="page-breadcrumb">
-        <li><a href="index-2.html">home</a></li>
-        <li>Services</li>
+        <li>Account</li>
+        <li>Register</li>
       </ul>
     </div>
   </div>
@@ -36,79 +36,48 @@
       <div class="title-box">
         <h2>Register</h2>
         <div class="text">
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum
-        </div>
-      </div>
-
-      <!-- Form Box -->
-      <div class="form-box">
-        <!-- Login Form -->
-        <div class="styled-form">
-          <form method="post" asp-action="Register" asp-controller="Account">
-            <div class="form-group">
-              <label>Enter your Email</label>
-              <span class="icon flaticon-envelope"></span>
-              <input type="email" name="email" placeholder="Email" required />
-            </div>
-            <div class="form-group">
-              <label>Enter your Username</label>
-              <span class="icon flaticon-user"></span>
-              <input type="text" name="username" placeholder="Username" required />
-            </div>
-            <div class="form-group">
-              <label>Enter your Password</label>
-              <span class="icon flaticon-padlock-1"></span>
-              <input type="password" name="password" placeholder="Password" required />
-            </div>
-            <div class="form-group">
-              <label>Re-enter your Password</label>
-              <span class="icon flaticon-padlock-1"></span>
-              <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
-            </div>
-            <div class="form-group">
-              <button type="submit" class="theme-btn btn-style-one">Register</button>
-            </div>
-          </form>
-          <div class="form-group">
-            <p>Already have an account? <a asp-action="Login" asp-controller="Account">Login here</a></p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Login Section -->
-
-<!-- CTA Section -->
-<section class="cta-section">
-  <div class="auto-container">
-    <div class="inner-container"
-      style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
-      <div class="row clearfix">
-        <!-- Title Column -->
-        <div class="title-column col-lg-5 col-md-12 col-sm-12">
-          <div class="inner-column">
-            <h3>Let us take care about your veicle</h3>
-          </div>
+          Please register to become a member of Carsore <3 </div>
         </div>
 
-        <!-- Form Column -->
-        <div class="form-column col-lg-7 col-md-12 col-sm-12">
-          <div class="inner-column">
-            <div class="newsletter-form">
-              <form method="post" action="https://themeim.com/demo/carsore/contact.html">
-                <div class="form-group">
-                  <span class="icon fa fa-envelope"></span>
-                  <input type="email" name="email" value="" placeholder="Enter your mail" required="" />
-                  <button type="submit" class="theme-btn flaticon-send"></button>
-                </div>
-              </form>
+        <!-- Form Box -->
+        <div class="form-box">
+          <!-- Login Form -->
+          <div class="styled-form">
+            <form method="post" asp-action="Register" asp-controller="Account">
+              <div class="form-group">
+                <label>Enter your Email</label>
+                <span class="icon flaticon-envelope"></span>
+                <input type="email" name="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <label>Enter your Username</label>
+                <span class="icon flaticon-user"></span>
+                <input type="text" name="username" placeholder="Username" required />
+              </div>
+              <div class="form-group">
+                <label>Enter your Password</label>
+                <span class="icon flaticon-padlock-1"></span>
+                <input type="password" name="password" id="input-pass" placeholder="Password" required />
+                <span class="eye-icon flaticon-eye" id="show-pass"></span>
+              </div>
+              <div class="form-group">
+                <label>Re-enter your Password</label>
+                <span class="icon flaticon-padlock-1"></span>
+                <input type="password" name="confirmPassword" id="input-confirm-pass" placeholder="Confirm Password"
+                  required />
+                <span class="eye-icon flaticon-eye" id="show-confirm-pass"></span>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="theme-btn btn-style-one">Register</button>
+              </div>
+            </form>
+            <div class="form-group">
+              <p>Already have an account? <a asp-action="Login" asp-controller="Account">Login here</a></p>
             </div>
+
           </div>
         </div>
       </div>
     </div>
-  </div>
 </section>
+@await Html.PartialAsync("_SendMail")

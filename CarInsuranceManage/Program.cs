@@ -1,45 +1,48 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.EntityFrameworkCore;
 using CarInsuranceManage.Database;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Thêm dịch vụ MVC vào container
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Thêm cấu hình routing để URL luôn viết chữ thường
+// Add routing configuration to make URLs lowercase
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
-
 // Cấu hình DbContext để sử dụng MySQL
 builder.Services.AddDbContext<CarInsuranceDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
                      new MySqlServerVersion(new Version(8, 0, 33))));
-
-// Cấu hình xác thực Google
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;  // Change this to FacebookDefaults.AuthenticationScheme for default if necessary.
 })
 .AddCookie()
 .AddGoogle(options =>
 {
     options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+})
+.AddFacebook(options =>
+{
+    options.AppId = builder.Configuration["Facebook:AppId"];
+    options.AppSecret = builder.Configuration["Facebook:AppSecret"];
 });
 
-// Xây dựng ứng dụng
+
 var app = builder.Build();
 
-// Đảm bảo database đã được tạo và dữ liệu mẫu được thêm vào
+// Ensure database is created and apply migrations
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<CarInsuranceDbContext>();
     try
     {
-        dbContext.Database.Migrate(); // Áp dụng migrations và seed data
+        dbContext.Database.Migrate(); // Apply migrations and seed data
     }
     catch (Exception ex)
     {
@@ -47,7 +50,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Cấu hình HTTP request pipeline
+// Configure HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -55,18 +58,17 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();  // Cấu hình cho phép phục vụ các tài nguyên tĩnh như hình ảnh, CSS, JS
+app.UseStaticFiles();  // Enable serving static files like images, CSS, and JS
 
 app.UseRouting();
 
-// Cấu hình xác thực và ủy quyền
+// Configure authentication and authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Cấu hình Route cho các controller
+// Set up the default route for controllers
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Chạy ứng dụng
 app.Run();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2K6d6hVwxnfQNL49BZqx4e5LbmefcaSS1wB+7bnqaGM=",
+  "Hash": "+1iM/XAO5c2A/Jc4JEii5p5qqPzIo/mbHiuTjMuSZUE=",
   "Source": "CarInsuranceManage",
   "BasePath": "_content/CarInsuranceManage",
   "Mode": "Default",
@@ -8909,25 +8909,6 @@
       "OriginalItemSpec": "wwwroot\\customer-assets\\css\\header.css"
     },
     {
-      "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\icon.css",
-      "SourceId": "CarInsuranceManage",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\",
-      "BasePath": "_content/CarInsuranceManage",
-      "RelativePath": "customer-assets/css/icon.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\customer-assets\\css\\icon.css"
-    },
-    {
       "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\import0bda.css",
       "SourceId": "CarInsuranceManage",
       "SourceType": "Discovered",
@@ -9040,6 +9021,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\customer-assets\\css\\jquery.mCustomScrollbar.min.css"
+    },
+    {
+      "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\main.css",
+      "SourceId": "CarInsuranceManage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\",
+      "BasePath": "_content/CarInsuranceManage",
+      "RelativePath": "customer-assets/css/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\customer-assets\\css\\main.css"
     },
     {
       "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\niceselect.css",
@@ -12593,6 +12593,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\customer-assets\\js\\color-settings.js"
+    },
+    {
+      "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\icon.js",
+      "SourceId": "CarInsuranceManage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\",
+      "BasePath": "_content/CarInsuranceManage",
+      "RelativePath": "customer-assets/js/icon.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\customer-assets\\js\\icon.js"
     },
     {
       "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery-ui copy 2.js",

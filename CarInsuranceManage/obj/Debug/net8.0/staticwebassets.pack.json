@@ -1869,10 +1869,6 @@
       "PackagePath": "staticwebassets\\customer-assets\\css\\header.css"
     },
     {
-      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\icon.css",
-      "PackagePath": "staticwebassets\\customer-assets\\css\\icon.css"
-    },
-    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\import0bda.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\import0bda.css"
     },
@@ -1895,6 +1891,10 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\jquery.mCustomScrollbar.min.css",
       "PackagePath": "staticwebassets\\customer-assets\\css\\jquery.mCustomScrollbar.min.css"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\customer-assets\\css\\main.css"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\niceselect.css",
@@ -2643,6 +2643,10 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\color-settings.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\color-settings.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\icon.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\icon.js"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery-ui copy 2.js",
