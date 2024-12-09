@@ -49,11 +49,6 @@ namespace CarInsuranceManage.Controllers.Admin
             return View("~/Views/Admin/UIComponents/List_Group.cshtml");  // Đường dẫn tuyệt đối đến view List_Group
         }
 
-        public IActionResult Media_Object()
-        {
-            return View("~/Views/Admin/UIComponents/Media_Object.cshtml");  // Đường dẫn tuyệt đối đến view Media_Object
-        }
-
         public IActionResult Modal()
         {
             return View("~/Views/Admin/UIComponents/Modal.cshtml");  // Đường dẫn tuyệt đối đến view Modal

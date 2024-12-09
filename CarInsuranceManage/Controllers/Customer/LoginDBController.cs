@@ -50,11 +50,12 @@ namespace CarInsuranceManage.Controllers.Customer
 
             // Create claims for the user
             var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.username),
-                new Claim(ClaimTypes.Email, user.email),
-                new Claim(ClaimTypes.Role, user.user_logs ?? "user") // Default role
-            };
+                {
+                    new Claim(ClaimTypes.Name, user.username),
+                    new Claim(ClaimTypes.Email, user.email),
+                    new Claim(ClaimTypes.Role, user.role == "admin" ? "admin" : "user")
+
+                };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var authProperties = new AuthenticationProperties
@@ -80,6 +81,5 @@ namespace CarInsuranceManage.Controllers.Customer
             return RedirectToAction("Index", "Home");
         }
 
-       
     }
 }

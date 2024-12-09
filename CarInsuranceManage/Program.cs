@@ -3,32 +3,27 @@ using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.EntityFrameworkCore;
 using CarInsuranceManage.Database;
 using Microsoft.AspNetCore.Authentication.Google;
-using CarInsuranceManage.Configuration;
+using Microsoft.AspNetCore.Session;
 
 var builder = WebApplication.CreateBuilder(args);
-// builder.Services.AddSingleton<TwilioSettings>(builder.Configuration.GetSection("Twilio").Get<TwilioSettings>());
 
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian hết hạn session
-});
-
-// Add services to the container.
+// Thêm các dịch vụ của bạn
 builder.Services.AddControllersWithViews();
-
-// Add routing configuration to make URLs lowercase
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
-// Cấu hình DbContext để sử dụng MySQL
+
+// Configure DbContext to use MySQL
 builder.Services.AddDbContext<CarInsuranceDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-                     new MySqlServerVersion(new Version(8, 0, 33))));
+                     new MySqlServerVersion(new Version(8, 0, 33))));  // Ensure you have the correct MySQL version here
+
+// Configure authentication services
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;  // Change this to FacebookDefaults.AuthenticationScheme for default if necessary.
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;  // Default to Google, change to Facebook if needed
 })
-.AddCookie()
+.AddCookie()  // Add Cookie authentication
 .AddGoogle(options =>
 {
     options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
@@ -36,10 +31,18 @@ builder.Services.AddAuthentication(options =>
 })
 .AddFacebook(options =>
 {
-    options.AppId = builder.Configuration["Facebook:AppId"];
-    options.AppSecret = builder.Configuration["Facebook:AppSecret"];
+    options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
 });
 
+// Add session services
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -53,11 +56,11 @@ using (var scope = app.Services.CreateScope())
     }
     catch (Exception ex)
     {
-        Console.WriteLine(ex.Message);
+        Console.WriteLine(ex.Message);  // Log any migration errors
     }
 }
 
-// Configure HTTP request pipeline
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -69,7 +72,10 @@ app.UseStaticFiles();  // Enable serving static files like images, CSS, and JS
 
 app.UseRouting();
 
-// Configure authentication and authorization
+// Use session
+app.UseSession();
+
+// Use authentication and authorization middleware
 app.UseAuthentication();
 app.UseAuthorization();
 

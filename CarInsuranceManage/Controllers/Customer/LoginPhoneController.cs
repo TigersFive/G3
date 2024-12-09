@@ -1,15 +1,11 @@
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using CarInsuranceManage.Configuration;
-using CarInsuranceManage.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
 using CarInsuranceManage.Database;
+using CarInsuranceManage.Models;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
-using Microsoft.Extensions.Options;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System;
 
 namespace CarInsuranceManage.Controllers.Customer
@@ -17,77 +13,103 @@ namespace CarInsuranceManage.Controllers.Customer
     public class LoginPhoneController : Controller
     {
         private readonly CarInsuranceDbContext _context;
-        private readonly TwilioSettings _twilioSettings;
+        private readonly string _twilioAccountSid;
+        private readonly string _twilioAuthToken;
+        private readonly string _twilioPhoneNumber;
 
-        // Inject DbContext và TwilioSettings vào controller
-        public LoginPhoneController(CarInsuranceDbContext context, IOptions<TwilioSettings> twilioSettings)
+        public LoginPhoneController(IConfiguration configuration, CarInsuranceDbContext context)
         {
+            _twilioAccountSid = configuration["Twilio:AccountSid"];
+            _twilioAuthToken = configuration["Twilio:AuthToken"];
+            _twilioPhoneNumber = configuration["Twilio:PhoneNumber"];
             _context = context;
-            _twilioSettings = twilioSettings.Value;
         }
 
-        
         [HttpPost]
-        public async Task<IActionResult> LoginWithPhone(string phoneNumber)
+        public IActionResult SendOtp(string phone)
         {
-            // Kiểm tra nếu số điện thoại hợp lệ
-            if (string.IsNullOrEmpty(phoneNumber))
+            if (string.IsNullOrEmpty(phone))
             {
-                TempData["WarningMessage"] = "Please enter a valid phone number.";
-                return View("~/Views/Customer/Account/Login_Phone.cshtml");
+                TempData["WarningMessage"] = "Phone number is required.";
+                return RedirectToAction("Login_phone", "Account");
             }
 
-            // Tạo mã OTP (ví dụ: 6 chữ số ngẫu nhiên)
-            string otp = new Random().Next(100000, 999999).ToString();
+            // Thêm mã quốc gia nếu chưa có
+            if (!phone.StartsWith("+"))
+            {
+                phone = "+84" + phone; // Giả sử bạn đang làm việc với số điện thoại ở Việt Nam
+            }
 
-            // Gửi OTP qua SMS
-            await SendOtpAsync(phoneNumber, otp);
-
-            // Lưu OTP vào session hoặc cơ sở dữ liệu tạm thời để xác minh sau này
-            HttpContext.Session.SetString("OtpCode", otp);
-            HttpContext.Session.SetString("PhoneNumber", phoneNumber);
-
-            // Chuyển hướng tới trang nhập OTP
-            return RedirectToAction("Verify_Phone");
-        }
-
-        private async Task SendOtpAsync(string phoneNumber, string otp)
-        {
             try
             {
-                TwilioClient.Init(_twilioSettings.AccountSid, _twilioSettings.AuthToken);
+                var otp = new Random().Next(100000, 999999).ToString();
+                HttpContext.Session.SetString("OTP", otp);
+                HttpContext.Session.SetString("PhoneNumber", phone);
 
+                TwilioClient.Init(_twilioAccountSid, _twilioAuthToken);
                 var message = MessageResource.Create(
-                    body: $"Your OTP code is {otp}",
-                    from: new PhoneNumber(_twilioSettings.PhoneNumber),
-                    to: new PhoneNumber(phoneNumber)
+                    body: $"Your OTP code is: {otp}",
+                    from: new PhoneNumber(_twilioPhoneNumber),
+                    to: new PhoneNumber(phone)
                 );
 
-                Console.WriteLine($"OTP sent to {phoneNumber}: {message.Sid}");
+                TempData["SuccessMessage"] = "OTP sent successfully. Please check your phone.";
+                return RedirectToAction("Verify_phone", "Account");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending OTP: {ex.Message}");
+                TempData["WarningMessage"] = $"Error: {ex.Message}";
+                return RedirectToAction("Login_phone", "Account");
             }
         }
+
 
         [HttpPost]
         public IActionResult VerifyOtp(string otp)
         {
-            // Lấy mã OTP đã lưu trong session
-            var sessionOtp = HttpContext.Session.GetString("OtpCode");
-            var phoneNumber = HttpContext.Session.GetString("PhoneNumber");
+            var storedOtp = HttpContext.Session.GetString("OTP");
+            var storedPhoneNumber = HttpContext.Session.GetString("PhoneNumber");
 
-            if (sessionOtp != otp)
+            if (storedOtp == null || storedPhoneNumber == null)
             {
-                TempData["WarningMessage"] = "Invalid OTP. Please try again.";
-                return View("~/Views/Customer/Account/Verify_phone.cshtml");
+                TempData["WarningMessage"] = "Session expired. Please try again.";
+                return RedirectToAction("Login_phone", "Account");
             }
 
-            // OTP hợp lệ, thực hiện đăng nhập hoặc chuyển hướng
-            // Ví dụ: Lưu thông tin đăng nhập người dùng
-            TempData["SuccessMessage"] = "Login successful!";
-            return RedirectToAction("Index", "Home");
+            if (otp == storedOtp)
+            {
+                var user = new User
+                {
+                    phone_number = storedPhoneNumber,
+                    username = "user" + storedPhoneNumber.Substring(storedPhoneNumber.Length - 4), // For example
+                    password = "N/A",
+                    email = "N/A",
+                    user_logs = "phone",
+                    role = "user",
+                    created_at = DateTime.Now
+                };
+
+                _context.Users.Add(user);
+                _context.SaveChanges();
+
+                var loginLog = new LoginLog
+                {
+                    user_id = user.user_id,
+                    ip_address = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                    login_time = DateTime.Now
+                };
+
+                _context.LoginLogs.Add(loginLog);
+                _context.SaveChanges();
+
+                TempData["SuccessMessage"] = "User account created successfully and logged in!";
+                return RedirectToAction("Profile", "Account");
+            }
+            else
+            {
+                TempData["WarningMessage"] = "Invalid OTP. Please try again.";
+                return RedirectToAction("Verify_phone", "Account");
+            }
         }
     }
 }

@@ -117,3 +117,6 @@ C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\Microsoft.IdentityModel.Lo
 C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\Twilio.dll
+C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\MailKit.dll
+C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\MimeKit.dll
