@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6jVytTJ7b+9UY7jFS4RthMvE19b/VLbXPBAV6ZHKcrw=",
+  "Hash": "b3FhsKs6t/478Wi4y4JAcIUdkPzQnA29MBPN2kQqu5U=",
   "Source": "CarInsuranceManage",
   "BasePath": "_content/CarInsuranceManage",
   "Mode": "Default",
@@ -10153,8 +10153,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p3ppqzbahg",
-      "Integrity": "VUF29TjUJz5bQ9+rrOZ31Kxd8vZoKVNry6e8xlkx7Q4=",
+      "Fingerprint": "sk2nh0dry4",
+      "Integrity": "zK16j4btB75XDLCS/LBuAmqBbJ+69NDeyHZlkqb00iU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\customer-assets\\css\\style.css"
@@ -54253,7 +54253,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "199426"
+          "Value": "199428"
         },
         {
           "Name": "Content-Type",
@@ -54261,11 +54261,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VUF29TjUJz5bQ9+rrOZ31Kxd8vZoKVNry6e8xlkx7Q4=\""
+          "Value": "\"zK16j4btB75XDLCS/LBuAmqBbJ+69NDeyHZlkqb00iU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 07 Dec 2024 14:23:27 GMT"
+          "Value": "Mon, 09 Dec 2024 08:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -54275,12 +54275,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VUF29TjUJz5bQ9+rrOZ31Kxd8vZoKVNry6e8xlkx7Q4="
+          "Value": "sha256-zK16j4btB75XDLCS/LBuAmqBbJ+69NDeyHZlkqb00iU="
         }
       ]
     },
     {
-      "Route": "customer-assets/css/style.p3ppqzbahg.css",
+      "Route": "customer-assets/css/style.sk2nh0dry4.css",
       "AssetFile": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\wwwroot\\customer-assets\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -54290,7 +54290,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "199426"
+          "Value": "199428"
         },
         {
           "Name": "Content-Type",
@@ -54298,11 +54298,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VUF29TjUJz5bQ9+rrOZ31Kxd8vZoKVNry6e8xlkx7Q4=\""
+          "Value": "\"zK16j4btB75XDLCS/LBuAmqBbJ+69NDeyHZlkqb00iU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 07 Dec 2024 14:23:27 GMT"
+          "Value": "Mon, 09 Dec 2024 08:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -54312,7 +54312,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "p3ppqzbahg"
+          "Value": "sk2nh0dry4"
         },
         {
           "Name": "label",
@@ -54320,7 +54320,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-VUF29TjUJz5bQ9+rrOZ31Kxd8vZoKVNry6e8xlkx7Q4="
+          "Value": "sha256-zK16j4btB75XDLCS/LBuAmqBbJ+69NDeyHZlkqb00iU="
         }
       ]
     },

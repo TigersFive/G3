@@ -5775,14 +5775,14 @@
     <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/css/style.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-VUF29TjUJz5bQ9\u002BrrOZ31Kxd8vZoKVNry6e8xlkx7Q4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"199426"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022VUF29TjUJz5bQ9\u002BrrOZ31Kxd8vZoKVNry6e8xlkx7Q4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 07 Dec 2024 14:23:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-zK16j4btB75XDLCS/LBuAmqBbJ\u002B69NDeyHZlkqb00iU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"199428"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022zK16j4btB75XDLCS/LBuAmqBbJ\u002B69NDeyHZlkqb00iU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Dec 2024 08:08:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/css/style.p3ppqzbahg.css">
+    <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/css/style.sk2nh0dry4.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"p3ppqzbahg"},{"Name":"integrity","Value":"sha256-VUF29TjUJz5bQ9\u002BrrOZ31Kxd8vZoKVNry6e8xlkx7Q4="},{"Name":"label","Value":"_content/CarInsuranceManage/customer-assets/css/style.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"199426"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022VUF29TjUJz5bQ9\u002BrrOZ31Kxd8vZoKVNry6e8xlkx7Q4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 07 Dec 2024 14:23:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sk2nh0dry4"},{"Name":"integrity","Value":"sha256-zK16j4btB75XDLCS/LBuAmqBbJ\u002B69NDeyHZlkqb00iU="},{"Name":"label","Value":"_content/CarInsuranceManage/customer-assets/css/style.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"199428"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022zK16j4btB75XDLCS/LBuAmqBbJ\u002B69NDeyHZlkqb00iU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Dec 2024 08:08:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/css/style33a7.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\css\style33a7.css'))</AssetFile>
