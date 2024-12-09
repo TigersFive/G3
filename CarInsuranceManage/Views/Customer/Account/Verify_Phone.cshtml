@@ -23,10 +23,8 @@
             <div class="form-group">
               <label>Enter OTP</label>
               <div class="otp-inputs">
-                <input style="50px" type="text" name="otp1" maxlength="1" pattern="\d" required class="otp-field" />
-                <input style="50px" type="text" name="otp2" maxlength="1" pattern="\d" required class="otp-field" />
-                <input style="50px" type="text" name="otp3" maxlength="1" pattern="\d" required class="otp-field" />
-                <input style="50px" type="text" name="otp4" maxlength="1" pattern="\d" required class="otp-field" />
+                <input style="width:50px" type="text" name="otp" maxlength="6" pattern="\d" required
+                  class="otp-field" />
               </div>
             </div>
             <div class="form-group text-center">
@@ -36,31 +34,9 @@
             </div>
           </form>
 
+
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Add the CSS style for OTP inputs -->
-<style>
-  .otp-inputs {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .otp-field {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-  }
-
-  .otp-field:focus {
-    border-color: #007bff;
-  }
-</style>

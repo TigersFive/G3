@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.Google;
 using CarInsuranceManage.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSingleton<TwilioSettings>(builder.Configuration.GetSection("Twilio").Get<TwilioSettings>());
+// builder.Services.AddSingleton<TwilioSettings>(builder.Configuration.GetSection("Twilio").Get<TwilioSettings>());
 
 builder.Services.AddSession(options =>
 {

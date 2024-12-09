@@ -14,8 +14,6 @@ namespace CarInsuranceManage.Controllers
         //    return View("~/Views/Admin/Home/Dashboard.cshtml");
         // }
 
-
-
         public IActionResult Index()
         {
             return View("~/Views/Customer/Home/Index.cshtml"); 
