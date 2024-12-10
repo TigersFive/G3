@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\CarInsuranceManage.csproj": {}
+    "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\CarInsuranceManage.csproj": {}
   },
   "projects": {
-    "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\CarInsuranceManage.csproj": {
+    "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\CarInsuranceManage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\CarInsuranceManage.csproj",
+        "projectUniqueName": "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\CarInsuranceManage.csproj",
         "projectName": "CarInsuranceManage",
-        "projectPath": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\CarInsuranceManage.csproj",
+        "projectPath": "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\CarInsuranceManage.csproj",
         "packagesPath": "C:\\Users\\doxua\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\obj\\",
+        "outputPath": "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

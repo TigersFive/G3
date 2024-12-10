@@ -11856,8 +11856,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zl303j7jid</Fingerprint>
-      <Integrity>ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=</Integrity>
+      <Fingerprint>jdpuldk2wy</Fingerprint>
+      <Integrity>CdsznjP39Laxjqg8IVkRewwZq9sAh4PhFRSuEFrPXKY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\js\checkform.js'))</OriginalItemSpec>

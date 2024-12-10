@@ -7896,17 +7896,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"50731"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=\u0022"},{"Name":"Last-Modified","Value":"Sat, 07 Dec 2024 14:23:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/js/checkform.jdpuldk2wy.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\js\checkform.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jdpuldk2wy"},{"Name":"integrity","Value":"sha256-CdsznjP39Laxjqg8IVkRewwZq9sAh4PhFRSuEFrPXKY="},{"Name":"label","Value":"_content/CarInsuranceManage/customer-assets/js/checkform.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8525"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022CdsznjP39Laxjqg8IVkRewwZq9sAh4PhFRSuEFrPXKY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Dec 2024 08:44:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/js/checkform.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\js\checkform.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8508"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 15:43:53 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/js/checkform.zl303j7jid.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\js\checkform.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zl303j7jid"},{"Name":"integrity","Value":"sha256-ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0="},{"Name":"label","Value":"_content/CarInsuranceManage/customer-assets/js/checkform.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8508"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022ua6axnUQAED5feJSftLN68MGTSp71OBIPs4CQExlPs0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 15:43:53 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-CdsznjP39Laxjqg8IVkRewwZq9sAh4PhFRSuEFrPXKY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8525"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022CdsznjP39Laxjqg8IVkRewwZq9sAh4PhFRSuEFrPXKY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Dec 2024 08:44:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarInsuranceManage/customer-assets/js/color-settings.gwczadujlx.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\customer-assets\js\color-settings.js'))</AssetFile>

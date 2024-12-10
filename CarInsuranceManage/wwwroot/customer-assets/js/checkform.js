@@ -58,6 +58,7 @@ function check() {
   const nation = document.getElementById('nation').value.trim();
   const city = document.getElementById('city').value.trim();
   const district = document.getElementById('district').value.trim();
+  const address = document.getElementById('address').value.trim();
 
   // Kiểm tra tất cả các giá trị hợp lệ
   if (
@@ -66,7 +67,8 @@ function check() {
     phone &&
     nation !== 'Select Nation' &&
     city !== 'Select City' &&
-    district !== 'Select District'
+    district !== 'Select District' &&
+    address
   ) {
     document.getElementById('insured_vehicle').classList.remove('hidden');
   }
@@ -156,73 +158,67 @@ function checkabcxyz() {
   }
 }
 
-const dataBike = {
-  honda: {
-    "wave": ["Wave Alpha", "Wave RSX", "Wave Blade"],
-    "winner": ["Winner 150", "Winner X"]
-  },
-  yamaha: {
-    "exciter": ["Exciter 150", "Exciter 155"],
-    "jupiter": ["Jupiter 150", "Jupiter 155"]
-  }
-}
+// const dataBike = {
+//   honda: {
+//     "wave": ["Wave Alpha", "Wave RSX", "Wave Blade"],
+//     "winner": ["Winner 150", "Winner X"]
+//   },
+//   yamaha: {
+//     "exciter": ["Exciter 150", "Exciter 155"],
+//     "jupiter": ["Jupiter 150", "Jupiter 155"]
+//   }
+// }
 
 
-function bikeBrand() {
-  const bikeBrandSelect = document.getElementById("bike_brand").value;
-  const bikeLineSelect = document.getElementById("bike_line");
-  const bikeTypeSelect = document.getElementById("bike_type");
+// function bikeBrand() {
+//   const bikeBrandSelect = document.getElementById("bike_brand").value;
+//   const bikeLineSelect = document.getElementById("bike_line");
+//   const bikeTypeSelect = document.getElementById("bike_type");
 
-  // Reset các danh sách
-  bikeLineSelect.innerHTML = '<option value="">bike Line</option>';
-  bikeTypeSelect.innerHTML = '<option value="">bike Type</option>';
+//   // Reset các danh sách
+//   bikeLineSelect.innerHTML = '<option value="">bike Line</option>';
+//   bikeTypeSelect.innerHTML = '<option value="">bike Type</option>';
 
-  // Kiểm tra và thêm các dòng xe phù hợp
-  if (bikeBrandSelect && dataBike[bikeBrandSelect]) {
-    Object.keys(dataBike[bikeBrandSelect]).forEach(bike_line => {
-      const option = document.createElement("option");
-      option.value = bike_line;
-      option.textContent = bike_line.charAt(0).toUpperCase() + bike_line.slice(1);
-      bikeLineSelect.appendChild(option);
-    });
-  }
-}
+//   // Kiểm tra và thêm các dòng xe phù hợp
+//   if (bikeBrandSelect && dataBike[bikeBrandSelect]) {
+//     Object.keys(dataBike[bikeBrandSelect]).forEach(bike_line => {
+//       const option = document.createElement("option");
+//       option.value = bike_line;
+//       option.textContent = bike_line.charAt(0).toUpperCase() + bike_line.slice(1);
+//       bikeLineSelect.appendChild(option);
+//     });
+//   }
+// }
 
-function bikeLine() {
-  const bikeBrandSelect = document.getElementById("bike_brand").value;
-  const bikeLineSelect = document.getElementById("bike_line").value;
-  const bikeTypeSelect = document.getElementById("bike_type");
+// function bikeLine() {
+//   const bikeBrandSelect = document.getElementById("bike_brand").value;
+//   const bikeLineSelect = document.getElementById("bike_line").value;
+//   const bikeTypeSelect = document.getElementById("bike_type");
 
-  // Reset danh sách loại xe
-  bikeTypeSelect.innerHTML = '<option value="">Vehicle Type</option>';
+//   // Reset danh sách loại xe
+//   bikeTypeSelect.innerHTML = '<option value="">Vehicle Type</option>';
 
-  // Kiểm tra và thêm các loại xe phù hợp
-  if (bikeBrandSelect && bikeLineSelect && dataBike[bikeBrandSelect][bikeLineSelect]) {
-    dataBike[bikeBrandSelect][bikeLineSelect].forEach(bike_type => {
-      const option = document.createElement("option");
-      option.value = bike_type;
-      option.textContent = bike_type;
-     bikeTypeSelect.appendChild(option);
-    });
-  }
-}
+//   // Kiểm tra và thêm các loại xe phù hợp
+//   if (bikeBrandSelect && bikeLineSelect && dataBike[bikeBrandSelect][bikeLineSelect]) {
+//     dataBike[bikeBrandSelect][bikeLineSelect].forEach(bike_type => {
+//       const option = document.createElement("option");
+//       option.value = bike_type;
+//       option.textContent = bike_type;
+//      bikeTypeSelect.appendChild(option);
+//     });
+//   }
+// }
 
 function check2Bike() {
-  const carBrand = document.getElementById('bike_brand').value.trim(); 
-  const vehicleLine = document.getElementById('bike_line').value.trim();
-  const vehicleType = document.getElementById('bike_type').value.trim();
-  const year = document.getElementById('year_of_manufacture').value.trim();
+ 
+  const vehiclecapacity = document.getElementById('vehicle_capacity').value.trim();
   const registration = document.getElementById('registrasion_date').value.trim();
   const numberPlate = document.getElementById('number_plate').value.trim();
   const frameNumber = document.getElementById('frame_number').value.trim(); 
   const machineNumber = document.getElementById('machine_number').value.trim();
 
   if(
-    carBrand !== 'Bike Brand' &&
-    vehicleLine !== 'Bike Line' &&
-    vehicleType !== 'Bike Type' &&
-    year &&
-  
+    vehiclecapacity !== 'Vehicle Capacity' &&
     registration  &&
     numberPlate &&
     frameNumber &&

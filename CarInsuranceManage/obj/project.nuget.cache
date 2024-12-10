@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EhHYLraHDFk=",
+  "dgSpecHash": "2oCJdC5f/JQ=",
   "success": true,
-  "projectFilePath": "D:\\FPT APTECH\\eProject3\\project3\\CarInsuranceManage\\CarInsuranceManage.csproj",
+  "projectFilePath": "D:\\FPT APTECH\\Eproject3\\G3\\CarInsuranceManage\\CarInsuranceManage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\doxua\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\doxua\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
