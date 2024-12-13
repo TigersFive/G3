@@ -1,0 +1,426 @@
+@{
+    ViewData["Title"] = "Insurance Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Title -->
+<section class="page-title">
+    <div class="background-container">
+        <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
+        <img class="right-image" src="~/customer-assets/images/background/insurance-form-right-bg.png" alt="" />
+    </div>
+    <div class="service-container" style="
+              background-image: url('https://themeim.com/');
+            ">
+        <div class="section-icons-outer parallax-scene-1">
+            <div data-depth="0.20" class="pattern-layer"
+                style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
+            </div>
+        </div>
+
+        <div class="auto-container">
+            <h1>Insurance Form</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index-2.html">home</a></li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- Insurance Page Section -->
+<section class="insurance-page-section">
+    <div class="auto-container">
+        <div class="inner-container">
+            <!-- Sec Title -->
+            <div class="sec-title">
+                <h2>
+                    Up to 50% Off* on <br />
+                    Car Insurance
+                </h2>
+                <div class="text">
+                    We are a professional and creative company and we offer you a
+                    trusty insurance on <br />
+                    your veicle.
+                </div>
+            </div>
+            <!-- End Sec Title -->
+            <div class="section-icons-outer parallax-scene-2">
+                <div data-depth="0.20" class="icon-layer"
+                    style="background-image: url('@Url.Content("~/customer-assets/images/icons/icon-1.png")')"></div>
+            </div>
+            <div class="row clearfix">
+                <!-- Column -->
+                <div class="form-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column"  style=" background-color: #e3f5f5;width: 700px;border-radius: 10px;">
+                        <h4>Owner Info</h4>
+
+                        <style>
+                            .hidden {
+                                display: none;
+                            }
+                        </style>
+
+
+                        <div class="styled-form">
+                            <form method="post" action="index.html">
+                                <div id="owner_info">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label>Enter your Name</label>
+                                            <span class="icon flaticon-user-2"></span>
+                                            <input type="text" name="username" id="username" placeholder="Your Name"
+                                                required oninput="check()" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter your Email</label>
+                                            <span class="icon flaticon-envelope"></span>
+                                            <input type="email" name="email" id="email" placeholder="Your Email"
+                                                required oninput="check()" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter your Number Phone</label>
+                                            <span class="icon flaticon-phone-call"></span>
+                                            <input type="text" name="phone" id="phone" placeholder="Your Phone Number"
+                                                required oninput="check()" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nation">Nation</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <select id="nation" name="nation"
+                                                class="custom-select-box insurence-form-border " required
+                                                onchange="check();updateProvinces();">
+                                                <option>Select Nation</option>
+                                                <option value="vietnam">Việt Nam</option>
+                                                <option value="usa">USA</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label for="city">City</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <select id="city" name="city"
+                                                    class="custom-select-box insurence-form-border " required
+                                                    onchange="check();updateDistricts();">
+                                                    <option value="">Select City</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="district">District</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <select id="district" name="district"
+                                                    class="custom-select-box insurence-form-border " required
+                                                    onchange="check()">
+                                                    <option value="">Select District</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div id="insured_vehicle" class="hidden">
+                                    <h4>Insured Vehicle Information</h4>
+
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label for="car_brand">Car Brand</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <select id="car_brand" name="car_brand"
+                                                    class="custom-select-box insurence-form-border" required
+                                                    onchange="carBrand();check2();">
+                                                    <option>Car Brand</option>
+                                                    <option value="mec">Mercedes-Benz</option>
+                                                    <option value="toyota">Toyota</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="vehicle_line">Vehicle Line</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <select id="vehicle_line" name="vehicle_line"
+                                                    class="custom-select-box insurence-form-border" required
+                                                    onchange="vehicleLine();check2();">
+                                                    <option value="">Vehicle Line</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle_type">Vehicle Type</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <select id="vehicle_type" name="vehicle_type"
+                                                class="custom-select-box insurence-form-border" required
+                                                onchange="check2();">
+                                                <option value="">Vehicle Type</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Year of Manufacture</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="year_of_manufacture" type="text" name="year_of_manufacture"
+                                                    placeholder="Year of Manufacture" required oninput="check2()" />
+                                            </div>
+                                            <div class="form-group col">
+                                                <label>Seating</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="seating" type="text" name="seating" placeholder="Seating"
+                                                    required oninput="check2()" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Registration Date</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <span class="calendar-icon flaticon-calendar"></span>
+                                            <input id="registrasion_date" name="registrasion_date" class="datepicker"
+                                                autocomplete="off" type="text" name="username" placeholder="DD/MM/YYYY"
+                                                required oninput="check2()" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Number Plate</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <input id="number_plate" type="text" name="number_plate"
+                                                placeholder="Number Plate" required oninput="check2()" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Frame Number </label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="frame_number" type="text" name="frame_number"
+                                                    placeholder="Your Frame Number" required oninput="check2()" />
+                                            </div>
+                                            <div class="form-group col">
+                                                <label>Machine Number</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="machine_number" type="text" name="machine_number"
+                                                    placeholder="Your Machine Number" required oninput="check2()" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div id="driver_info" class="hidden">
+                                    <h4>Driver Information</h4>
+
+                                    <fieldset>
+
+
+                                        <div class="form-group">
+                                            <label>Date of birth</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <span class="calendar-icon flaticon-calendar"></span>
+                                            <input id="date_of_birth" name="date_of_birth" class="datepicker"
+                                                autocomplete="off" type="text" name="date_of_birth"
+                                                placeholder="DD/MM/YYYY" required onchange="checkabcxyz();" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Date of Certificate</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <span class="calendar-icon flaticon-calendar"></span>
+                                            <input id="date_of_certificate" name="date_of_certificate"
+                                                class="datepicker" autocomplete="off" type="text"
+                                                name="date_of_certificate" placeholder="DD/MM/YYYY" required
+                                                onchange="checkabcxyz();" />
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+
+                                <div id="contract_term" class="hidden">
+                                    <h4>Contract Term</h4>
+
+                                    <fieldset>
+
+
+                                        <div class="form-group">
+                                            <label>Duration</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <span class="calendar-icon flaticon-calendar"></span>
+                                            <input id="duration" name="duration" class="number" autocomplete="off"
+                                                type="text" placeholder="DD/MM/YYYY" required />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Insurance Start Date</label>
+                                            <span class="icon flaticon-edit"></span>
+                                            <span class="calendar-icon flaticon-calendar"></span>
+                                            <input id="insurance_start_date" name="insurance_start_date"
+                                                class="datepicker" autocomplete="off" type="text"
+                                                placeholder="DD/MM/YYYY" required />
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <button type="button" class="theme-btn btn-style-one">
+                                        <span class="txt">Confirm <i class="fa fa-arrow-circle-right"></i></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <style>
+                    .box-bill {
+                        background-color: #ebf5f5;
+                        width: 400px;
+                        height: 400px;
+                        border-radius: 10px;
+                        position: sticky;
+                        top: 100px;
+                        margin-left: 150px;
+                    }
+
+                    .form {
+                        margin-left: 20px;
+                        padding-top: 20px;
+                    }
+
+                    .infomatinon {
+                        font-size: 18px;
+                        font-weight: 600;
+                        padding-top: 8px;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid gray;
+                        margin-right: 20px;
+                    }
+
+                    .coupon {
+                        margin-top: 10px;
+
+                    }
+
+                    .code {
+                        margin-top: 10px;
+                    }
+
+                    .forminput {
+                        color: gray;
+                        width: 260px;
+                        height: 50px;
+                        padding-left: 10px;
+                        border: 1px solid grey;
+                        border-radius: 5px;
+                    }
+
+                    .apply {
+                        width: 100px;
+                        height: 50px;
+                        background-color: #3e96ee;
+                        color: white;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        transition: all 0.8s ease;
+                    }
+
+                    .apply:hover {
+                        background-color: #002448;
+                        color: white;
+                        /* transform: scale(1.1); */
+                    }
+
+                    .total-bill {
+                        margin-top: 15px;
+                    }
+
+                    .total {
+                        color: #3e96ee;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .currency-text {
+                        font-size: 30px;
+                        font-weight: 200;
+                    }
+
+                    .monny-text {
+                        font-size: 30px;
+                        font-weight: 600;
+                        padding-left: 10px;
+                    }
+
+                    .year-text {
+                        padding-left: 10px;
+                        font-weight: 500;
+                        font-size: 20px;
+                    }
+                </style>
+                <!-- Column -->
+                <div class="form-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="box-bill">
+                        <div class="form">
+                            <div class="invoice">
+                                <h3>Invoice</h3>
+                            </div>
+                            <div class="infomatinon">
+                                <span>
+                                    <span class="brand">Mec |</span>
+                                    <span class="type">G63 |</span>
+                                    <span class="year">2024</span>
+                                </span>
+                            </div>
+                            <div class="coupon">
+                                <h5>Coupon code (if any)</h5>
+                                <div class="code">
+                                    <input class="forminput" type="text" placeholder="Coupon code">
+                                    <button class="apply">Apply</button>
+                                </div>
+                                <div class="total-bill">
+                                    <h5>Total estimated fee</h5>
+                                    <div class="total">
+                                        <span>
+                                            <span class="currency-text">VND</span>
+                                            <span class="monny-text">3,000,000</span>
+                                            <span class="year-text"> /Năm</span>
+                                        </span>
+                                    </div>
+                                    <p style="font-weight: 500;">Taxes and fees included according to state regulations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End Services Section -->
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="auto-container">
+        <div class="inner-container"
+            style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
+            <div class="row clearfix">
+                <!-- Title Column -->
+                <div class="title-column col-lg-5 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <h3>Let us take care about your veicle</h3>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="newsletter-form">
+                            <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                                <div class="form-group">
+                                    <span class="icon fa fa-envelope"></span>
+                                    <input type="email" name="email" value="" placeholder="Enter your mail"
+                                        required="" />
+                                    <button type="submit" class="theme-btn flaticon-send"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA Section -->
