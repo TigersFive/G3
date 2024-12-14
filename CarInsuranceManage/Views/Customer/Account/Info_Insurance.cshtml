@@ -1,1 +1,146 @@
-<h1>code thêm cho tao trang này đoạn này nhé</h1>
+@model CarInsuranceManage.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+
+  .profile-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-sidebar {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .profile-sidebar .btn {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .profile-sidebar .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+
+  .form-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #495057;
+  }
+
+  .password-toggle {
+    position: relative;
+  }
+
+  .password-toggle .toggle-password {
+    position: absolute;
+    top: 72%;
+    right:10px ;
+    margin-right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+</style>
+
+<section class="main-slider">
+  <div class="container profile-container">
+    <div class="row">
+      <!-- Sidebar -->
+      @await Html.PartialAsync("~/Views/Customer/Account/HeaderProfile.cshtml", Model)
+
+      <!-- Main Content -->
+      <div class="col-md-8 py-4 px-4">
+         @* @if (TempData["Success"] != null)
+        {
+          <div class="alert alert-success">@TempData["Success"]</div>
+        } *@
+         <h3 class="text-center mb-4">Transaction History</h3>
+        <div class="table-responsive p-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Tên khách hàng</th>
+                        <th scope="col">Biển số xe</th>
+                        <th scope="col">Loại bảo hiểm</th>
+                        <th scope="col">Thời hạn</th>
+                        <th scope="col">Ngày mua</th>
+                        <th scope="col">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>51H-12345</td>
+                        <td>Trách nhiệm dân sự</td>
+                        <td>01/01/2024 - 01/01/2025</td>
+                        <td>01/01/2024</td>
+                        <td><span class="badge bg-success">Còn hiệu lực</span></td>
+                    </tr>
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>29B-67890</td>
+                        <td>Bảo hiểm vật chất</td>
+                        <td>15/06/2023 - 15/06/2024</td>
+                        <td>15/06/2023</td>
+                        <td><span class="badge bg-danger">Đã hết hạn</span></td>
+                    </tr>
+                    <tr>
+                        <td>Lê Văn C</td>
+                        <td>30A-56789</td>
+                        <td>Bảo hiểm toàn diện</td>
+                        <td>10/03/2024 - 10/03/2025</td>
+                        <td>10/03/2024</td>
+                        <td><span class="badge bg-success">Còn hiệu lực</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-section">
+    <div class="auto-container">
+      <div class="inner-container"
+        style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
+        <div class="row clearfix">
+          <!-- Title Column -->
+          <div class="title-column col-lg-5 col-md-12 col-sm-12">
+            <div class="inner-column">
+              <h3>Let us take care about your veicle</h3>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="form-column col-lg-7 col-md-12 col-sm-12">
+            <div class="inner-column">
+              <div class="newsletter-form">
+                <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                  <div class="form-group">
+                    <span class="icon fa fa-envelope"></span>
+                    <input type="email" name="email" value="" placeholder="Enter your mail" required="" />
+                    <button type="submit" class="theme-btn flaticon-send"></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

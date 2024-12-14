@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarInsuranceManage.Migrations
 {
     [DbContext(typeof(CarInsuranceDbContext))]
-    [Migration("20241214024757_CarInsuranceDb")]
+    [Migration("20241214085822_CarInsuranceDb")]
     partial class CarInsuranceDb
     {
         /// <inheritdoc />

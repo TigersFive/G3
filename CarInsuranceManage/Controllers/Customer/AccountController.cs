@@ -101,9 +101,20 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public IActionResult Info_Insurance()
         {
-            return View("~/Views/Customer/Account/Info_Insurance.cshtml");
-        }
+            if (!User.Identity.IsAuthenticated)
+            {
+                TempData["Warning"] = "You must be logged in to view your profile.";
+                return RedirectToAction("Login");
+            }
 
+            var user = _context.Users.FirstOrDefault(u => u.username == User.Identity.Name);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View("~/Views/Customer/Account/Info_Insurance.cshtml", user);
+        }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
