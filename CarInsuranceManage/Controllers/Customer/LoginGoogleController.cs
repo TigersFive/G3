@@ -18,12 +18,16 @@ namespace CarInsuranceManage.Controllers.Customer
             _context = context;
         }
 
+
+        
+
         public IActionResult LoginWithGoogle()
         {
             var redirectUrl = Url.Action("GoogleResponse", "LoginGoogle");
             var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
             return Challenge(properties, GoogleDefaults.AuthenticationScheme);
         }
+     
 
         public async Task<IActionResult> GoogleResponse()
         {
@@ -59,46 +63,13 @@ namespace CarInsuranceManage.Controllers.Customer
 
                     _context.Users.Add(user);
                     await _context.SaveChangesAsync();
-
-                    // Create a new Customer record
-                    var customer = new Models.Customer
-                    {
-                        user_id = user.user_id, // Link with the created user
-                        full_name = name ?? "N/A",  // If no full name, use "N/A"
-                        phone_number = "N/A", // Assuming phone number is not provided
-                        address = "N/A" // Assuming address is not provided
-                    };
-
-                    // Add new customer to the database
-                    _context.Customers.Add(customer);
-                    await _context.SaveChangesAsync();
                 }
 
-                // Store user_id, username, email in session
-                HttpContext.Session.SetInt32("user_id", user.user_id); // Store user_id in session
-                HttpContext.Session.SetString("username", user.username); // Store username in session
-                HttpContext.Session.SetString("email", user.email); // Store email in session
-
-                // Retrieve customer information from the Customer table
-                var customerInfo = await _context.Customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
-                if (customerInfo != null)
-                {
-                    // Store customer_id in session
-                    HttpContext.Session.SetInt32("customer_id", customerInfo.customer_id);
-                    HttpContext.Session.SetString("customer_name", customerInfo.full_name); // Example of storing customer name
-                }
-                else
-                {
-                    // Handle case when customer info is not found
-                    TempData["WarningMessage"] = "Customer information not found.";
-                }
-
-                // Log the login action
-                var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
+                // Optionally, log the login action
                 var loginLog = new LoginLog
                 {
                     user_id = user.user_id,
-                    ip_address = ipAddress,
+                    ip_address = HttpContext.Connection.RemoteIpAddress?.ToString(),
                     login_time = DateTime.Now
                 };
 
@@ -111,5 +82,8 @@ namespace CarInsuranceManage.Controllers.Customer
 
             return RedirectToAction("Login");
         }
+        // Handle Facebook login response
+       
+       
     }
 }

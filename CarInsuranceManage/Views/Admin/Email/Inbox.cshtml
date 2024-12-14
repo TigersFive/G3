@@ -1,4 +1,7 @@
-﻿<form method="post" action="@Url.Action("DeleteEmails", "Email")">
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form method="post" action="@Url.Action("DeleteEmails", "Email")">
     <div class="content-body">
         <div class="row page-titles mx-0">
             <div class="col p-md-0">

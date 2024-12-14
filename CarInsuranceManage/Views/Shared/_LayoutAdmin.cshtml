@@ -48,8 +48,7 @@
                                     class="mdi mdi-magnify"></i></span>
                         </div>
                         <input type="search" class="form-control" placeholder="Search Dashboard"
-                            aria-label="Search Dashboard" id="search-input">
-
+                            aria-label="Search Dashboard">
                         <div class="drop-down animated flipInX d-md-none">
                             <form action="#">
                                 <input type="text" class="form-control" placeholder="Search">
@@ -65,7 +64,7 @@
                             </a>
                             <div class="drop-down  dropdown-menu">
                                 <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">1 New Messages</span>
+                                    <span class="">3 New Messages</span>
                                     <a href="javascript:void()" class="d-inline-block">
                                         <span class="badge badge-pill gradient-1">0</span>
                                     </a>
@@ -84,12 +83,103 @@
                                                 </div>
                                             </a>
                                         </li>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="~/admin-assets/images/avatar/2.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Adam Smith</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Can you do me a favour?</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="~/admin-assets/images/avatar/3.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Barak Obama</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img"
+                                                    src="~/admin-assets/images/avatar/4.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Hilari Clinton</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hello</div>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
 
                                 </div>
                             </div>
                         </li>
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2">0</span>
+                            </a>
+                            <div class="drop-down  dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>
+                                    <a href="javascript:void()" class="d-inline-block">
+                                        <span class="badge badge-pill gradient-2">5</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i
+                                                        class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i
+                                                        class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
 
+                                </div>
+                            </div>
+                        </li>
                         <li class="icons dropdown d-none d-md-flex">
                             <a href="javascript:void(0)" class="log-user" data-toggle="dropdown">
                                 <span>English</span> <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
@@ -116,10 +206,9 @@
                                                 <span>Profile</span></a>
                                         </li>
                                         <li>
-                                            <a href="https://mail.google.com/mail/u/0/?ogbl#inbox" target="_blank">
+                                            <a asp-controller="Email" asp-action="Inbox">
                                                 <i class="icon-envelope-open"></i> <span>Inbox</span>
-                                                <div class="badge gradient-3 badge-pill gradient-1" id="unread-badge">0
-                                                </div> <!-- Số lượng email chưa đọc -->
+                                                <div class="badge gradient-3 badge-pill gradient-1">3</div>
                                             </a>
                                         </li>
 
@@ -138,6 +227,7 @@
                 </div>
             </div>
         </div>
+
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
@@ -151,7 +241,14 @@
                             <li><a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a></li>
                         </ul>
                     </li>
-
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a asp-controller="Layout" asp-action="Index">Layout Web</a></li>
+                        </ul>
+                    </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">Users</span>
@@ -164,7 +261,7 @@
                             <li><a asp-controller="User" asp-action="Manage">Users Manage</a></li>
 
                             <!-- Thêm người dùng mới -->
-                            <li><a asp-controller="User" asp-action="FeedBack">Users FeedBack</a></li>
+                            <li><a asp-controller="User" asp-action="Create">Users Create</a></li>
                         </ul>
                     </li>
 
@@ -174,7 +271,9 @@
                             <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox" target="_blank">Inbox</a></li>
+                            <li><a asp-controller="Email" asp-action="Inbox">Inbox</a></li>
+                            <li><a asp-controller="Email" asp-action="Read">Read</a></li>
+                            <li><a asp-controller="Email" asp-action="Compose">Compose</a></li>
                         </ul>
                     </li>
                     <li>
@@ -227,23 +326,18 @@
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li>
-                                <a asp-controller="Table" asp-action="Basic_Table" aria-expanded="false">Basic Table</a>
+                            <li><a asp-controller="Table" asp-action="Basic_Table" aria-expanded="false">Basic Table</a>
                             </li>
-                            <li>
-                                <a asp-controller="Table" asp-action="Data_Table" aria-expanded="false">Data Table</a>
+                            <li><a asp-controller="Table" asp-action="Data_Table" aria-expanded="false">Data Table</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-
         @RenderBody()
     </div>
 
-
-    <script src="~/admin-assets/js/search.js"></script>
     <script src="~/admin-assets/plugins/common/common.min.js"></script>
     <script src="~/admin-assets/js/custom.min.js"></script>
     <script src="~/admin-assets/js/settings.js"></script>

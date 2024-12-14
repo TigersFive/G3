@@ -1,4 +1,7 @@
-﻿<div class="content-body">
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="content-body">
 
             <div class="container-fluid mt-3">
                 <div class="row">
@@ -50,7 +53,22 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-content d-flex justify-content-between">
+                                    <div class="stat-text text-info">
+                                        <i class="mdi mdi-account-box-multiple"></i>
+                                    </div>
+                                    <div class="stat-digit">
+                                        <p class="m-0">Expenses</p>
+                                        <h3>$56,4342</h3>
+                                    </div>
+                                </div>
+                                <p class="mb-0"> Since Last Month</p>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
 
                 <div class="row">

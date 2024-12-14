@@ -1,9 +1,16 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- Page Title -->
 <section class="page-title">
     <div class="background-container">
         <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
         <img class="right-image" class="right-image" src="~/customer-assets/images/background/4.jpg" alt="" />
     </div>
-    <div class="service-container" style="background-image: url('https://themeim.com/');">
+    <div class="service-container" style="
+            background-image: url('https://themeim.com/');
+          ">
         <div class="section-icons-outer parallax-scene-1">
             <div data-depth="0.20" class="pattern-layer"
                 style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
@@ -25,21 +32,7 @@
 <section class="login-section">
     <div class="auto-container">
         <div class="login-box">
-            <!-- Display Success or Error Message -->
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success">
-                    @TempData["SuccessMessage"]
-                </div>
-            }
-
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div class="alert alert-danger">
-                    @TempData["ErrorMessage"]
-                </div>
-            }
-
+            <!-- Display Warning Message -->
             @if (TempData["WarningMessage"] != null)
             {
                 <div class="alert alert-warning">
@@ -79,6 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="pull-right">
+
                                     <a href="@Url.Action("Forgot_Password", "Account")" class="forgot">Forgot your
                                         Password?</a>
                                 </div>

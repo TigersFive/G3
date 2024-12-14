@@ -1,123 +1,117 @@
-using Microsoft.AspNetCore.Mvc;
-using MimeKit;
-using MailKit.Net.Smtp;
-using System;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using CarInsuranceManage.Models;
-using CarInsuranceManage.Database;
+// using Microsoft.AspNetCore.Authentication;
+// using Microsoft.AspNetCore.Authentication.Cookies;
+// using Microsoft.AspNetCore.Authentication.Google;
+// using Microsoft.AspNetCore.Mvc;
+// using CarInsuranceManage.Models;
+// using CarInsuranceManage.Database;
+// using System.Security.Claims;
+// using Microsoft.EntityFrameworkCore;
+// using Microsoft.AspNetCore.Authentication.Facebook;
 
-namespace CarInsuranceManage.Controllers
-{
-    public class ForgotPasswordEmailController : Controller
-    {
-        private readonly CarInsuranceDbContext _context;
+// namespace CarInsuranceManage.Controllers.Customer
+// {
+//     public class ForgotPasswordEmailController : Controller
+//     {
+//         private readonly CarInsuranceDbContext _context;
 
-        public ForgotPasswordEmailController(CarInsuranceDbContext context)
-        {
-            _context = context;
-        }
+//         public ForgotPasswordEmailController(CarInsuranceDbContext context)
+//         {
+//             _context = context;
+//         }
 
-        // Phương thức để gửi email với mã xác nhận ngẫu nhiên
-        public async Task<IActionResult> SendMail(string email)
-        {
-            // Tìm người dùng theo email
-            var user = _context.Users.SingleOrDefault(u => u.email == email);
-            if (user == null)
-            {
-                TempData["ErrorMessage"] = "Email không hợp lệ.";
-                return RedirectToAction("Login", "Account");
-            }
+//         // Process the email submission
+//         [HttpPost("")]
+//         public async Task<IActionResult> Index(ForgotPasswordViewModel model)
+//         {
+//             if (!ModelState.IsValid)
+//             {
+//                 return View(model);
+//             }
 
-            // Tạo mã xác nhận ngẫu nhiên
-            var resetCode = GenerateRandomCode();
+//             // Check if the email exists
+//             var user = _context.Customers.FirstOrDefault(c => c.Email == model.Email);
+//             if (user == null)
+//             {
+//                 ModelState.AddModelError("", "Email không tồn tại.");
+//                 return View(model);
+//             }
 
-            // Lưu mã reset vào cơ sở dữ liệu
-            user.password = resetCode;
-            await _context.SaveChangesAsync();
+//             // Generate a new reset token (8 characters)
+//             string resetToken = GenerateResetToken();
 
-            // Gửi email
-            var result = await SendEmailAsync(email, resetCode);
-            if (!result)
-            {
-                TempData["ErrorMessage"] = "Lỗi khi gửi email.";
-                return RedirectToAction("Login", "Account");
-            }
+//             // Store the reset token and set the expiry time (e.g., 1 hour)
+//             user.ResetToken = resetToken; // Store plain reset token
+//             user.ResetTokenExpiry = DateTime.UtcNow.AddHours(1); // Set expiry time to 1 hour from now
 
-            // Thông báo gửi thành công
-            TempData["SuccessMessage"] = "Mã xác nhận đã được gửi qua email. Vui lòng kiểm tra email của bạn.";
-            return RedirectToAction("Login", "Account");
-        }
+//             await _context.SaveChangesAsync(); // Save changes to the database before sending the email
 
+//             // Send the reset token via email after storing it
+//             SendResetTokenEmail(model.Email, resetToken);
 
-        // Tạo mã xác nhận ngẫu nhiên
-        private string GenerateRandomCode(int length = 6)
-        {
-            const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-            StringBuilder randomCode = new StringBuilder(length);
-            using (var rng = new RNGCryptoServiceProvider())
-            {
-                byte[] randomBytes = new byte[length];
-                rng.GetBytes(randomBytes);
-                for (int i = 0; i < length; i++)
-                {
-                    randomCode.Append(validChars[randomBytes[i] % validChars.Length]);
-                }
-            }
-            return randomCode.ToString();
-        }
+//             ViewBag.Message = "Mã đặt lại mật khẩu đã được gửi đến email của bạn.";
+//             return View();
+//         }
 
-        // Gửi email
-        private async Task<bool> SendEmailAsync(string toEmail, string resetCode)
-        {
-            try
-            {
-                var emailMessage = new MimeMessage();
-                emailMessage.From.Add(new MailboxAddress("Hỗ trợ Khách Hàng", "insurancecarsore@gmail.com"));
-                emailMessage.To.Add(new MailboxAddress("", toEmail));
-                emailMessage.Subject = "Thông báo thay đổi mật khẩu tài khoản của bạn";
+//         // Generate a random alphanumeric reset token
+//         private string GenerateResetToken()
+//         {
+//             var random = new Random();
+//             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//             return new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+//         }
 
-                // Thông điệp email chi tiết và chuyên nghiệp
-                string emailBody = $@"
-                    Chào bạn,
+//         // Send the reset token via email
+//         // Send the reset token via email
+//         private void SendResetTokenEmail(string email, string resetToken)
+//         {
+//             var message = new MimeMessage();
+//             message.From.Add(new MailboxAddress("Restaurantly", "bahatmittt@gmail.com"));
+//             message.To.Add(new MailboxAddress("", email));
+//             message.Subject = "Mã đặt lại mật khẩu của bạn";
 
-                    Chúng tôi nhận thấy có yêu cầu thay đổi mật khẩu cho tài khoản của bạn tại hệ thống Car Insurance. 
-                    Nếu bạn không yêu cầu thay đổi mật khẩu, xin vui lòng bỏ qua email này.
+//             // Generate the reset password URL
+// var resetPasswordUrl = Url.Action("Index", "reset-password", new { token = resetToken, email }, Request.Scheme);
 
-                    Mật khẩu mới của bạn là: {resetCode}
+//             // Include the reset token and the reset link in the email body
+//             message.Body = new TextPart("plain")
+//             {
+//                 Text = $@"
+//                 Xin chào,
 
-                    Vui lòng sử dụng mật khẩu này để đăng nhập vào hệ thống.
+//                 Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn tại Restaurantly. 
+//                 Dưới đây là mã token của bạn để đặt lại mật khẩu:
 
-                    Nếu bạn gặp bất kỳ khó khăn nào trong việc thay đổi mật khẩu, vui lòng liên hệ với chúng tôi qua email này hoặc gọi đến số hỗ trợ: 123-456-789.
+//                 Mã token: {resetToken}
 
-                    Trân trọng,
-                    Đội ngũ Hỗ trợ Khách Hàng
-                    Car Insurance";
+//                 Bạn có thể đặt lại mật khẩu bằng cách truy cập vào liên kết sau:
+//                 {resetPasswordUrl}
 
-                emailMessage.Body = new TextPart("plain")
-                {
-                    Text = emailBody
-                };
+//                 Vui lòng lưu ý:
+//                 - Mã token này có hiệu lực trong vòng 1 giờ kể từ khi yêu cầu được gửi.
+//                 - Nếu bạn không sử dụng mã token trong khoảng thời gian này, bạn sẽ cần yêu cầu lại một mã mới.
+//                 - Để bảo mật tài khoản của bạn, hãy không chia sẻ mã token này với bất kỳ ai.
 
-                using (var client = new SmtpClient())
-                {
-                    await client.ConnectAsync("smtp.gmail.com", 587, false);
-                    await client.AuthenticateAsync("insurancecarsore@gmail.com", "bfuv iniw uecz xgyl");
-                    await client.SendAsync(emailMessage);
-                    await client.DisconnectAsync(true);
-                }
+//                 Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.
 
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi khi gửi email
-                Console.WriteLine($"Lỗi gửi email: {ex.Message}");
-                return false;
-            }
-        }
+//                 Trân trọng,
+//                 Nhóm hỗ trợ của Restaurantly"
+//             };
 
-    }
-}
+//             using (var client = new SmtpClient())
+//             {
+//                 try
+//                 {
+//                     client.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+//                     client.Authenticate("bahatmittt@gmail.com", "wfod orhz zyzy sokd"); // Use App Password if 2FA is enabled
+//                     client.Send(message);
+//                     client.Disconnect(true);
+//                 }
+//                 catch (Exception ex)
+//                 {
+//                     Console.WriteLine($"Gửi email thất bại: {ex.Message}");
+//                 }
+//             }
+//         }
+
+//     }
+// }

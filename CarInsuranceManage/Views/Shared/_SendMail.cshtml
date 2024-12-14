@@ -14,13 +14,7 @@
         <div class="form-column col-lg-7 col-md-12 col-sm-12">
           <div class="inner-column">
             <div class="newsletter-form">
-              @if (TempData["Message"] != null)
-              {
-                <div class="alert alert-success mt-3">
-                  @TempData["Message"]
-                </div>
-              }
-              <form method="post" asp-action="SendMail" asp-controller="Suport">
+              <form method="post" action="https://themeim.com/demo/carsore/contact.html">
                 <div class="form-group">
                   <span class="icon fa fa-envelope"></span>
                   <input type="email" name="email" value="" placeholder="Enter your mail" required="" />

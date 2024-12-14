@@ -4,11 +4,9 @@ namespace CarInsuranceManage.Controllers.Admin
 {
     public class AccountController : Controller
     {
-        [HttpGet]
-        [Route("admin/account/profile")]
        public IActionResult Profile()
         {
-            return View("~/Views/Admin/Account/Profile.cshtml");  
+            return View("~/Views/Admin/App/Profile.cshtml");  
         }
 
         // Action Calendar, trả về view từ thư mục Admin/App

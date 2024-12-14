@@ -10,6 +10,7 @@ namespace CarInsuranceManage.Models
 
         [ForeignKey("Customer")]
         public int customer_id { get; set; }
+
         [Required]
         [StringLength(100)]
         public string? support_type { get; set; }

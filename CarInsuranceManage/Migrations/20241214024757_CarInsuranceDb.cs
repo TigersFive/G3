@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarInsuranceManage.Migrations
 {
     /// <inheritdoc />
-    public partial class CarinseranceDB : Migration
+    public partial class CarInsuranceDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

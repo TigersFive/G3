@@ -55,7 +55,7 @@ namespace CarInsuranceManage.Controllers
             return View("~/Views/Admin/User/EditUser.cshtml", user);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult DeleteUser(int id)
         {
             var user = _dbContext.Users.Find(id);
@@ -65,9 +65,8 @@ namespace CarInsuranceManage.Controllers
             }
             _dbContext.Users.Remove(user);
             _dbContext.SaveChanges();
-            return Json(new { success = true }); // Trả về JSON thông báo xóa thành công
+            return RedirectToAction("Index");
         }
-
 
         [HttpGet]
         public IActionResult Index()
@@ -99,14 +98,6 @@ namespace CarInsuranceManage.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-        [HttpGet]
-        public IActionResult FeedBack()
-        {
-            var usersFeedBack = _dbContext.Contacts.ToList();
-            return View("~/Views/Admin/User/FeedBack.cshtml", usersFeedBack);
-        }
-
-
     }
 
 

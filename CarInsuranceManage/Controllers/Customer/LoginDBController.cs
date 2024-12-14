@@ -5,7 +5,6 @@ using CarInsuranceManage.Models;
 using CarInsuranceManage.Database;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
 using Claim = System.Security.Claims.Claim;
 
 namespace CarInsuranceManage.Controllers.Customer
@@ -50,11 +49,12 @@ namespace CarInsuranceManage.Controllers.Customer
             }
 
             // Create claims for the user
-                        var claims = new List<Claim>
+            var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.username),
                     new Claim(ClaimTypes.Email, user.email),
                     new Claim(ClaimTypes.Role, user.role == "admin" ? "admin" : "user")
+
                 };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -64,25 +64,6 @@ namespace CarInsuranceManage.Controllers.Customer
             };
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
-
-            // Store user_id, username, email in session
-            HttpContext.Session.SetInt32("user_id", user.user_id); // Store user_id in session
-            HttpContext.Session.SetString("username", user.username); // Store username in session
-            HttpContext.Session.SetString("email", user.email); // Store email in session
-
-            // Retrieve customer information from the Customer table
-            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
-            if (customer != null)
-            {
-                // Store customer_id in session
-                HttpContext.Session.SetInt32("customer_id", customer.customer_id);
-                HttpContext.Session.SetString("customer_name", customer.full_name); // Example of storing customer name
-            }
-            else
-            {
-                // Handle case when customer info is not found
-                TempData["WarningMessage"] = "Customer information not found.";
-            }
 
             // Log the login action
             var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
