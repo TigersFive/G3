@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\admin\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|f:\\t2307a\\semester3\\g3\\carinsurancemanage\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|f:\\t2307a\\semester3\\g3\\carinsurancemanage\\controllers\\admin\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\admin\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|f:\\t2307a\\semester3\\g3\\carinsurancemanage\\views\\admin\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\admin\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|f:\\t2307a\\semester3\\g3\\carinsurancemanage\\views\\admin\\account\\lock_screen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\admin\\account\\lock_screen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|f:\\t2307a\\semester3\\g3\\carinsurancemanage\\controllers\\customer\\logindbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\logindbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,41 +94,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsBAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T08:09:17.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Lock_Screen.cshtml",
-              "DocumentMoniker": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Admin\\Account\\Lock_Screen.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Account\\Lock_Screen.cshtml",
-              "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Admin\\Account\\Lock_Screen.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Account\\Lock_Screen.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T08:16:22.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Admin\\Home\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Home\\Dashboard.cshtml",
-              "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Admin\\Home\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Home\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T08:07:26.501Z",
+              "Title": "LoginDBController.cs",
+              "DocumentMoniker": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Controllers\\Customer\\LoginDBController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Customer\\LoginDBController.cs",
+              "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Controllers\\Customer\\LoginDBController.cs",
+              "RelativeToolTip": "Controllers\\Customer\\LoginDBController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T07:22:10.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Controllers\\Admin\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AccountController.cs",
+              "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Controllers\\Admin\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T03:59:33.962Z",
               "EditorCaption": ""
             },
             {
@@ -143,7 +126,7 @@
               "RelativeDocumentMoniker": "Views\\Admin\\Account\\Profile.cshtml",
               "ToolTip": "F:\\T2307A\\semester3\\G3\\CarInsuranceManage\\Views\\Admin\\Account\\Profile.cshtml",
               "RelativeToolTip": "Views\\Admin\\Account\\Profile.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-14T07:57:28.429Z",
               "EditorCaption": ""

@@ -238,10 +238,10 @@ F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets\msbui
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarInsuranceManage.props
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarInsuranceManage.props
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets.pack.json
-F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsur.81E0E8BF.Up2Date
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.dll
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\refint\CarInsuranceManage.dll
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.pdb
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.genruntimeconfig.cache
 F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\ref\CarInsuranceManage.dll
+F:\T2307A\semester3\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
