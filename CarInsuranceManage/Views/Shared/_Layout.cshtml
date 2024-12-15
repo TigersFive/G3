@@ -82,7 +82,7 @@
                                             <a asp-area="" asp-controller="Insurance" asp-action="services">Services</a>
                                             <ul>
                                                 <li><a asp-area="" asp-controller="Insurance"
-                                                        asp-action="Bike_Detail">Bike
+                                                        asp-action="Moto_Detail">Moto
                                                         Insurance</a></li>
 
                                                 <li><a asp-area="" asp-controller="Insurance"
@@ -91,7 +91,7 @@
                                                 </li>
 
                                                 <li><a asp-area="" asp-controller="Insurance"
-                                                        asp-action="Car_Detail">Bus/Truck
+                                                        asp-action="Truck_Detail">Bus/Truck
                                                         Insurance</a></li>
                                             </ul>
                                         </li>
@@ -102,7 +102,7 @@
                                             @if (User.Identity.IsAuthenticated)
                                             {
                                             <li style="padding-left: 60px;">
-                                                <a asp-area="" asp-controller="Account" asp-action="Profile">
+                                                <a asp-area="" asp-controller="Account" asp-action="ProfileForCustomer">
                                                     <img style="height: 40px; width: 40px; border-radius: 50%; margin-top: -5px;"
                                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm6PLJe9kcUX4umLQ5m_YJNu5mBlsPA5v8g&s"
                                                         alt="User Image">
@@ -111,7 +111,7 @@
                                             <li class="dropdown">
                                                 <a href="#">@User.Identity.Name</a>
                                                 <ul>
-                                                    <li><a asp-area="" asp-controller="Account" asp-action="Profile">My
+                                                    <li><a asp-controller="Account" asp-action="ProfileForCustomer">My
                                                             Profile</a></li>
                                                     <li><a asp-area="" asp-controller="Account"
                                                             asp-action="Info_Insurance">Info Insurance</a></li>
@@ -318,7 +318,7 @@
                             <div class="footer-widget quote-widget">
                                 <h3>Request a Quote</h3>
                                 <div class="quote-form">
-                                    <form method="post" action="https://themeim.com/demo/carsore/appointment.html">
+                                    <form method="post" asp-action="Question" asp-controller="Suport">
                                         <div class="clearfix">
                                             <div class="form-group">
                                                 <input type="text" name="username" placeholder="Your Name *"
@@ -328,13 +328,13 @@
                                             <div class="form-group">
                                                 <input type="email" name="email" placeholder="Your Email" required="" />
                                             </div>
+
                                             <div class="form-group">
-                                                <select class="custom-select-box nice-select">
-                                                    <option>Your Subject</option>
-                                                    <option>Subject 01</option>
-                                                    <option>Subject 02</option>
-                                                    <option>Subject 03</option>
-                                                    <option>Subject 04</option>
+                                                <select class="custom-select-box nice-select" name="subject">
+                                                    <option value="Giá Bảo Hiểm xe Ô tô">Giá Bảo Hiểm xe Ô tô</option>
+                                                    <option value="Giá Bảo Hiểm xe Mô tô">Giá Bảo Hiểm xe Mô tô</option>
+                                                    <option value="Giá Bảo Hiểm Dành Cho Xe Tải">Giá Bảo Hiểm Dành Cho
+                                                        Xe Tải</option>
                                                 </select>
                                             </div>
 
@@ -345,6 +345,8 @@
                                             </div>
                                         </div>
                                     </form>
+
+
                                 </div>
                             </div>
                         </div>

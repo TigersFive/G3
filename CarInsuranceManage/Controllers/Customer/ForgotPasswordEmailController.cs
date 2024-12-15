@@ -47,7 +47,7 @@ namespace CarInsuranceManage.Controllers
             }
 
             // Thông báo gửi thành công
-            TempData["SuccessMessage"] = "Mã xác nhận đã được gửi qua email. Vui lòng kiểm tra email của bạn.";
+            TempData["SuccessMessage"] = "We have sent you the code, please use it to login!";
             return RedirectToAction("Login", "Account");
         }
 

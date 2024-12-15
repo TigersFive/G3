@@ -108,8 +108,10 @@ namespace CarInsuranceManage.Migrations
                     b.Property<int>("customer_id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("parent_comment_id")
+                        .HasColumnType("int");
+
                     b.Property<int?>("rating")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("status")
@@ -119,6 +121,8 @@ namespace CarInsuranceManage.Migrations
                     b.HasKey("comment_id");
 
                     b.HasIndex("customer_id");
+
+                    b.HasIndex("parent_comment_id");
 
                     b.ToTable("Comments");
                 });
@@ -251,7 +255,7 @@ namespace CarInsuranceManage.Migrations
                     b.Property<DateTime?>("resolved_at")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("resolved_by")
+                    b.Property<int?>("resolved_by")
                         .HasColumnType("int");
 
                     b.Property<string>("support_description")
@@ -707,7 +711,13 @@ namespace CarInsuranceManage.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CarInsuranceManage.Models.Comment", "ParentComment")
+                        .WithMany("Replies")
+                        .HasForeignKey("parent_comment_id");
+
                     b.Navigation("Customer");
+
+                    b.Navigation("ParentComment");
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Contact", b =>
@@ -742,9 +752,7 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasOne("CarInsuranceManage.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("resolved_by")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("resolved_by");
 
                     b.Navigation("Customer");
 
@@ -888,6 +896,11 @@ namespace CarInsuranceManage.Migrations
                         .IsRequired();
 
                     b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("CarInsuranceManage.Models.Comment", b =>
+                {
+                    b.Navigation("Replies");
                 });
 #pragma warning restore 612, 618
         }

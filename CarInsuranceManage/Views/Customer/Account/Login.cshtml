@@ -3,7 +3,7 @@
         <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
         <img class="right-image" class="right-image" src="~/customer-assets/images/background/4.jpg" alt="" />
     </div>
-    <div class="service-container" style="background-image: url('https://themeim.com/');">
+    <div class="service-container">
         <div class="section-icons-outer parallax-scene-1">
             <div data-depth="0.20" class="pattern-layer"
                 style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
@@ -13,8 +13,7 @@
         <div class="auto-container">
             <h1>Login In</h1>
             <ul class="page-breadcrumb">
-                <li>Account</li>
-                <li>Login</li>
+                <li>Account|Login</li>
             </ul>
         </div>
     </div>
@@ -32,6 +31,12 @@
                     @TempData["SuccessMessage"]
                 </div>
             }
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Message"]
+                </div>
+            }
 
             @if (TempData["ErrorMessage"] != null)
             {
@@ -39,7 +44,18 @@
                     @TempData["ErrorMessage"]
                 </div>
             }
-
+            @if (TempData["MessageSendMailSupportRequestError"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["MessageSendMailSupportRequestError"]
+                </div>
+            }
+            @if (TempData["MessageSendMailSupportRequestSuccess"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["MessageSendMailSupportRequestSuccess"]
+                </div>
+            }
             @if (TempData["WarningMessage"] != null)
             {
                 <div class="alert alert-warning">
@@ -106,7 +122,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>

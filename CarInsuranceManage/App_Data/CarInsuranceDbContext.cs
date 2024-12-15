@@ -27,7 +27,7 @@ namespace CarInsuranceManage.Database
         public DbSet<CustomerSupportRequest> CustomerSupportRequests { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<BannerImage> BannerImages { get; set; }
+        public DbSet<Banner> Banner { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
         // Ensure you are using the default SaveChangesAsync

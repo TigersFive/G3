@@ -1,16 +1,12 @@
-﻿@{
-    ViewBag.Title = "Blog";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<!-- Page Title -->
-<section class="page-title">
+﻿<section class="page-title">
     <div class="background-container">
         <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
         <img class="right-image" src="~/customer-assets/images/background/7.jpg" alt="" />
     </div>
     <div class="service-container">
         <div class="section-icons-outer parallax-scene-1">
-            <div data-depth="0.20" class="pattern-layer" style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
+            <div data-depth="0.20" class="pattern-layer"
+                style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-8.png")')">
             </div>
         </div>
 
@@ -39,7 +35,8 @@
                             <h3>How to apply on carsore?</h3>
                             <ul class="post-meta">
                                 <li>
-                                    <span class="icon"><img src="~/customer-assets/images/resource/author-3.jpg" alt="" /></span>Luiz Mark
+                                    <span class="icon"><img src="~/customer-assets/images/resource/author-3.jpg"
+                                            alt="" /></span>Luiz Mark
                                 </li>
                                 <li>
                                     <span class="icon fa fa-calendar"></span>22 OCT, 2021
@@ -108,8 +105,7 @@
                                             <figure class="video-image">
                                                 <img src="~/customer-assets/images/resource/news-5.jpg" alt="" />
                                             </figure>
-                                            <a href="https://www.youtube.com/watch?v=kxPCFljwJws"
-                                               class="lightbox-image overlay-box">
+                                            <a href="#" class="lightbox-image overlay-box">
                                                 <span class="flaticon-play-arrow">
                                                     <i class="ripple"></i>
                                                 </span>
@@ -170,119 +166,95 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- End Blog Author Box -->
-                        <!-- Comments Area -->
+                        @model IEnumerable<CarInsuranceManage.Models.Comment>
+
                         <div class="comments-area">
                             <div class="group-title">
                                 <h4>Comments by User</h4>
                             </div>
+
+                            @if (TempData["Message"] != null)
+                            {
+                                <div class="alert alert-info">@TempData["Message"]</div>
+                            }
+                            @if (TempData["WarningMessage"] != null)
+                            {
+                                <div class="alert alert-warning">@TempData["WarningMessage"]</div>
+                            }
+
                             <div class="comments-outer">
-                                <div class="comment-box">
-                                    <div class="comment">
-                                        <div class="author-thumb">
-                                            <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
-                                        </div>
-                                        <div class="comment-info clearfix">
-                                            <strong>Paris Romaguera</strong>
-                                        </div>
-                                        <div class="text">
-                                            Lorem Ipsum is simply dummy text of the printing
-                                            and typesetting industry. Lorem Ipsum has
-                                            industry's standard dummy text ever since the
-                                            1500s.
-                                        </div>
-                                        <div class="comment-time">SEP 22, 2021</div>
-                                        <a class="theme-btn reply-btn" href="#"> Reply</a>
-                                    </div>
-                                </div>
+                                <!-- Lọc chỉ những bình luận chính (parentCommentId == null) -->
+                                @foreach (var comment in Model.Where(c => c.parent_comment_id == null).OrderBy(c =>
+                                c.created_at))
+                                {
+                                    <div class="comment-box">
+                                        <div class="comment">
+                                            <div class="author-thumb">
+                                                <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
+                                            </div>
+                                            <div class="comment-info clearfix">
+                                                <strong>@comment.Customer.User?.username</strong>
+                                            </div>
+                                            <div class="text">
+                                                @comment.comment_text
+                                            </div>
+                                            <div class="comment-time">@comment.created_at.ToString("MMM dd, yyyy")</div>
 
-                                <div class="comment-box reply-comment">
-                                    <div class="comment">
-                                        <div class="author-thumb">
-                                            <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
-                                        </div>
-                                        <div class="comment-info clearfix">
-                                            <strong>Paris Romaguera</strong>
-                                        </div>
-                                        <div class="text">
-                                            Lorem Ipsum is simply dummy text of the printing
-                                            and typesetting industry. Lorem Ipsum has nobeen
-                                            dummy text ever since the 1500s.
-                                        </div>
-                                        <div class="comment-time">SEP 22, 2021</div>
-                                        <a class="theme-btn reply-btn" href="#"> Reply</a>
-                                    </div>
-                                </div>
+                                            <!-- Nút trả lời -->
+                                            <a class="theme-btn reply-btn" data-comment-id="@comment.comment_id"
+                                                data-username="@comment.Customer.User?.username">Reply</a>
 
-                                <div class="comment-box">
-                                    <div class="comment">
-                                        <div class="author-thumb">
-                                            <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
-                                        </div>
-                                        <div class="comment-info clearfix">
-                                            <strong>Paris Romaguera</strong>
-                                        </div>
-                                        <div class="text">
-                                            Lorem Ipsum is simply dummy text of the printing
-                                            and typesetting industry. Lorem Ipsum has nobeen
-                                            the industry's standard dummy text ever since the
-                                            1500s.
-                                        </div>
-                                        <div class="comment-time">SEP 22, 2021</div>
-                                        <a class="theme-btn reply-btn" href="#"> Reply</a>
-                                    </div>
-                                </div>
+                                            <!-- Form trả lời, ẩn ban đầu -->
+                                            <div class="reply-form" id="reply-form-@comment.comment_id"
+                                                style="display:none;">
+                                                <form method="post" asp-action="Send" asp-controller="Blog">
+                                                    <div class="form-group">
+                                                        <textarea name="message" class="form-control"
+                                                            placeholder="Type Your Reply"></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="parentCommentId"
+                                                        value="@comment.comment_id" />
+                                                    <button type="submit" class="btn btn-primary">Reply</button>
+                                                </form>
+                                            </div>
 
-                                <div class="comment-box">
-                                    <div class="comment">
-                                        <div class="author-thumb">
-                                            <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
+                                            <!-- Hiển thị các trả lời của bình luận -->
+                                            @foreach (var reply in Model.Where(r => r.parent_comment_id ==
+                                           comment.comment_id).OrderBy(r => r.created_at))
+                                            {
+                                                <div class="comment-box reply-box">
+                                                    <div class="comment">
+                                                        <div class="author-thumb">
+                                                            <img src="~/customer-assets/images/resource/author-5.jpg" alt="" />
+                                                        </div>
+                                                        <div class="comment-info clearfix">
+                                                            <strong>@reply.Customer.User?.username</strong>
+                                                        </div>
+                                                        <div class="alert alert-info">
+                                                            @reply.comment_text
+                                                        </div>
+                                                        <div class="comment-time">@reply.created_at.ToString("MMM dd, yyyy")
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
                                         </div>
-                                        <div class="comment-info clearfix">
-                                            <strong>Paris Romaguera</strong>
-                                        </div>
-                                        <div class="text">
-                                            Lorem Ipsum is simply dummy text of the printing
-                                            and typesetting industry. Lorem Ipsum has nobeen
-                                            the industry's standard dummy text ever since the
-                                            1500s.
-                                        </div>
-                                        <div class="comment-time">SEP 22, 2021</div>
-                                        <a class="theme-btn reply-btn" href="#"> Reply</a>
                                     </div>
-                                </div>
+                                }
                             </div>
                         </div>
-
-                        <!-- Comment Form -->
+                        <script src="~/customer-assets/js/js.js"></script>
                         <div class="comment-form">
                             <div class="group-title">
                                 <h4>Leave a comment</h4>
                             </div>
-                            <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                            <form method="post" asp-action="Send" asp-controller="Blog">
                                 <div class="row clearfix">
-                                    <div class="
-                              col-lg-12 col-md-12 col-sm-12 col-xs-12
-                              form-group
-                            ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                         <label>Your Message</label>
-                                        <textarea name="message" placeholder="Type Your Message"></textarea>
+                                        <textarea name="message" placeholder="Type Your Message" required></textarea>
                                     </div>
-
-                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                        <label>Enter Your Name*</label>
-                                        <input type="text" name="username" placeholder="Your Name" required />
-                                    </div>
-
-                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                        <label>Enter Your Email*</label>
-                                        <input type="email" name="email" placeholder="Your Email" required />
-                                    </div>
-
-                                    <div class="
-                              col-lg-12 col-md-12 col-sm-12 col-xs-12
-                              form-group
-                            ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                         <button class="theme-btn btn-style-one" type="submit" name="submit-form">
                                             <span class="txt">
                                                 Send Now
@@ -302,24 +274,25 @@
                 <aside class="sidebar sticky-top">
                     <!-- Search -->
                     <div class="sidebar-widget search-box">
-                        <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                        <form method="post">
                             <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Search here..." required />
+                                <input type="search" name="search-field" value="" placeholder="Search here..."
+                                    required />
                                 <button type="submit">
                                     <span class="icon fa fa-search"></span>
                                 </button>
                             </div>
                         </form>
                     </div>
-
                     <!-- Subscribe Widget -->
                     <div class="sidebar-widget subscribe-widget">
                         <div class="widget-content">
                             <h5>SUBSCRIBE FOR MORE WORDPRESS THEMES</h5>
                             <div class="subscribe-form">
-                                <form method="post" action="https://themeim.com/demo/carsore/contact.html">
+                                <form method="post">
                                     <div class="form-group">
-                                        <input type="email" name="email" value="" placeholder="Your Email" required="" />
+                                        <input type="email" name="email" value="" placeholder="Your Email"
+                                            required="" />
                                         <button type="submit" class="theme-btn subscribe-btn">
                                             Subscribe
                                         </button>
@@ -340,201 +313,56 @@
 
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="https://themeim.com/"><img src="~/customer-assets/images/resource/post-thumb-1.jpg" alt="" /></a>
+                                    <a href=""><img src="~/customer-assets/images/resource/post-thumb-1.jpg"
+                                            alt="" /></a>
                                 </div>
                                 <h6>
-                                    <a href="https://themeim.com/">Lorem Ipsum is simply a text the printing?</a>
+                                    <a href="">Lorem Ipsum is simply a text the printing?</a>
                                 </h6>
                                 <div class="post-date">
-                                    <svg id="calender-icon" xmlns="http://www.w3.org/2000/svg" width="16.104" height="16.103"
-                                         viewBox="0 0 16.104 16.103">
-                                        <path data-name="Path 8735"
-                                              d="M1325.567,613.187c0-.243-.011-.442,0-.639a.623.623,0,0,1,1.245,0c.013.2,0,.4,0,.615h2.834c0-.185-.006-.369,0-.552a.629.629,0,1,1,1.255,0c.008.177,0,.355,0,.554h2.862c0-.184-.005-.377,0-.571a.629.629,0,1,1,1.255.005c.006.186,0,.372,0,.589.3,0,.573-.005.842,0a2.508,2.508,0,0,1,2.489,2.518c.01,2.18,0,4.36,0,6.54,0,.458-.243.745-.622.749s-.635-.288-.635-.768q0-3.144,0-6.288a1.308,1.308,0,0,0-1.505-1.493h-.57c0,.219.007.414,0,.609a.627.627,0,1,1-1.254-.007c-.007-.187,0-.374,0-.581h-2.862c0,.181.006.364,0,.547a.63.63,0,1,1-1.255.013c-.008-.177,0-.355,0-.556h-2.83c0,.188.006.365,0,.541a.632.632,0,1,1-1.256-.014c-.006-.167,0-.334,0-.581a7.419,7.419,0,0,0-1.219.124,1.207,1.207,0,0,0-.823,1.275q0,2.893,0,5.785,0,1.839,0,3.679a1.3,1.3,0,0,0,1.475,1.492h10.627a1.286,1.286,0,0,0,1.484-1.3.629.629,0,1,1,1.254.093,2.513,2.513,0,0,1-2.452,2.458c-1.195.016-2.39,0-3.584,0q-3.694,0-7.389,0a2.523,2.523,0,0,1-2.674-2.683q0-4.748,0-9.5a2.522,2.522,0,0,1,2.661-2.664Z"
-                                              transform="translate(-1322.26 -611.931)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8736"
-                                              d="M1418.953,708.224a.626.626,0,1,1,.631-.606A.631.631,0,0,1,1418.953,708.224Z"
-                                              transform="translate(-1412.29 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8737"
-                                              d="M1505.982,708.224a.626.626,0,1,1,.621-.616A.631.631,0,0,1,1505.982,708.224Z"
-                                              transform="translate(-1493.838 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8738"
-                                              d="M1418.944,795.24a.626.626,0,1,1,.638-.6A.631.631,0,0,1,1418.944,795.24Z"
-                                              transform="translate(-1412.288 -782.54)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8739"
-                                              d="M1375.515,706.964a.627.627,0,1,1-.622.611A.623.623,0,0,1,1375.515,706.964Z"
-                                              transform="translate(-1371.583 -700.988)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8740"
-                                              d="M1463.155,707.6a.622.622,0,1,1-.63-.634A.622.622,0,0,1,1463.155,707.6Z"
-                                              transform="translate(-1453.129 -700.991)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8741"
-                                              d="M1418.943,751.784a.623.623,0,1,1,.639-.6A.623.623,0,0,1,1418.943,751.784Z"
-                                              transform="translate(-1412.289 -741.824)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8742"
-                                              d="M1505.96,751.783a.623.623,0,1,1,.637-.6A.623.623,0,0,1,1505.96,751.783Z"
-                                              transform="translate(-1493.832 -741.823)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8743"
-                                              d="M1375.52,793.986a.627.627,0,1,1-.632.6A.623.623,0,0,1,1375.52,793.986Z"
-                                              transform="translate(-1371.578 -782.538)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8744"
-                                              d="M1462.533,795.236a.627.627,0,1,1,.618-.615A.623.623,0,0,1,1462.533,795.236Z"
-                                              transform="translate(-1453.126 -782.536)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8745"
-                                              d="M1376.143,751.18a.622.622,0,1,1-.6-.638A.617.617,0,0,1,1376.143,751.18Z"
-                                              transform="translate(-1371.589 -741.827)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8746"
-                                              d="M1463.157,751.173a.623.623,0,1,1-.6-.633A.618.618,0,0,1,1463.157,751.173Z"
-                                              transform="translate(-1453.131 -741.825)" fill="rgba(0,34,68,0.7)" />
-                                    </svg>SEP 11, 2021
+                                    <img src="~/customer-assets/images/calender.svg" alt="" srcset="">SEP 11, 2021
                                 </div>
                             </div>
 
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="https://themeim.com/"><img src="~/customer-assets/images/resource/post-thumb-2.jpg" alt="" /></a>
+                                    <a href=""><img src="~/customer-assets/images/resource/post-thumb-2.jpg"
+                                            alt="" /></a>
                                 </div>
                                 <h6>
-                                    <a href="https://themeim.com/">Lorem Ipsum is simply a text the printing?</a>
+                                    <a href="">Lorem Ipsum is simply a text the printing?</a>
                                 </h6>
                                 <div class="post-date">
-                                    <svg id="calender-icon-2" xmlns="http://www.w3.org/2000/svg" width="16.104" height="16.103"
-                                         viewBox="0 0 16.104 16.103">
-                                        <path data-name="Path 8735"
-                                              d="M1325.567,613.187c0-.243-.011-.442,0-.639a.623.623,0,0,1,1.245,0c.013.2,0,.4,0,.615h2.834c0-.185-.006-.369,0-.552a.629.629,0,1,1,1.255,0c.008.177,0,.355,0,.554h2.862c0-.184-.005-.377,0-.571a.629.629,0,1,1,1.255.005c.006.186,0,.372,0,.589.3,0,.573-.005.842,0a2.508,2.508,0,0,1,2.489,2.518c.01,2.18,0,4.36,0,6.54,0,.458-.243.745-.622.749s-.635-.288-.635-.768q0-3.144,0-6.288a1.308,1.308,0,0,0-1.505-1.493h-.57c0,.219.007.414,0,.609a.627.627,0,1,1-1.254-.007c-.007-.187,0-.374,0-.581h-2.862c0,.181.006.364,0,.547a.63.63,0,1,1-1.255.013c-.008-.177,0-.355,0-.556h-2.83c0,.188.006.365,0,.541a.632.632,0,1,1-1.256-.014c-.006-.167,0-.334,0-.581a7.419,7.419,0,0,0-1.219.124,1.207,1.207,0,0,0-.823,1.275q0,2.893,0,5.785,0,1.839,0,3.679a1.3,1.3,0,0,0,1.475,1.492h10.627a1.286,1.286,0,0,0,1.484-1.3.629.629,0,1,1,1.254.093,2.513,2.513,0,0,1-2.452,2.458c-1.195.016-2.39,0-3.584,0q-3.694,0-7.389,0a2.523,2.523,0,0,1-2.674-2.683q0-4.748,0-9.5a2.522,2.522,0,0,1,2.661-2.664Z"
-                                              transform="translate(-1322.26 -611.931)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8736"
-                                              d="M1418.953,708.224a.626.626,0,1,1,.631-.606A.631.631,0,0,1,1418.953,708.224Z"
-                                              transform="translate(-1412.29 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8737"
-                                              d="M1505.982,708.224a.626.626,0,1,1,.621-.616A.631.631,0,0,1,1505.982,708.224Z"
-                                              transform="translate(-1493.838 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8738"
-                                              d="M1418.944,795.24a.626.626,0,1,1,.638-.6A.631.631,0,0,1,1418.944,795.24Z"
-                                              transform="translate(-1412.288 -782.54)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8739"
-                                              d="M1375.515,706.964a.627.627,0,1,1-.622.611A.623.623,0,0,1,1375.515,706.964Z"
-                                              transform="translate(-1371.583 -700.988)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8740"
-                                              d="M1463.155,707.6a.622.622,0,1,1-.63-.634A.622.622,0,0,1,1463.155,707.6Z"
-                                              transform="translate(-1453.129 -700.991)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8741"
-                                              d="M1418.943,751.784a.623.623,0,1,1,.639-.6A.623.623,0,0,1,1418.943,751.784Z"
-                                              transform="translate(-1412.289 -741.824)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8742"
-                                              d="M1505.96,751.783a.623.623,0,1,1,.637-.6A.623.623,0,0,1,1505.96,751.783Z"
-                                              transform="translate(-1493.832 -741.823)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8743"
-                                              d="M1375.52,793.986a.627.627,0,1,1-.632.6A.623.623,0,0,1,1375.52,793.986Z"
-                                              transform="translate(-1371.578 -782.538)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8744"
-                                              d="M1462.533,795.236a.627.627,0,1,1,.618-.615A.623.623,0,0,1,1462.533,795.236Z"
-                                              transform="translate(-1453.126 -782.536)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8745"
-                                              d="M1376.143,751.18a.622.622,0,1,1-.6-.638A.617.617,0,0,1,1376.143,751.18Z"
-                                              transform="translate(-1371.589 -741.827)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8746"
-                                              d="M1463.157,751.173a.623.623,0,1,1-.6-.633A.618.618,0,0,1,1463.157,751.173Z"
-                                              transform="translate(-1453.131 -741.825)" fill="rgba(0,34,68,0.7)" />
-                                    </svg>SEP 11, 2021
+                                    <img src="~/customer-assets/images/calender.svg" alt="" srcset="">SEP 11, 2021
+
                                 </div>
                             </div>
 
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="https://themeim.com/"><img src="~/customer-assets/images/resource/post-thumb-3.jpg" alt="" /></a>
+                                    <a href=""><img src="~/customer-assets/images/resource/post-thumb-3.jpg"
+                                            alt="" /></a>
                                 </div>
                                 <h6>
-                                    <a href="https://themeim.com/">Lorem Ipsum is simply a text the printing?</a>
+                                    <a href="">Lorem Ipsum is simply a text the printing?</a>
                                 </h6>
                                 <div class="post-date">
-                                    <svg id="calender-icon-3" xmlns="http://www.w3.org/2000/svg" width="16.104" height="16.103"
-                                         viewBox="0 0 16.104 16.103">
-                                        <path data-name="Path 8735"
-                                              d="M1325.567,613.187c0-.243-.011-.442,0-.639a.623.623,0,0,1,1.245,0c.013.2,0,.4,0,.615h2.834c0-.185-.006-.369,0-.552a.629.629,0,1,1,1.255,0c.008.177,0,.355,0,.554h2.862c0-.184-.005-.377,0-.571a.629.629,0,1,1,1.255.005c.006.186,0,.372,0,.589.3,0,.573-.005.842,0a2.508,2.508,0,0,1,2.489,2.518c.01,2.18,0,4.36,0,6.54,0,.458-.243.745-.622.749s-.635-.288-.635-.768q0-3.144,0-6.288a1.308,1.308,0,0,0-1.505-1.493h-.57c0,.219.007.414,0,.609a.627.627,0,1,1-1.254-.007c-.007-.187,0-.374,0-.581h-2.862c0,.181.006.364,0,.547a.63.63,0,1,1-1.255.013c-.008-.177,0-.355,0-.556h-2.83c0,.188.006.365,0,.541a.632.632,0,1,1-1.256-.014c-.006-.167,0-.334,0-.581a7.419,7.419,0,0,0-1.219.124,1.207,1.207,0,0,0-.823,1.275q0,2.893,0,5.785,0,1.839,0,3.679a1.3,1.3,0,0,0,1.475,1.492h10.627a1.286,1.286,0,0,0,1.484-1.3.629.629,0,1,1,1.254.093,2.513,2.513,0,0,1-2.452,2.458c-1.195.016-2.39,0-3.584,0q-3.694,0-7.389,0a2.523,2.523,0,0,1-2.674-2.683q0-4.748,0-9.5a2.522,2.522,0,0,1,2.661-2.664Z"
-                                              transform="translate(-1322.26 -611.931)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8736"
-                                              d="M1418.953,708.224a.626.626,0,1,1,.631-.606A.631.631,0,0,1,1418.953,708.224Z"
-                                              transform="translate(-1412.29 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8737"
-                                              d="M1505.982,708.224a.626.626,0,1,1,.621-.616A.631.631,0,0,1,1505.982,708.224Z"
-                                              transform="translate(-1493.838 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8738"
-                                              d="M1418.944,795.24a.626.626,0,1,1,.638-.6A.631.631,0,0,1,1418.944,795.24Z"
-                                              transform="translate(-1412.288 -782.54)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8739"
-                                              d="M1375.515,706.964a.627.627,0,1,1-.622.611A.623.623,0,0,1,1375.515,706.964Z"
-                                              transform="translate(-1371.583 -700.988)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8740" data-name="Path 8740"
-                                              d="M1463.155,707.6a.622.622,0,1,1-.63-.634A.622.622,0,0,1,1463.155,707.6Z"
-                                              transform="translate(-1453.129 -700.991)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8741"
-                                              d="M1418.943,751.784a.623.623,0,1,1,.639-.6A.623.623,0,0,1,1418.943,751.784Z"
-                                              transform="translate(-1412.289 -741.824)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8742" data-name="Path 8742"
-                                              d="M1505.96,751.783a.623.623,0,1,1,.637-.6A.623.623,0,0,1,1505.96,751.783Z"
-                                              transform="translate(-1493.832 -741.823)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8743" data-name="Path 8743"
-                                              d="M1375.52,793.986a.627.627,0,1,1-.632.6A.623.623,0,0,1,1375.52,793.986Z"
-                                              transform="translate(-1371.578 -782.538)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8744" data-name="Path 8744"
-                                              d="M1462.533,795.236a.627.627,0,1,1,.618-.615A.623.623,0,0,1,1462.533,795.236Z"
-                                              transform="translate(-1453.126 -782.536)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8745" data-name="Path 8745"
-                                              d="M1376.143,751.18a.622.622,0,1,1-.6-.638A.617.617,0,0,1,1376.143,751.18Z"
-                                              transform="translate(-1371.589 -741.827)" fill="rgba(0,34,68,0.7)" />
-                                        <path id="Path_8746" data-name="Path 8746"
-                                              d="M1463.157,751.173a.623.623,0,1,1-.6-.633A.618.618,0,0,1,1463.157,751.173Z"
-                                              transform="translate(-1453.131 -741.825)" fill="rgba(0,34,68,0.7)" />
-                                    </svg>SEP 11, 2021
+                                    <img src="~/customer-assets/images/calender.svg" alt="" srcset="">SEP 11, 2021
                                 </div>
                             </div>
 
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="https://themeim.com/"><img src="~/customer-assets/images/resource/post-thumb-4.jpg" alt="" /></a>
+                                    <a href="#"><img src="~/customer-assets/images/resource/post-thumb-4.jpg"
+                                            alt="" /></a>
                                 </div>
                                 <h6>
-                                    <a href="https://themeim.com/">Lorem Ipsum is simply a text the printing?</a>
+                                    <a href="">Lorem Ipsum is simply a text the printing?</a>
                                 </h6>
                                 <div class="post-date">
-                                    <svg id="calender-icon-4" xmlns="http://www.w3.org/2000/svg" width="16.104" height="16.103"
-                                         viewBox="0 0 16.104 16.103">
-                                        <path data-name="Path 8735"
-                                              d="M1325.567,613.187c0-.243-.011-.442,0-.639a.623.623,0,0,1,1.245,0c.013.2,0,.4,0,.615h2.834c0-.185-.006-.369,0-.552a.629.629,0,1,1,1.255,0c.008.177,0,.355,0,.554h2.862c0-.184-.005-.377,0-.571a.629.629,0,1,1,1.255.005c.006.186,0,.372,0,.589.3,0,.573-.005.842,0a2.508,2.508,0,0,1,2.489,2.518c.01,2.18,0,4.36,0,6.54,0,.458-.243.745-.622.749s-.635-.288-.635-.768q0-3.144,0-6.288a1.308,1.308,0,0,0-1.505-1.493h-.57c0,.219.007.414,0,.609a.627.627,0,1,1-1.254-.007c-.007-.187,0-.374,0-.581h-2.862c0,.181.006.364,0,.547a.63.63,0,1,1-1.255.013c-.008-.177,0-.355,0-.556h-2.83c0,.188.006.365,0,.541a.632.632,0,1,1-1.256-.014c-.006-.167,0-.334,0-.581a7.419,7.419,0,0,0-1.219.124,1.207,1.207,0,0,0-.823,1.275q0,2.893,0,5.785,0,1.839,0,3.679a1.3,1.3,0,0,0,1.475,1.492h10.627a1.286,1.286,0,0,0,1.484-1.3.629.629,0,1,1,1.254.093,2.513,2.513,0,0,1-2.452,2.458c-1.195.016-2.39,0-3.584,0q-3.694,0-7.389,0a2.523,2.523,0,0,1-2.674-2.683q0-4.748,0-9.5a2.522,2.522,0,0,1,2.661-2.664Z"
-                                              transform="translate(-1322.26 -611.931)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8736"
-                                              d="M1418.953,708.224a.626.626,0,1,1,.631-.606A.631.631,0,0,1,1418.953,708.224Z"
-                                              transform="translate(-1412.29 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8737"
-                                              d="M1505.982,708.224a.626.626,0,1,1,.621-.616A.631.631,0,0,1,1505.982,708.224Z"
-                                              transform="translate(-1493.838 -700.996)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8738"
-                                              d="M1418.944,795.24a.626.626,0,1,1,.638-.6A.631.631,0,0,1,1418.944,795.24Z"
-                                              transform="translate(-1412.288 -782.54)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8739"
-                                              d="M1375.515,706.964a.627.627,0,1,1-.622.611A.623.623,0,0,1,1375.515,706.964Z"
-                                              transform="translate(-1371.583 -700.988)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8740"
-                                              d="M1463.155,707.6a.622.622,0,1,1-.63-.634A.622.622,0,0,1,1463.155,707.6Z"
-                                              transform="translate(-1453.129 -700.991)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8741"
-                                              d="M1418.943,751.784a.623.623,0,1,1,.639-.6A.623.623,0,0,1,1418.943,751.784Z"
-                                              transform="translate(-1412.289 -741.824)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8742"
-                                              d="M1505.96,751.783a.623.623,0,1,1,.637-.6A.623.623,0,0,1,1505.96,751.783Z"
-                                              transform="translate(-1493.832 -741.823)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8743"
-                                              d="M1375.52,793.986a.627.627,0,1,1-.632.6A.623.623,0,0,1,1375.52,793.986Z"
-                                              transform="translate(-1371.578 -782.538)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8744"
-                                              d="M1462.533,795.236a.627.627,0,1,1,.618-.615A.623.623,0,0,1,1462.533,795.236Z"
-                                              transform="translate(-1453.126 -782.536)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8745"
-                                              d="M1376.143,751.18a.622.622,0,1,1-.6-.638A.617.617,0,0,1,1376.143,751.18Z"
-                                              transform="translate(-1371.589 -741.827)" fill="rgba(0,34,68,0.7)" />
-                                        <path data-name="Path 8746"
-                                              d="M1463.157,751.173a.623.623,0,1,1-.6-.633A.618.618,0,0,1,1463.157,751.173Z"
-                                              transform="translate(-1453.131 -741.825)" fill="rgba(0,34,68,0.7)" />
-                                    </svg>SEP 11, 2021
+
+                                    <img src="~/customer-assets/images/calender.svg" alt="" srcset="">SEP 11, 2021
+
                                 </div>
                             </div>
                         </div>
@@ -610,35 +438,4 @@
         </div>
     </div>
 </div>
-
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="auto-container">
-        <div class="inner-container" style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-5.png")')">
-            <div class="row clearfix">
-                <!-- Title Column -->
-                <div class="title-column col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <h3>Let us take care about your veicle</h3>
-                    </div>
-                </div>
-
-                <!-- Form Column -->
-                <div class="form-column col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="newsletter-form">
-                            <form method="post" action="https://themeim.com/demo/carsore/contact.html">
-                                <div class="form-group">
-                                    <span class="icon fa fa-envelope"></span>
-                                    <input type="email" name="email" value="" placeholder="Enter your mail" required="" />
-                                    <button type="submit" class="theme-btn flaticon-send"></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End CTA Section -->
+@await Html.PartialAsync("_SendMail")

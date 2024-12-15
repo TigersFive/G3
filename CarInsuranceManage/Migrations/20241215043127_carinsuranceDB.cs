@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarInsuranceManage.Migrations
 {
     /// <inheritdoc />
-    public partial class CarinseranceDB : Migration
+    public partial class carinsuranceDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -156,9 +156,10 @@ namespace CarInsuranceManage.Migrations
                     comment_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     customer_id = table.Column<int>(type: "int", nullable: false),
+                    parent_comment_id = table.Column<int>(type: "int", nullable: true),
                     comment_text = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    rating = table.Column<int>(type: "int", nullable: false),
+                    rating = table.Column<int>(type: "int", nullable: true),
                     created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     status = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -166,6 +167,11 @@ namespace CarInsuranceManage.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.comment_id);
+                    table.ForeignKey(
+                        name: "FK_Comments_Comments_parent_comment_id",
+                        column: x => x.parent_comment_id,
+                        principalTable: "Comments",
+                        principalColumn: "comment_id");
                     table.ForeignKey(
                         name: "FK_Comments_Customers_customer_id",
                         column: x => x.customer_id,
@@ -225,7 +231,7 @@ namespace CarInsuranceManage.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     resolved_at = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    resolved_by = table.Column<int>(type: "int", nullable: false)
+                    resolved_by = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -240,8 +246,7 @@ namespace CarInsuranceManage.Migrations
                         name: "FK_CustomerSupportRequests_Users_resolved_by",
                         column: x => x.resolved_by,
                         principalTable: "Users",
-                        principalColumn: "user_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "user_id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -532,6 +537,11 @@ namespace CarInsuranceManage.Migrations
                 name: "IX_Comments_customer_id",
                 table: "Comments",
                 column: "customer_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_parent_comment_id",
+                table: "Comments",
+                column: "parent_comment_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contacts_customer_id",

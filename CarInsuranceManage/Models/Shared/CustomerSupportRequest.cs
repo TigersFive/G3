@@ -24,7 +24,7 @@ namespace CarInsuranceManage.Models
         public DateTime? resolved_at { get; set; }
 
         [ForeignKey("User")]
-        public int resolved_by { get; set; }
+        public int? resolved_by { get; set; }
 
         public virtual Customer? Customer { get; set; }
         public virtual User? User { get; set; }

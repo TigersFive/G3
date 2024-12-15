@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/admin-assets/plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="~/admin-assets/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="~/admin-assets/css/style.css">
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -112,7 +114,8 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a asp-controller="Account" asp-action="Profile"><i class="icon-user"></i>
+                                            <a asp-controller="Account" asp-action="ProfileForAdmin"><i
+                                                    class="icon-user"></i>
                                                 <span>Profile</span></a>
                                         </li>
                                         <li>
@@ -157,14 +160,19 @@
                             <i class="icon-user menu-icon"></i><span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <!-- Danh sách người dùng -->
                             <li><a asp-controller="User" asp-action="Index">Users List</a></li>
 
-                            <!-- Quản lý người dùng -->
                             <li><a asp-controller="User" asp-action="Manage">Users Manage</a></li>
 
-                            <!-- Thêm người dùng mới -->
                             <li><a asp-controller="User" asp-action="FeedBack">Users FeedBack</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Settings</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a asp-area="" asp-controller="Settings" asp-action="Banner">Add Banner</a></li>
                         </ul>
                     </li>
 
@@ -261,6 +269,8 @@
     <script src="~/admin-assets/plugins/chartist/js/chartist.min.js"></script>
     <script src="~/admin-assets/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
     <script src="~/admin-assets/js/dashboard/dashboard-1.js"></script>
+    <!-- FontAwesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 
 </body>
 

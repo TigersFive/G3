@@ -4,11 +4,7 @@ namespace CarInsuranceManage.Controllers.Customer
 {
     public class InsuranceController : Controller
     {
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View("~/Views/Customer/Insurance/Index.cshtml");
-        }
+
         [HttpGet]
         public IActionResult Services()
         {
@@ -16,9 +12,14 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
         [HttpGet]
-        public IActionResult Bike_Detail()
+        public IActionResult Moto_Detail()
         {
-            return View("~/Views/Customer/Insurance/Bike_Detail.cshtml");
+            return View("~/Views/Customer/Insurance/Moto_Detail.cshtml");
+        }
+        [HttpGet]
+        public IActionResult Moto_Insurance()
+        {
+            return View("~/Views/Customer/Insurance/Moto_Insurance.cshtml");
         }
         [HttpGet]
         public IActionResult Car_Detail()
@@ -31,9 +32,14 @@ namespace CarInsuranceManage.Controllers.Customer
             return View("~/Views/Customer/Insurance/Car_Insurance.cshtml");
         }
         [HttpGet]
-        public IActionResult Bike_Insurance()
+        public IActionResult Truck_Detail()
         {
-            return View("~/Views/Customer/Insurance/Bike_Insurance.cshtml");
+            return View("~/Views/Customer/Insurance/Truck_Detail.cshtml");
+        }
+        [HttpGet]
+        public IActionResult Truck_Insurance()
+        {
+            return View("~/Views/Customer/Insurance/Truck_Insurance.cshtml");
         }
     }
 }

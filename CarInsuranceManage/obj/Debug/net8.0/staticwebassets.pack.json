@@ -2317,8 +2317,20 @@
       "PackagePath": "staticwebassets\\customer-assets\\images\\background\\planes-group.png"
     },
     {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\calender.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\calender.svg"
+    },
+    {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\cau_hoi_thuong_gap.png",
       "PackagePath": "staticwebassets\\customer-assets\\images\\cau_hoi_thuong_gap.png"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\checkno.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\checkno.svg"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\checkyes.svg",
+      "PackagePath": "staticwebassets\\customer-assets\\images\\checkyes.svg"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\images\\clients\\1.png",
@@ -2691,6 +2703,10 @@
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\jquery.scrollTo.min.js",
       "PackagePath": "staticwebassets\\customer-assets\\js\\jquery.scrollTo.min.js"
+    },
+    {
+      "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\js.js",
+      "PackagePath": "staticwebassets\\customer-assets\\js\\js.js"
     },
     {
       "Id": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\nav-tool.js",

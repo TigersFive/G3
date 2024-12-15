@@ -32,7 +32,9 @@ namespace CarInsuranceManage.Models
 
         [Required]
         public string? user_logs { get; set; } // Required field
-
+                                               // New avatar field
+        [StringLength(255)]
+        public string? avatar { get; set; } // Avatar field to store the avatar image path or URL
         [Required]
         [StringLength(50)]
         public string? role { get; set; } // Role field to distinguish customer or admin

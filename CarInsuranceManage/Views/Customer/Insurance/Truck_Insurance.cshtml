@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Insurance Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -52,7 +52,7 @@
             <div class="row clearfix">
                 <!-- Column -->
                 <div class="form-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column" style=" background-color: #e3f5f5;width: 700px;border-radius: 10px;">
+                    <div class="inner-column"  style=" background-color: #e3f5f5;width: 700px;border-radius: 10px;">
                         <h4>Owner Info</h4>
 
                         <style>
@@ -123,77 +123,86 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="form-group col">
-                                                <label for="bike_brand">Bike Brand</label>
+                                                <label for="car_brand">Car Brand</label>
                                                 <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
-                                                <select id="bike_brand" name="bike_brand"
+                                                <select id="car_brand" name="car_brand"
                                                     class="custom-select-box insurence-form-border" required
-                                                    onchange="bikeBrand();check2Bike();">
-                                                    <option>Bike Brand</option>
-                                                    <option value="honda">HonDa</option>
-                                                    <option value="yamaha">Yamaha</option>
+                                                    onchange="carBrand();check2();">
+                                                    <option>Car Brand</option>
+                                                    <option value="mec">Mercedes-Benz</option>
+                                                    <option value="toyota">Toyota</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col">
-                                                <label for="bike_line">Bike Line</label>
+                                                <label for="vehicle_line">Vehicle Line</label>
                                                 <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
-                                                <select id="bike_line" name="bike_line"
+                                                <select id="vehicle_line" name="vehicle_line"
                                                     class="custom-select-box insurence-form-border" required
-                                                    onchange="bikeLine();check2Bike();">
-                                                    <option value="">Bike Line</option>
+                                                    onchange="vehicleLine();check2();">
+                                                    <option value="">Vehicle Line</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="bike">Bike Type</label>
+                                            <label for="vehicle_type">Vehicle Type</label>
                                             <span class="icon flaticon-edit"></span>
-                                            <select id="bike_type" name="bike_type"
+                                            <select id="vehicle_type" name="vehicle_type"
                                                 class="custom-select-box insurence-form-border" required
-                                                onchange="check2Bike();">
-                                                <option value="">Bike Type</option>
+                                                onchange="check2();">
+                                                <option value="">Vehicle Type</option>
                                             </select>
                                         </div>
-
-                                        <div class="form-group">
-                                            <label>Year of Manufacture</label>
-                                            <span class="icon flaticon-edit"></span>
-                                            <input id="year_of_manufacture" type="text" name="year_of_manufacture"
-                                                placeholder="Year of Manufacture" required oninput="check2Bike()" />
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Year of Manufacture</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="year_of_manufacture" type="text" name="year_of_manufacture"
+                                                    placeholder="Year of Manufacture" required oninput="check2()" />
+                                            </div>
+                                            <div class="form-group col">
+                                                <label>Seating</label>
+                                                <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
+                                                <input id="seating" type="text" name="seating" placeholder="Seating"
+                                                    required oninput="check2()" />
+                                            </div>
                                         </div>
-
-
                                         <div class="form-group">
                                             <label>Registration Date</label>
                                             <span class="icon flaticon-edit"></span>
                                             <span class="calendar-icon flaticon-calendar"></span>
                                             <input id="registrasion_date" name="registrasion_date" class="datepicker"
                                                 autocomplete="off" type="text" name="username" placeholder="DD/MM/YYYY"
-                                                required oninput="check2Bike()" />
+                                                required oninput="check2()" />
                                         </div>
                                         <div class="form-group">
                                             <label>Number Plate</label>
                                             <span class="icon flaticon-edit"></span>
                                             <input id="number_plate" type="text" name="number_plate"
-                                                placeholder="Number Plate" required oninput="check2Bike()" />
+                                                placeholder="Number Plate" required oninput="check2()" />
                                         </div>
                                         <div class="row">
                                             <div class="form-group col">
                                                 <label>Frame Number </label>
                                                 <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
                                                 <input id="frame_number" type="text" name="frame_number"
-                                                    placeholder="Your Frame Number" required oninput="check2Bike()" />
+                                                    placeholder="Your Frame Number" required oninput="check2()" />
                                             </div>
                                             <div class="form-group col">
                                                 <label>Machine Number</label>
                                                 <span style="margin-left: 15px;" class="icon flaticon-edit"></span>
                                                 <input id="machine_number" type="text" name="machine_number"
-                                                    placeholder="Your Machine Number" required oninput="check2Bike()" />
+                                                    placeholder="Your Machine Number" required oninput="check2()" />
                                             </div>
                                         </div>
                                     </fieldset>
                                 </div>
+
                                 <div id="driver_info" class="hidden">
                                     <h4>Driver Information</h4>
+
                                     <fieldset>
+
+
                                         <div class="form-group">
                                             <label>Date of birth</label>
                                             <span class="icon flaticon-edit"></span>
@@ -202,6 +211,7 @@
                                                 autocomplete="off" type="text" name="date_of_birth"
                                                 placeholder="DD/MM/YYYY" required onchange="checkabcxyz();" />
                                         </div>
+
                                         <div class="form-group">
                                             <label>Date of Certificate</label>
                                             <span class="icon flaticon-edit"></span>
@@ -211,11 +221,16 @@
                                                 name="date_of_certificate" placeholder="DD/MM/YYYY" required
                                                 onchange="checkabcxyz();" />
                                         </div>
+
                                     </fieldset>
                                 </div>
+
                                 <div id="contract_term" class="hidden">
                                     <h4>Contract Term</h4>
+
                                     <fieldset>
+
+
                                         <div class="form-group">
                                             <label>Duration</label>
                                             <span class="icon flaticon-edit"></span>
@@ -223,6 +238,7 @@
                                             <input id="duration" name="duration" class="number" autocomplete="off"
                                                 type="text" placeholder="DD/MM/YYYY" required />
                                         </div>
+
                                         <div class="form-group">
                                             <label>Insurance Start Date</label>
                                             <span class="icon flaticon-edit"></span>
@@ -231,8 +247,12 @@
                                                 class="datepicker" autocomplete="off" type="text"
                                                 placeholder="DD/MM/YYYY" required />
                                         </div>
+
                                     </fieldset>
                                 </div>
+
+
+
                                 <div class="form-group">
                                     <button type="button" class="theme-btn btn-style-one">
                                         <span class="txt">Confirm <i class="fa fa-arrow-circle-right"></i></span>
