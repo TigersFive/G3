@@ -18,7 +18,6 @@ namespace CarInsuranceManage.Database
         public DbSet<InsurancePolicy> insurance_policies { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<Claim> claims { get; set; }
-        public DbSet<CompanyExpense> company_expenses { get; set; }
         public DbSet<Report> reports { get; set; }
         public DbSet<LoginLog> login_logs { get; set; }
         public DbSet<InsuranceHistory> insurance_histories { get; set; }

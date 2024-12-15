@@ -39,15 +39,6 @@ CREATE TABLE Comments (
     FOREIGN KEY (parent_comment_id) REFERENCES Comments(comment_id)
 );
 
--- 4. CompanyExpense Table
-CREATE TABLE CompanyExpenses (
-    expense_id INT AUTO_INCREMENT PRIMARY KEY,
-    expense_type VARCHAR(50) NOT NULL,
-    expense_date DATETIME NOT NULL,
-    expense_amount DECIMAL(18, 2) NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
 -- 5. Contact Table
 CREATE TABLE Contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
