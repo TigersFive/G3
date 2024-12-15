@@ -29,7 +29,7 @@ namespace CarInsuranceManage.Controllers.Customer
             }
 
             // Check if the user exists
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.email == email);
+            var user = await _context.users.FirstOrDefaultAsync(u => u.email == email);
             if (user == null)
             {
                 TempData["WarningMessage"] = "Invalid email or password.";
@@ -71,7 +71,7 @@ namespace CarInsuranceManage.Controllers.Customer
             HttpContext.Session.SetString("email", user.email); // Store email in session
 
             // Retrieve customer information from the Customer table
-            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
+            var customer = await _context.customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
             if (customer != null)
             {
                 // Store customer_id in session
@@ -93,7 +93,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 login_time = DateTime.Now
             };
 
-            _context.LoginLogs.Add(loginLog);
+            _context.login_logs.Add(loginLog);
             await _context.SaveChangesAsync();
 
             // Redirect to home after successful login

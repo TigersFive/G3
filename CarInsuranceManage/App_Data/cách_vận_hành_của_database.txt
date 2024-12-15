@@ -1,0 +1,140 @@
+1. Bảng Banners (Banners)
+Công dụng:
+
+Bảng này lưu trữ các banner quảng cáo trên trang web, chẳng hạn như hình ảnh khuyến mãi, chương trình ưu đãi, hoặc quảng cáo bảo hiểm.
+Thông tin bao gồm tiêu đề, hình ảnh, mô tả, đường dẫn (link) và trạng thái hoạt động của banner.
+Cách vận hành:
+
+Quản trị viên có thể thêm, sửa, hoặc xóa các banner để hiển thị trên trang web, giúp thu hút sự chú ý của khách hàng đến các chương trình bảo hiểm đặc biệt hoặc các khuyến mãi.
+2. Bảng Claims (Claims)
+Công dụng:
+
+Bảng này lưu trữ thông tin về các yêu cầu bồi thường (claim) của khách hàng khi xảy ra sự cố với xe.
+Mỗi yêu cầu bồi thường sẽ liên kết với một hợp đồng bảo hiểm (InsurancePolicy).
+Cách vận hành:
+
+Khách hàng gửi yêu cầu bồi thường, mô tả vụ tai nạn và số tiền yêu cầu bồi thường.
+Các yêu cầu bồi thường này sẽ được xem xét và xử lý bởi bộ phận hỗ trợ của công ty bảo hiểm.
+3. Bảng Comments (Comments)
+Công dụng:
+
+Bảng này chứa các bình luận và đánh giá từ khách hàng về dịch vụ bảo hiểm hoặc các sản phẩm bảo hiểm mà họ đã mua.
+Bao gồm các thông tin như người bình luận, nội dung bình luận, đánh giá sao, và trạng thái của bình luận.
+Cách vận hành:
+
+Khách hàng có thể để lại phản hồi hoặc đánh giá về dịch vụ bảo hiểm, giúp các khách hàng tiềm năng khác tham khảo.
+Các bình luận có thể được quản trị viên kiểm duyệt trước khi xuất hiện công khai.
+4. Bảng CompanyExpenses (CompanyExpenses)
+Công dụng:
+
+Bảng này lưu trữ các chi phí hoạt động của công ty bảo hiểm như chi phí vận hành, chi phí nhân sự, chi phí marketing, v.v.
+Cách vận hành:
+
+Quản trị viên hoặc kế toán có thể ghi nhận và theo dõi các khoản chi phí của công ty, giúp quản lý tài chính và tối ưu hóa chi phí.
+5. Bảng Contacts (Contacts)
+Công dụng:
+
+Bảng này lưu trữ thông tin liên lạc từ khách hàng, chẳng hạn như khi họ muốn yêu cầu hỗ trợ hoặc cần thông tin thêm về bảo hiểm.
+Cách vận hành:
+
+Khách hàng điền vào form liên hệ và gửi câu hỏi hoặc yêu cầu. Các yêu cầu này sẽ được nhân viên hỗ trợ xử lý.
+Tình trạng của yêu cầu có thể là "Đang chờ", "Đã giải quyết", v.v.
+6. Bảng Customers (Customers)
+Công dụng:
+
+Bảng này lưu trữ thông tin về khách hàng, bao gồm tên, số điện thoại, địa chỉ và mối quan hệ với người dùng (ví dụ như người đăng ký bảo hiểm).
+Cách vận hành:
+
+Khi khách hàng đăng ký tài khoản trên website, thông tin của họ được lưu vào bảng này.
+Mỗi khách hàng có thể có nhiều hợp đồng bảo hiểm.
+7. Bảng CustomerSupportRequests (CustomerSupportRequests)
+Công dụng:
+
+Bảng này chứa thông tin về các yêu cầu hỗ trợ của khách hàng, chẳng hạn như yêu cầu hỗ trợ về bảo hiểm, khiếu nại hoặc các vấn đề khác.
+Cách vận hành:
+
+Khách hàng có thể gửi yêu cầu hỗ trợ qua hệ thống. Quản trị viên hoặc nhân viên hỗ trợ sẽ giải quyết các yêu cầu này.
+8. Bảng Estimates (Estimates)
+Công dụng:
+
+Bảng này lưu trữ các ước tính giá trị bảo hiểm mà khách hàng nhận được dựa trên thông tin xe của họ (số tiền bảo hiểm ước tính, loại bảo hiểm, v.v.).
+Cách vận hành:
+
+Khi khách hàng yêu cầu báo giá cho bảo hiểm xe, hệ thống sẽ tính toán và tạo ra một ước tính giá trị bảo hiểm dựa trên các yếu tố như loại xe, giá trị xe, loại bảo hiểm, v.v.
+9. Bảng InsuranceHistories (InsuranceHistories)
+Công dụng:
+
+Bảng này ghi lại các thay đổi đối với hợp đồng bảo hiểm (ví dụ: thay đổi loại bảo hiểm, thay đổi thời gian bảo hiểm, v.v.).
+Cách vận hành:
+
+Khi có thay đổi trong hợp đồng bảo hiểm (ví dụ, khách hàng yêu cầu điều chỉnh hợp đồng), lịch sử thay đổi sẽ được ghi lại trong bảng này.
+10. Bảng InsurancePolicies (InsurancePolicies)
+Công dụng:
+
+Bảng này lưu trữ thông tin về các hợp đồng bảo hiểm mà khách hàng đã mua, bao gồm số hợp đồng, thời gian bảo hiểm, loại bảo hiểm và giá trị bảo hiểm.
+Cách vận hành:
+
+Khi khách hàng mua bảo hiểm, thông tin hợp đồng sẽ được lưu vào bảng này. Cung cấp dữ liệu cho các bảng khác như thanh toán, yêu cầu bồi thường, lịch sử bảo hiểm, v.v.
+11. Bảng LoginLogs (LoginLogs)
+Công dụng:
+
+Bảng này ghi nhận lịch sử đăng nhập của người dùng vào hệ thống.
+Cách vận hành:
+
+Mỗi lần người dùng đăng nhập vào hệ thống, thông tin như thời gian đăng nhập và địa chỉ IP sẽ được lưu vào bảng này để theo dõi và bảo mật.
+12. Bảng Notifications (Notifications)
+Công dụng:
+
+Bảng này lưu trữ thông báo gửi tới khách hàng, chẳng hạn như thông báo về chính sách mới, thông báo về thanh toán hoặc yêu cầu bồi thường.
+Cách vận hành:
+
+Khi có thông báo mới gửi đến khách hàng (ví dụ, hợp đồng bảo hiểm sắp hết hạn), thông tin sẽ được lưu vào bảng này và khách hàng sẽ nhận được thông báo qua email hoặc hệ thống.
+13. Bảng Payments (Payments)
+Công dụng:
+
+Bảng này lưu trữ các thông tin thanh toán của khách hàng cho các hợp đồng bảo hiểm, bao gồm số tiền thanh toán, ngày thanh toán, và số hóa đơn.
+Cách vận hành:
+
+Khi khách hàng thực hiện thanh toán cho hợp đồng bảo hiểm, các thông tin này sẽ được ghi lại trong bảng này.
+Bảng này hỗ trợ theo dõi tình trạng thanh toán của từng hợp đồng bảo hiểm.
+14. Bảng Reports (Reports)
+Công dụng:
+
+Bảng này lưu trữ các báo cáo được tạo ra trong hệ thống, chẳng hạn như báo cáo doanh thu, báo cáo số lượng khách hàng mới, v.v.
+Cách vận hành:
+
+Các báo cáo tự động được tạo ra hoặc yêu cầu từ quản trị viên để đánh giá hiệu quả hoạt động của công ty bảo hiểm.
+15. Bảng SpecialInsuranceRequests (SpecialInsuranceRequests)
+Công dụng:
+
+Bảng này lưu trữ các yêu cầu bảo hiểm đặc biệt từ khách hàng, chẳng hạn như yêu cầu bảo hiểm cho xe đặc biệt hoặc tình huống đặc biệt.
+Cách vận hành:
+
+Khách hàng có thể gửi yêu cầu bảo hiểm đặc biệt và các yêu cầu này sẽ được xem xét và xử lý bởi bộ phận hỗ trợ của công ty bảo hiểm.
+16. Bảng Users (Users)
+Công dụng:
+
+Bảng này lưu trữ thông tin về người dùng của hệ thống, bao gồm quản trị viên và nhân viên hỗ trợ.
+Cách vận hành:
+
+Quản trị viên và nhân viên sẽ đăng nhập vào hệ thống để quản lý các hoạt động như khách hàng, thanh toán, yêu cầu bồi thường, v.v.
+17. Bảng Vehicles (Vehicles)
+Công dụng:
+
+Bảng này lưu trữ thông tin về xe của khách hàng, bao gồm loại xe, số khung, số máy và mức giá trị bảo hiểm của xe.
+Cách vận hành:
+
+Khi khách hàng đăng ký bảo hiểm cho xe của mình, thông tin về xe sẽ được lưu vào bảng này.
+18. Bảng VehicleImages (VehicleImages)
+Công dụng:
+
+Bảng này lưu trữ các hình ảnh của xe và các tài liệu bảo hiểm liên quan (hình ảnh xe, giấy tờ bảo hiểm, tài liệu yêu cầu bồi thường).
+Cách vận hành:
+
+Khi khách hàng nộp hồ sơ yêu cầu bảo hiểm hoặc yêu cầu bồi thường, các hình ảnh liên quan sẽ được tải lên và lưu trữ trong bảng này.
+Tổng kết về vận hành:
+Quy trình bán bảo hiểm: Khách hàng đăng ký tài khoản (bảng Users), sau đó họ có thể cung cấp thông tin xe (bảng Vehicles) và yêu cầu bảo hiểm (bảng Estimates).
+Quy trình thanh toán: Khi khách hàng đồng ý với báo giá, hợp đồng bảo hiểm sẽ được tạo (bảng InsurancePolicies), và họ thực hiện thanh toán (bảng Payments).
+Quy trình yêu cầu bồi thường: Nếu khách hàng gặp sự cố, họ có thể gửi yêu cầu bồi thường (bảng Claims).
+Hỗ trợ khách hàng: Nếu có bất kỳ vấn đề nào, khách hàng có thể gửi yêu cầu hỗ trợ (bảng CustomerSupportRequests), và các nhân viên hỗ trợ sẽ xử lý.
+Hệ thống này kết hợp các bảng dữ liệu để cung cấp tất cả các chức năng cần thiết cho một web bán bảo hiểm xe cộ.

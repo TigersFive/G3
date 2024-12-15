@@ -56,7 +56,7 @@
                         <div class="col-lg-auto order-lg-1">
                             <div class="wap_btn wap_btn_new mt-2 mt-lg-0">
 
-                                <a asp-controller="Insurance" asp-action="Bike_Insurance" class="btn_tht">Charge</a>
+                                <a asp-controller="Insurance" asp-action="Moto_Insurance" class="btn_tht">Charge</a>
                             </div>
                         </div>
                         <div class="col-lg-7 order-lg-0">
@@ -229,7 +229,7 @@
                                     if (language) {
                                         $.datetimepicker.setLocale(language);
                                     }
-                                    $('#frmCalcBike input[name=\'thoihantu\']').datetimepicker({
+                                    $('#frmCalcMoto input[name=\'thoihantu\']').datetimepicker({
                                         lang: language,
                                         timepicker: false,
                                         format: 'd/m/Y',
@@ -241,10 +241,10 @@
                                         yearStart: 2024,
                                         yearEnd: 2025
                                     });
-                                    $('#frmCalcBike input[name=\'thoihantu\']').trigger('change');
+                                    $('#frmCalcMoto input[name=\'thoihantu\']').trigger('change');
                                 });
                                 function bv_dateend_ready(val) {
-                                    $('#frmCalcBike input[name=\'thoihanden\']').val(val);
+                                    $('#frmCalcMoto input[name=\'thoihanden\']').val(val);
                                 }
                                 function changeBHYear(val) {
                                     var dt_duration = $('#dt_duration').val();

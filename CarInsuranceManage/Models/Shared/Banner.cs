@@ -10,7 +10,7 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(255, ErrorMessage = "Title must be less than 255 characters.")]
-        public string? Title { get; set; }
+        public string? title { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -19,7 +19,7 @@ namespace CarInsuranceManage.Models
 
         [Required]
         [StringLength(500, ErrorMessage = "Description must be less than 500 characters.")]
-        public string? Description { get; set; }
+        public string? description { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -34,10 +34,10 @@ namespace CarInsuranceManage.Models
         public bool status { get; set; }
 
         [Display(Name = "Start Date")]
-        public DateTime? StartDate { get; set; } // Thời điểm banner bắt đầu hiển thị
+        public DateTime? startdate { get; set; } // Thời điểm banner bắt đầu hiển thị
 
         [Display(Name = "End Date")]
-        public DateTime? EndDate { get; set; } // Thời điểm banner kết thúc hiển thị
+        public DateTime? enddate { get; set; } // Thời điểm banner kết thúc hiển thị
 
         [Display(Name = "Created At")]
         public DateTime CreatedAt { get; set; } = DateTime.Now; // Tự động lưu ngày tạo

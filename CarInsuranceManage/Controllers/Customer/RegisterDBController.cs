@@ -33,7 +33,7 @@ namespace CarInsuranceManage.Controllers.Customer
             }
 
             // Check if email already exists
-            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.email == email);
+            var existingUser = await _context.users.FirstOrDefaultAsync(u => u.email == email);
             if (existingUser != null)
             {
                 TempData["WarningMessage"] = "Email already exists.";
@@ -51,7 +51,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 role = "user"
             };
 
-            _context.Users.Add(user);
+            _context.users.Add(user);
             await _context.SaveChangesAsync();
 
             // After user registration, create a new customer entry with provided details
@@ -63,7 +63,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 address = string.IsNullOrEmpty(address) ? "N/A" : address   // Default to "N/A" if null or empty
             };
 
-            _context.Customers.Add(customer);
+            _context.customers.Add(customer);
             await _context.SaveChangesAsync();
 
             // Display success message

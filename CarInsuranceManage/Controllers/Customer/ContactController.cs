@@ -56,7 +56,7 @@ namespace CarInsuranceManage.Controllers
                 contact.date_modified = DateTime.Now;
 
                 // Save to the database
-                _context.Contacts.Add(contact);
+                _context.contacts.Add(contact);
                 _context.SaveChanges();
 
                 // Store a success message in TempData

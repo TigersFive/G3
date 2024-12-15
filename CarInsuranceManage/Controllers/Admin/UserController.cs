@@ -25,7 +25,7 @@ namespace CarInsuranceManage.Controllers
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Users.Add(user);
+                _dbContext.users.Add(user);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -35,7 +35,7 @@ namespace CarInsuranceManage.Controllers
         [HttpGet]
         public IActionResult EditUser(int id)
         {
-            var user = _dbContext.Users.Find(id);
+            var user = _dbContext.users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -48,7 +48,7 @@ namespace CarInsuranceManage.Controllers
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Users.Update(user);
+                _dbContext.users.Update(user);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,12 +58,12 @@ namespace CarInsuranceManage.Controllers
         [HttpPost]
         public IActionResult DeleteUser(int id)
         {
-            var user = _dbContext.Users.Find(id);
+            var user = _dbContext.users.Find(id);
             if (user == null)
             {
                 return NotFound();
             }
-            _dbContext.Users.Remove(user);
+            _dbContext.users.Remove(user);
             _dbContext.SaveChanges();
             return Json(new { success = true }); // Trả về JSON thông báo xóa thành công
         }
@@ -72,14 +72,14 @@ namespace CarInsuranceManage.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var users = _dbContext.Users.ToList();
+            var users = _dbContext.users.ToList();
             return View("~/Views/Admin/User/Index.cshtml", users);
         }
 
         [HttpGet]
         public IActionResult ConfirmDelete(int id)
         {
-            var user = _dbContext.Users.Find(id);
+            var user = _dbContext.users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -90,19 +90,19 @@ namespace CarInsuranceManage.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(int user_id)
         {
-            var user = _dbContext.Users.Find(user_id);
+            var user = _dbContext.users.Find(user_id);
             if (user == null)
             {
                 return NotFound();
             }
-            _dbContext.Users.Remove(user);
+            _dbContext.users.Remove(user);
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult FeedBack()
         {
-            var usersFeedBack = _dbContext.Contacts.ToList();
+            var usersFeedBack = _dbContext.contacts.ToList();
             return View("~/Views/Admin/User/FeedBack.cshtml", usersFeedBack);
         }
 

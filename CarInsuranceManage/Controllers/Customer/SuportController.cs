@@ -144,7 +144,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     return RedirectToAction("Login", "Account");
                 }
 
-                var customer = await _context.Customers.FirstOrDefaultAsync(c => c.customer_id == customerId.Value);
+                var customer = await _context.customers.FirstOrDefaultAsync(c => c.customer_id == customerId.Value);
                 if (customer == null)
                 {
                     TempData["MessageSendMailSupportRequestError"] = "Customer not found.";
@@ -163,7 +163,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     resolved_by = null, // Chưa có nhân viên xử lý
                 };
 
-                _context.CustomerSupportRequests.Add(supportRequest);
+                _context.customer_support_requests.Add(supportRequest);
                 await _context.SaveChangesAsync();
 
                 // Thông báo gửi thành công

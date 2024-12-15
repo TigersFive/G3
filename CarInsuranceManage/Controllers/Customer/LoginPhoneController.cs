@@ -89,7 +89,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     created_at = DateTime.Now
                 };
 
-                _context.Users.Add(user);
+                _context.users.Add(user);
                 _context.SaveChanges();
 
                 var loginLog = new LoginLog
@@ -99,7 +99,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     login_time = DateTime.Now
                 };
 
-                _context.LoginLogs.Add(loginLog);
+                _context.login_logs.Add(loginLog);
                 _context.SaveChanges();
 
                 TempData["SuccessMessage"] = "User account created successfully and logged in!";

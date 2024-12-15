@@ -23,7 +23,7 @@ namespace CarInsuranceManage.Controllers.Admin
             // Lấy thông tin người dùng hiện tại (Giả sử bạn đang dùng email trong session hoặc từ cookie)
             var currentUserEmail = User.Identity.Name; // Email người dùng đang đăng nhập (nếu bạn lưu trong Cookie)
             // Lấy thông tin người dùng từ cơ sở dữ liệu
-            var userInfo = await _context.Users
+            var userInfo = await _context.users
                                           .Where(u => u.username == currentUserEmail)
                                           .FirstOrDefaultAsync();
 
@@ -50,14 +50,14 @@ namespace CarInsuranceManage.Controllers.Admin
         [Route("admin/account/delete/{userId}")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
-            var user = await _context.Users.FindAsync(userId);
+            var user = await _context.users.FindAsync(userId);
             if (user == null)
             {
                 return NotFound("User not found");
             }
 
             // Xóa người dùng khỏi cơ sở dữ liệu
-            _context.Users.Remove(user);
+            _context.users.Remove(user);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Login"); // Redirect to a different page, e.g., admin dashboard
@@ -68,7 +68,7 @@ namespace CarInsuranceManage.Controllers.Admin
         [Route("admin/account/impersonate/{userId}")]
         public async Task<IActionResult> ImpersonateUser(int userId)
         {
-            var user = await _context.Users.FindAsync(userId);
+            var user = await _context.users.FindAsync(userId);
             if (user == null)
             {
                 return NotFound("User not found");

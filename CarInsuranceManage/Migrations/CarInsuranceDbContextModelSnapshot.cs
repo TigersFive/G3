@@ -22,13 +22,27 @@ namespace CarInsuranceManage.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("CarInsuranceManage.Models.BannerImage", b =>
+            modelBuilder.Entity("CarInsuranceManage.Models.Banner", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime?>("enddate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("image")
                         .IsRequired()
@@ -43,12 +57,35 @@ namespace CarInsuranceManage.Migrations
                     b.Property<int>("sort_order")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("startdate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<bool>("status")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("id");
 
-                    b.ToTable("BannerImages");
+                    b.ToTable("banners");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            CreatedAt = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(454),
+                            description = "Get 20% off on all car insurance policies this summer.",
+                            enddate = new DateTime(2025, 2, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(462),
+                            image = "summer_sale_banner.jpg",
+                            link = "https://carinsurance.com/summer-sale",
+                            sort_order = 1,
+                            startdate = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(458),
+                            status = true,
+                            title = "Summer Sale - 20% Off"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Claim", b =>
@@ -87,7 +124,31 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("policy_id");
 
-                    b.ToTable("Claims");
+                    b.ToTable("claims");
+
+                    b.HasData(
+                        new
+                        {
+                            claim_id = 1,
+                            CreatedAt = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(426),
+                            accident_date = new DateTime(2024, 11, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(429),
+                            claim_number = "CLAIM12345",
+                            claimable_amount = 8000.00m,
+                            insured_amount = 10000.00m,
+                            place_of_accident = "Downtown",
+                            policy_id = 1
+                        },
+                        new
+                        {
+                            claim_id = 2,
+                            CreatedAt = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(433),
+                            accident_date = new DateTime(2024, 10, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(434),
+                            claim_number = "CLAIM67890",
+                            claimable_amount = 4000.00m,
+                            insured_amount = 5000.00m,
+                            place_of_accident = "Suburb",
+                            policy_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Comment", b =>
@@ -124,7 +185,27 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("parent_comment_id");
 
-                    b.ToTable("Comments");
+                    b.ToTable("comments");
+
+                    b.HasData(
+                        new
+                        {
+                            comment_id = 1,
+                            comment_text = "Great service! Highly recommend this insurance.",
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(478),
+                            customer_id = 2,
+                            rating = 5,
+                            status = "Active"
+                        },
+                        new
+                        {
+                            comment_id = 2,
+                            comment_text = "Very affordable prices.",
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(481),
+                            customer_id = 1,
+                            rating = 4,
+                            status = "Active"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.CompanyExpense", b =>
@@ -151,7 +232,7 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasKey("expense_id");
 
-                    b.ToTable("CompanyExpenses");
+                    b.ToTable("company_expenses");
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Contact", b =>
@@ -202,7 +283,22 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("customer_id");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            customer_id = 2,
+                            date_added = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(601),
+                            date_modified = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(601),
+                            email = "john.doe@example.com",
+                            full_name = "John Doe",
+                            message = "I want to inquire about renewing my insurance policy.",
+                            phone = "0987654321",
+                            status = true,
+                            subject = "Inquiry about policy renewal"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Customer", b =>
@@ -235,7 +331,25 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("user_id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("customers");
+
+                    b.HasData(
+                        new
+                        {
+                            customer_id = 1,
+                            address = "123 Admin Street",
+                            full_name = "Admin User",
+                            phone_number = "0123456789",
+                            user_id = 1
+                        },
+                        new
+                        {
+                            customer_id = 2,
+                            address = "456 Main St, Cityville",
+                            full_name = "John Doe",
+                            phone_number = "0987654321",
+                            user_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.CustomerSupportRequest", b =>
@@ -281,7 +395,19 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("resolved_by");
 
-                    b.ToTable("CustomerSupportRequests");
+                    b.ToTable("customer_support_requests");
+
+                    b.HasData(
+                        new
+                        {
+                            support_id = 1,
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(565),
+                            customer_id = 2,
+                            support_description = "Need assistance with billing",
+                            support_payment = "Paid",
+                            support_status = "Open",
+                            support_type = "Billing"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Estimate", b =>
@@ -320,7 +446,29 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("vehicle_id");
 
-                    b.ToTable("Estimates");
+                    b.ToTable("estimates");
+
+                    b.HasData(
+                        new
+                        {
+                            estimate_id = 1,
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(359),
+                            customer_id = 2,
+                            estimate_amount = 1500.00m,
+                            policy_type = "Comprehensive",
+                            vehicle_id = 1,
+                            warranty = "3 years"
+                        },
+                        new
+                        {
+                            estimate_id = 2,
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(361),
+                            customer_id = 1,
+                            estimate_amount = 1000.00m,
+                            policy_type = "Third-Party",
+                            vehicle_id = 2,
+                            warranty = "1 year"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.InsuranceHistory", b =>
@@ -359,7 +507,19 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("policy_id");
 
-                    b.ToTable("InsuranceHistories");
+                    b.ToTable("insurance_histories");
+
+                    b.HasData(
+                        new
+                        {
+                            history_id = 1,
+                            change_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(531),
+                            change_type = "Updated",
+                            changed_by = 1,
+                            new_value = "Policy Active",
+                            old_value = "Initial",
+                            policy_id = 1
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.InsurancePolicy", b =>
@@ -401,7 +561,31 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("vehicle_id");
 
-                    b.ToTable("InsurancePolicies");
+                    b.ToTable("insurance_policies");
+
+                    b.HasData(
+                        new
+                        {
+                            policy_id = 1,
+                            customer_id = 2,
+                            policy_amount = 1500.00m,
+                            policy_end_date = new DateTime(2025, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(381),
+                            policy_number = "POLICY12345",
+                            policy_start_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(379),
+                            policy_type = "Comprehensive",
+                            vehicle_id = 1
+                        },
+                        new
+                        {
+                            policy_id = 2,
+                            customer_id = 1,
+                            policy_amount = 1000.00m,
+                            policy_end_date = new DateTime(2025, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(391),
+                            policy_number = "POLICY67890",
+                            policy_start_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(390),
+                            policy_type = "Third-Party",
+                            vehicle_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.LoginLog", b =>
@@ -427,7 +611,23 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("user_id");
 
-                    b.ToTable("LoginLogs");
+                    b.ToTable("login_logs");
+
+                    b.HasData(
+                        new
+                        {
+                            log_id = 1,
+                            ip_address = "192.168.1.1",
+                            login_time = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(511),
+                            user_id = 1
+                        },
+                        new
+                        {
+                            log_id = 2,
+                            ip_address = "192.168.1.2",
+                            login_time = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(512),
+                            user_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Notification", b =>
@@ -460,7 +660,18 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("customer_id");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("notifications");
+
+                    b.HasData(
+                        new
+                        {
+                            notification_id = 1,
+                            customer_id = 2,
+                            is_read = false,
+                            message_content = "Your insurance policy is about to expire.",
+                            message_type = "Reminder",
+                            sent_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(579)
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Payment", b =>
@@ -494,7 +705,27 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("policy_id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("payments");
+
+                    b.HasData(
+                        new
+                        {
+                            payment_id = 1,
+                            bill_number = "BILL12345",
+                            customer_id = 2,
+                            payment_amount = 1500.00m,
+                            payment_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(408),
+                            policy_id = 1
+                        },
+                        new
+                        {
+                            payment_id = 2,
+                            bill_number = "BILL67890",
+                            customer_id = 1,
+                            payment_amount = 1000.00m,
+                            payment_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(409),
+                            policy_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Report", b =>
@@ -518,7 +749,16 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasKey("report_id");
 
-                    b.ToTable("Reports");
+                    b.ToTable("reports");
+
+                    b.HasData(
+                        new
+                        {
+                            report_id = 1,
+                            description = "Monthly revenue report for car insurance sales.",
+                            generated_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(497),
+                            report_type = "Revenue Report"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.SpecialInsuranceRequest", b =>
@@ -557,7 +797,19 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("vehicle_id");
 
-                    b.ToTable("SpecialInsuranceRequests");
+                    b.ToTable("special_insurance_requests");
+
+                    b.HasData(
+                        new
+                        {
+                            request_id = 1,
+                            customer_id = 2,
+                            request_date = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(549),
+                            request_description = "Requesting additional 2 years of warranty.",
+                            request_type = "Extended Warranty",
+                            status = "Pending",
+                            vehicle_id = 1
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.User", b =>
@@ -569,6 +821,10 @@ namespace CarInsuranceManage.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("user_id"));
 
                     b.Property<string>("address")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("avatar")
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
 
@@ -609,7 +865,37 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasKey("user_id");
 
-                    b.ToTable("Users");
+                    b.ToTable("users");
+
+                    b.HasData(
+                        new
+                        {
+                            user_id = 1,
+                            address = "123 Admin Street",
+                            avatar = "avatar.png",
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(165),
+                            email = "vunnth2307024@fpt.edu.vn",
+                            full_name = "Admin User",
+                            password = "Vu@wk1162005",
+                            phone_number = "0123456789",
+                            role = "admin",
+                            user_logs = "Email",
+                            username = "admin"
+                        },
+                        new
+                        {
+                            user_id = 2,
+                            address = "123 Main St, Cityville",
+                            avatar = "john_avatar.png",
+                            created_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(168),
+                            email = "vusena3107@gmail.com",
+                            full_name = "John Doe",
+                            password = "Vu@wk1162005",
+                            phone_number = "0987654321",
+                            role = "customer",
+                            user_logs = "Login logs",
+                            username = "john_doe"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Vehicle", b =>
@@ -655,7 +941,31 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("customer_id");
 
-                    b.ToTable("Vehicles");
+                    b.ToTable("vehicles");
+
+                    b.HasData(
+                        new
+                        {
+                            vehicle_id = 1,
+                            body_number = "ABC123XYZ",
+                            customer_id = 2,
+                            engine_number = "ENG123456789",
+                            vehicle_model = "2022",
+                            vehicle_name = "Toyota Camry",
+                            vehicle_rate = 25000.00m,
+                            vehicle_version = "SE"
+                        },
+                        new
+                        {
+                            vehicle_id = 2,
+                            body_number = "DEF456XYZ",
+                            customer_id = 1,
+                            engine_number = "ENG987654321",
+                            vehicle_model = "2020",
+                            vehicle_name = "Honda Accord",
+                            vehicle_rate = 22000.00m,
+                            vehicle_version = "LX"
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.VehicleImage", b =>
@@ -689,7 +999,27 @@ namespace CarInsuranceManage.Migrations
 
                     b.HasIndex("vehicle_id");
 
-                    b.ToTable("VehicleImages");
+                    b.ToTable("vehicle_images");
+
+                    b.HasData(
+                        new
+                        {
+                            image_id = 1,
+                            description = "Toyota Camry front view",
+                            image_path = "images/vehicle1.jpg",
+                            image_type = "Vehicle",
+                            uploaded_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(335),
+                            vehicle_id = 1
+                        },
+                        new
+                        {
+                            image_id = 2,
+                            description = "Honda Accord side view",
+                            image_path = "images/vehicle2.jpg",
+                            image_type = "Vehicle",
+                            uploaded_at = new DateTime(2024, 12, 15, 17, 28, 42, 96, DateTimeKind.Local).AddTicks(338),
+                            vehicle_id = 2
+                        });
                 });
 
             modelBuilder.Entity("CarInsuranceManage.Models.Claim", b =>

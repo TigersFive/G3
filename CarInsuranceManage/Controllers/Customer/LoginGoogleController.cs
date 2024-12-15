@@ -42,7 +42,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 }
 
                 // Check if the user already exists in the database
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.email == email);
+                var user = await _context.users.FirstOrDefaultAsync(u => u.email == email);
                 if (user == null)
                 {
                     // Add a new user with default values for required fields
@@ -57,7 +57,7 @@ namespace CarInsuranceManage.Controllers.Customer
                         role = "user"
                     };
 
-                    _context.Users.Add(user);
+                    _context.users.Add(user);
                     await _context.SaveChangesAsync();
 
                     // Create a new Customer record
@@ -70,7 +70,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     };
 
                     // Add new customer to the database
-                    _context.Customers.Add(customer);
+                    _context.customers.Add(customer);
                     await _context.SaveChangesAsync();
                 }
 
@@ -80,7 +80,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 HttpContext.Session.SetString("email", user.email); // Store email in session
 
                 // Retrieve customer information from the Customer table
-                var customerInfo = await _context.Customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
+                var customerInfo = await _context.customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
                 if (customerInfo != null)
                 {
                     // Store customer_id in session
@@ -102,7 +102,7 @@ namespace CarInsuranceManage.Controllers.Customer
                     login_time = DateTime.Now
                 };
 
-                _context.LoginLogs.Add(loginLog);
+                _context.login_logs.Add(loginLog);
                 await _context.SaveChangesAsync();
 
                 // Redirect to home after successful login

@@ -21,7 +21,7 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var comments = await _context.Comments
+            var comments = await _context.comments
                 .Include(c => c.Customer)               // Lấy dữ liệu Customer
                 .ThenInclude(c => c.User)               // Lấy dữ liệu User của Customer
                 .Include(c => c.Replies)                // Lấy danh sách trả lời của bình luận
@@ -44,7 +44,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 return RedirectToAction("Login", "Account");
             }
 
-            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.customer_id == customerId.Value);
+            var customer = await _context.customers.FirstOrDefaultAsync(c => c.customer_id == customerId.Value);
             if (customer == null)
             {
                 TempData["WarningMessage"] = "Customer not found.";
@@ -63,7 +63,7 @@ namespace CarInsuranceManage.Controllers.Customer
             };
 
             // Thêm vào cơ sở dữ liệu và lưu thay đổi
-            _context.Comments.Add(comment);
+            _context.comments.Add(comment);
             await _context.SaveChangesAsync();
 
             TempData["Message"] = "Your comment has been submitted successfully.";

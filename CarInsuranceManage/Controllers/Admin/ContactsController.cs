@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace CarInsuranceManage.Controllers
 {
-    public class ContactsController : Controller
+    public class contactsController : Controller
     {
         private readonly CarInsuranceDbContext _dbContext;
 
-        public ContactsController(CarInsuranceDbContext dbContext)
+        public contactsController(CarInsuranceDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -17,14 +17,14 @@ namespace CarInsuranceManage.Controllers
      
        
         [HttpPost]
-        public IActionResult DeleteContacts(int id)
+        public IActionResult Deletecontacts(int id)
         {
-            var contact = _dbContext.Contacts.Find(id); // Corrected to Contacts
+            var contact = _dbContext.contacts.Find(id); // Corrected to contacts
             if (contact == null)
             {
                 return NotFound();
             }
-            _dbContext.Contacts.Remove(contact); // Corrected to remove the contact
+            _dbContext.contacts.Remove(contact); // Corrected to remove the contact
             _dbContext.SaveChanges();
             return Json(new { success = true }); // Return success in JSON format
         }

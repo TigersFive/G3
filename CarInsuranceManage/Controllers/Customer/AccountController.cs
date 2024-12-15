@@ -63,7 +63,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 return RedirectToAction("Login");
             }
 
-            var user = _context.Users.FirstOrDefault(u => u.username == User.Identity.Name);
+            var user = _context.users.FirstOrDefault(u => u.username == User.Identity.Name);
             if (user == null)
             {
                 return NotFound();
@@ -81,7 +81,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 return RedirectToAction("Login");
             }
 
-            var user = _context.Users.FirstOrDefault(u => u.username == User.Identity.Name);
+            var user = _context.users.FirstOrDefault(u => u.username == User.Identity.Name);
             if (user == null)
             {
                 return NotFound();
@@ -108,7 +108,7 @@ namespace CarInsuranceManage.Controllers.Customer
                 return RedirectToAction("Login");
             }
 
-            var user = _context.Users.FirstOrDefault(u => u.username == User.Identity.Name);
+            var user = _context.users.FirstOrDefault(u => u.username == User.Identity.Name);
             if (user == null)
             {
                 return NotFound();

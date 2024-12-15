@@ -24,7 +24,7 @@ namespace CarInsuranceManage.Controllers
         public async Task<IActionResult> SendMail(string email)
         {
             // Tìm người dùng theo email
-            var user = _context.Users.SingleOrDefault(u => u.email == email);
+            var user = _context.users.SingleOrDefault(u => u.email == email);
             if (user == null)
             {
                 TempData["ErrorMessage"] = "Email không hợp lệ.";
