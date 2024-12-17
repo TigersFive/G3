@@ -192,6 +192,7 @@
 }
 .flaticon-edit:before {
     content: "\f139";
+    padding-left: 10px;
 }
 .flaticon-eye:before {
     content: "\f13a";

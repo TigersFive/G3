@@ -5,6 +5,7 @@ using CarInsuranceManage.Database;
 using CarInsuranceManage.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarInsuranceManage.Controllers.Customer
 {
@@ -18,44 +19,81 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
         [HttpGet]
-        public IActionResult Login_phone()
+        public async Task<IActionResult> Login_phone()
         {
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Login_Phone.cshtml");
         }
 
         [HttpGet]
-        public IActionResult Verify_phone()
+        public async Task<IActionResult> Verify_phone()
         {
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Verify_phone.cshtml");
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Login.cshtml");
         }
 
         [HttpGet]
-        public IActionResult Forgot_Password()
+        public async Task<IActionResult> Forgot_Password()
         {
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Forgot_Password.cshtml");
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Register.cshtml");
         }
 
         [HttpGet]
-        public IActionResult Blog()
+        public async Task<IActionResult> Blog()
         {
+            // Fetch active services from the Services table
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+
+            // Pass the services data to the ViewData
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Blog.cshtml");
         }
 
         [HttpGet]
-        [Route("customer/account/profile")]
-        public IActionResult ProfileForCustomer()
+        public async Task<IActionResult> ProfileForCustomer()
         {
             if (!User.Identity.IsAuthenticated)
             {
@@ -68,6 +106,14 @@ namespace CarInsuranceManage.Controllers.Customer
             {
                 return NotFound();
             }
+
+            // Fetch active services from the Services table
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+
+            // Pass the services data to the ViewData
+            ViewData["Services"] = services;
 
             return View("~/Views/Customer/Account/Profile.cshtml", user);
         }
@@ -100,7 +146,7 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
         [HttpGet]
-        public IActionResult Info_Insurance()
+        public async Task<IActionResult> Info_Insurance()
         {
             if (!User.Identity.IsAuthenticated)
             {
@@ -114,6 +160,12 @@ namespace CarInsuranceManage.Controllers.Customer
                 return NotFound();
             }
 
+            // Fetch active services for the view
+            var services = await _context.services
+                .Where(s => s.status == true)
+                .ToListAsync();
+            ViewData["Services"] = services;
+
             return View("~/Views/Customer/Account/Info_Insurance.cshtml", user);
         }
 
@@ -124,6 +176,5 @@ namespace CarInsuranceManage.Controllers.Customer
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
-
     }
 }

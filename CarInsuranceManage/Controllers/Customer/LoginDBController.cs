@@ -84,18 +84,6 @@ namespace CarInsuranceManage.Controllers.Customer
                 TempData["WarningMessage"] = "Customer information not found.";
             }
 
-            // Log the login action
-            var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
-            var loginLog = new LoginLog
-            {
-                user_id = user.user_id,
-                ip_address = ipAddress,
-                login_time = DateTime.Now
-            };
-
-            _context.login_logs.Add(loginLog);
-            await _context.SaveChangesAsync();
-
             // Redirect to home after successful login
             return RedirectToAction("Index", "Home");
         }

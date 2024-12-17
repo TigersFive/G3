@@ -98,8 +98,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Admin/Settings/Banner.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ3NcQmFubmVyLmNzaHRtbA==
+[C:/laragon/www/G3/CarInsuranceManage/Views/Admin/Settings/Services.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ3NcU2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Admin/Table/Basic_Table.cshtml]
@@ -202,12 +202,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/forgot_password.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxmb3Jnb3RfcGFzc3dvcmQuY3NodG1s
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/Forgot_Password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxGb3Jnb3RfUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/HeaderProfile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxIZWFkZXJQcm9maWxlLmNzaHRtbA==
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/Header_Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxIZWFkZXJfUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/Info_Insurance.cshtml]
@@ -246,36 +246,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9EZXRhaWwuY3NodG1s
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Home/MomoNotify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSG9tZVxNb21vTm90aWZ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_Insurance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9JbnN1cmFuY2UuY3NodG1s
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Home/PaymentCallBack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSG9tZVxQYXltZW50Q2FsbEJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Moto_Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXE1vdG9fRGV0YWlsLmNzaHRtbA==
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9kZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Moto_Insurance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXE1vdG9fSW5zdXJhbmNlLmNzaHRtbA==
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9pbnN1cmFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Services.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXFNlcnZpY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Truck_Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXFRydWNrX0RldGFpbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Truck_Insurance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXFRydWNrX0luc3VyYW5jZS5jc2h0bWw=
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Payment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Form_insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb3JtX2luc3VyYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Form_pay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb3JtX3BheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Layout.cshtml]
@@ -284,6 +292,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Our_services.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PdXJfc2VydmljZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_Quesion_insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9RdWVzaW9uX2luc3VyYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Shared/_SendMail.cshtml]

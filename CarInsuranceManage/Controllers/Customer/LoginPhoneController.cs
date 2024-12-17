@@ -92,15 +92,6 @@ namespace CarInsuranceManage.Controllers.Customer
                 _context.users.Add(user);
                 _context.SaveChanges();
 
-                var loginLog = new LoginLog
-                {
-                    user_id = user.user_id,
-                    ip_address = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                    login_time = DateTime.Now
-                };
-
-                _context.login_logs.Add(loginLog);
-                _context.SaveChanges();
 
                 TempData["SuccessMessage"] = "User account created successfully and logged in!";
                 return RedirectToAction("Profile", "Account");

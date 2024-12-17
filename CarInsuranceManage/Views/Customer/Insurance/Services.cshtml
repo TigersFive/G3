@@ -19,9 +19,6 @@
     </div>
   </div>
 </section>
-<!-- End Page Title -->
-
-<!-- Services Section -->
 <section class="services-section">
   <div class="auto-container">
     <!-- Sec Title -->
@@ -41,65 +38,45 @@
         <div data-depth="0.20" class="pattern-layer-two style-two"
           style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-4.png")')"></div>
       </div>
+      @model List<CarInsuranceManage.Models.Services>
+
       <div class="row clearfix">
         <div class="container">
           <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="image">
-                    <a asp-action="Moto_Detail" asp-controller="Insurance">
-                      <img src="~/customer-assets/images/resource/service-1.jpg" class="card-img-top" alt="" />
-                    </a>
-                  </div>
-                  <div class="lower-content">
-                    <h4><a asp-action="Moto_Detail" asp-controller="Insurance">Moto Insurance</a></h4>
-                    <p class="text">Lorem Ipsum is simply dummy text of sit dolor amlet….</p>
-                    <a asp-action="Moto_Detail" asp-controller="Insurance" class="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Dịch vụ 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="image">
-                    <a asp-action="Car_Detail" asp-controller="Insurance">
-                      <img src="~/customer-assets/images/resource/service-2.jpg" class="card-img-top" alt="" />
-                    </a>
-                  </div>
-                  <div class="lower-content">
-                    <h4><a asp-action="Car_Detail" asp-controller="Insurance">Car Insurance</a></h4>
-                    <p class="text">Lorem Ipsum is simply dummy text of sit dolor amlet….</p>
-                    <a asp-action="Car_Detail" asp-controller="Insurance" class="btn btn-primary">Read More</a>
+            @if (Model != null && Model.Any())
+              {
+              @foreach (var service in Model)
+              {
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="image">
+                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.id">
+                          <img src="~/customer-assets/uploads/product/@service.image" class="card-img-top"
+                            alt="@service.title" />
+                        </a>
+                      </div>
+                      <div class="lower-content">
+                        <h4><a asp-action="Car_details" asp-controller="Insurance"
+                            asp-route-id="@service.id">@service.title</a></h4>
+                        <p class="text">@service.description</p>
+                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.id"
+                          class="read-more">Read More</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Dịch vụ 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="image">
-                    <a asp-action="Truck_Detail" asp-controller="Insurance">
-                      <img src="~/customer-assets/images/resource/service-3.jpg" class="card-img-top" alt="" />
-                    </a>
-                  </div>
-                  <div class="lower-content">
-                    <h4><a asp-action="Truck_Detail" asp-controller="Insurance">Truck Insurance</a></h4>
-                    <p class="text">Lorem Ipsum is simply dummy text of sit dolor amlet….</p>
-                    <a asp-action="Truck_Detail" asp-controller="Insurance" class="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+              }
+            }
+            else
+            {
+            <p>No services available.</p> <!-- Hiển thị khi không có dữ liệu -->
+            }
           </div>
         </div>
-
       </div>
+
+
     </div>
   </div>
 </section>

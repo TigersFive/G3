@@ -12,7 +12,7 @@ namespace CarInsuranceManage.Models
         public int customer_id { get; set; }
 
         [ForeignKey("InsurancePolicy")]
-        public int policy_id { get; set; }
+        public int? policy_id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -22,8 +22,15 @@ namespace CarInsuranceManage.Models
 
         public decimal payment_amount { get; set; }
 
+        // Thêm trường transaction_id và payment_status
+        [StringLength(100)]
+        public string? transaction_id { get; set; }  // Mã giao dịch từ Momo
+
+        [Required]
+        [StringLength(50)]
+        public string? payment_status { get; set; }  // Trạng thái thanh toán
+
         public virtual Customer? Customer { get; set; }
         public virtual InsurancePolicy? InsurancePolicy { get; set; }
     }
-
 }

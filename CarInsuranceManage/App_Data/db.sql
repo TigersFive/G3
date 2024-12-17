@@ -1,48 +1,44 @@
--- 1. Banner Table
-CREATE TABLE Banners (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(255) NOT NULL,
-    image VARCHAR(255) NOT NULL,
-    Description VARCHAR(500) NOT NULL,
-    link VARCHAR(255) NOT NULL,
-    sort_order INT CHECK (sort_order >= 0 AND sort_order <= 1000),
-    status TINYINT(1) NOT NULL,
-    StartDate DATETIME NULL,
-    EndDate DATETIME NULL,
-    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    UpdatedAt DATETIME NULL
+CREATE TABLE insurance_policies (
+    policy_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    vehicle_id INT,
+    policy_number VARCHAR(50) NOT NULL,
+    policy_start_date DATETIME,
+    policy_end_date DATETIME,
+    policy_type VARCHAR(50) NOT NULL,
+    policy_amount DECIMAL(18, 2),
+    payment_status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id)
 );
 
--- 2. Claim Table
-CREATE TABLE Claims (
+CREATE TABLE claims (
     claim_id INT AUTO_INCREMENT PRIMARY KEY,
-    policy_id INT NOT NULL,
-    claim_number VARCHAR(50) NOT NULL,
-    accident_date DATETIME NOT NULL,
-    place_of_accident VARCHAR(255) NULL,
-    insured_amount DECIMAL(18, 2) NOT NULL,
-    claimable_amount DECIMAL(18, 2) NOT NULL,
+    policy_id INT,
+    claim_number VARCHAR(50),
+    accident_date DATETIME,
+    place_of_accident VARCHAR(255),
+    insured_amount DECIMAL(18, 2),
+    claimable_amount DECIMAL(18, 2),
     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (policy_id) REFERENCES InsurancePolicies(policy_id)
+    FOREIGN KEY (policy_id) REFERENCES InsurancePolicy(policy_id)
 );
 
--- 3. Comment Table
-CREATE TABLE Comments (
+CREATE TABLE comments (
     comment_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    parent_comment_id INT NULL,
+    customer_id INT,
+    parent_comment_id INT,
     comment_text TEXT NOT NULL,
-    rating INT NULL,
+    rating INT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(50) NOT NULL,  -- 'Active' or 'Archived'
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (parent_comment_id) REFERENCES Comments(comment_id)
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (parent_comment_id) REFERENCES Comment(comment_id)
 );
 
--- 5. Contact Table
-CREATE TABLE Contacts (
+CREATE TABLE contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
+    customer_id INT,
     full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(20) NOT NULL,
@@ -50,163 +46,146 @@ CREATE TABLE Contacts (
     message TEXT NOT NULL,
     date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
     date_modified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    status TINYINT(1) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    status BOOLEAN NOT NULL,  -- Active or Inactive
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
--- 6. Customer Table
-CREATE TABLE Customers (
+CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
+    user_id INT,
     full_name VARCHAR(100) NOT NULL,
     phone_number VARCHAR(15) NOT NULL,
     address VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
 );
 
--- 7. CustomerSupportRequest Table
-CREATE TABLE CustomerSupportRequests (
+CREATE TABLE customer_support_requests (
     support_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
+    customer_id INT,
     support_type VARCHAR(100) NOT NULL,
     support_description TEXT NOT NULL,
-    support_payment VARCHAR(100) NOT NULL,
+    support_payment VARCHAR(50) NOT NULL,
     support_status VARCHAR(50) NOT NULL,  -- 'Open', 'Closed', 'Pending'
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    resolved_at DATETIME NULL,
-    resolved_by INT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (resolved_by) REFERENCES Users(user_id)
+    resolved_at DATETIME,
+    resolved_by INT,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (resolved_by) REFERENCES User(user_id)
 );
 
--- 8. Estimate Table
-CREATE TABLE Estimates (
+CREATE TABLE estimates (
     estimate_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    vehicle_id INT NOT NULL,
+    customer_id INT,
+    vehicle_id INT,
     policy_type VARCHAR(50) NOT NULL,
     warranty VARCHAR(50) NOT NULL,
-    estimate_amount DECIMAL(18, 2) NOT NULL,
+    estimate_amount DECIMAL(18, 2),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id)
 );
 
--- 9. InsuranceHistory Table
-CREATE TABLE InsuranceHistories (
+CREATE TABLE insurance_histories (
     history_id INT AUTO_INCREMENT PRIMARY KEY,
-    policy_id INT NOT NULL,
+    policy_id INT,
     change_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     change_type VARCHAR(50) NOT NULL,
     old_value TEXT NOT NULL,
     new_value TEXT NOT NULL,
-    changed_by INT NOT NULL,
-    FOREIGN KEY (policy_id) REFERENCES InsurancePolicies(policy_id),
-    FOREIGN KEY (changed_by) REFERENCES Users(user_id)
+    changed_by INT,
+    FOREIGN KEY (policy_id) REFERENCES InsurancePolicy(policy_id),
+    FOREIGN KEY (changed_by) REFERENCES User(user_id)
 );
 
--- 10. InsurancePolicy Table
-CREATE TABLE InsurancePolicies (
-    policy_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    vehicle_id INT NOT NULL,
-    policy_number VARCHAR(50) NOT NULL,
-    policy_start_date DATETIME NOT NULL,
-    policy_end_date DATETIME NOT NULL,
-    policy_type VARCHAR(50) NOT NULL,
-    policy_amount DECIMAL(18, 2) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
-);
-
--- 11. LoginLog Table
-CREATE TABLE LoginLogs (
-    log_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    login_time DATETIME DEFAULT CURRENT_TIMESTAMP,
-    ip_address VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
-);
-
--- 12. Notification Table
-CREATE TABLE Notifications (
+CREATE TABLE notifications (
     notification_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
+    customer_id INT,
     message_type VARCHAR(100) NOT NULL,
     message_content TEXT NOT NULL,
     sent_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    is_read TINYINT(1) DEFAULT 0,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    is_read BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
--- 13. Payment Table
-CREATE TABLE Payments (
+CREATE TABLE payments (
     payment_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    policy_id INT NOT NULL,
+    customer_id INT,
+    policy_id INT,
     bill_number VARCHAR(50) NOT NULL,
     payment_date DATETIME NOT NULL,
     payment_amount DECIMAL(18, 2) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (policy_id) REFERENCES InsurancePolicies(policy_id)
+    transaction_id VARCHAR(100),
+    payment_status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (policy_id) REFERENCES InsurancePolicy(policy_id)
 );
 
--- 14. Report Table
-CREATE TABLE Reports (
+CREATE TABLE reports (
     report_id INT AUTO_INCREMENT PRIMARY KEY,
     report_type VARCHAR(50) NOT NULL,
     generated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    description TEXT NULL
+    description TEXT
 );
 
--- 15. SpecialInsuranceRequest Table
-CREATE TABLE SpecialInsuranceRequests (
+CREATE TABLE services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    policy_id INT,
+    title VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    sort_order INT NOT NULL,
+    status BOOLEAN NOT NULL,
+    startdate DATETIME,
+    enddate DATETIME,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (policy_id) REFERENCES InsurancePolicy(policy_id)
+);
+
+CREATE TABLE special_insurance_requests (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    vehicle_id INT NOT NULL,
+    customer_id INT,
+    vehicle_id INT,
     request_type VARCHAR(100) NOT NULL,
     request_description TEXT NOT NULL,
     request_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(50) NOT NULL,  -- 'Pending', 'Approved', 'Denied'
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id)
 );
 
--- 16. User Table
-CREATE TABLE Users (
+CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    full_name VARCHAR(100) NULL,
+    full_name VARCHAR(100),
     email VARCHAR(100) NOT NULL,
-    phone_number VARCHAR(15) NULL,
-    address VARCHAR(255) NULL,
+    phone_number VARCHAR(15),
+    address VARCHAR(255),
     user_logs TEXT NOT NULL,
-    avatar VARCHAR(255) NULL,  -- Avatar field
+    avatar VARCHAR(255),
     role VARCHAR(50) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- 17. Vehicle Table
-CREATE TABLE Vehicles (
+CREATE TABLE vehicles (
     vehicle_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
+    customer_id INT,
     vehicle_name VARCHAR(100) NOT NULL,
     vehicle_model VARCHAR(100) NOT NULL,
     vehicle_version VARCHAR(100) NOT NULL,
     body_number VARCHAR(50) NOT NULL,
     engine_number VARCHAR(50) NOT NULL,
-    vehicle_rate DECIMAL(18, 2) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    vehicle_rate DECIMAL(18, 2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
--- 18. VehicleImage Table
-CREATE TABLE VehicleImages (
+CREATE TABLE vehicle_images (
     image_id INT AUTO_INCREMENT PRIMARY KEY,
-    vehicle_id INT NOT NULL,
-    image_type VARCHAR(50) NOT NULL,  -- 'Vehicle', 'Insurance Document', 'Claim Document'
+    vehicle_id INT,
+    image_type VARCHAR(50) NOT NULL,  -- 'vehicles', 'Insurance Document', 'Claim Document'
     image_path VARCHAR(255) NOT NULL,
-    description VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
+    FOREIGN KEY (vehicle_id) REFERENCES vehicles(vehicle_id)
 );

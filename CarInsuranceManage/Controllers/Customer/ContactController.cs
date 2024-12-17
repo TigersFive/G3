@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CarInsuranceManage.Models;
 using CarInsuranceManage.Database;
+using Microsoft.EntityFrameworkCore; // for ToListAsync
 using System;
 using System.Security.Claims;
+using System.Threading.Tasks; // for async/await
+using Microsoft.AspNetCore.Http; // for session management
 
 namespace CarInsuranceManage.Controllers
 {
@@ -10,6 +13,7 @@ namespace CarInsuranceManage.Controllers
     {
         private readonly CarInsuranceDbContext _context;
 
+        // Constructor to inject CarInsuranceDbContext
         public ContactController(CarInsuranceDbContext context)
         {
             _context = context;
@@ -17,8 +21,15 @@ namespace CarInsuranceManage.Controllers
 
         // GET: /Contact/Index
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()  // Make it async to use await
         {
+            // Get the list of active services from the Services table
+            var services = await _context.services
+                .Where(s => s.status == true)  // Filter only active services
+                .ToListAsync();
+
+            // Pass the services list to the ViewData
+            ViewData["Services"] = services;
             return View("~/Views/Customer/Contact/Index.cshtml");
         }
 
@@ -29,47 +40,46 @@ namespace CarInsuranceManage.Controllers
             // Check if the user is authenticated
             if (!User.Identity.IsAuthenticated)
             {
-                // Store a message in TempData before redirecting
+                // Store a message in TempData before redirecting to login
                 TempData["ErrorMessage"] = "You must be logged in to submit a contact form.";
                 return RedirectToAction("Login", "Account"); // Redirect to login page
             }
 
-            // Get the customer_id from session (instead of using claims)
+            // Get the customer_id from the session
             var customerId = HttpContext.Session.GetInt32("customer_id");
 
             // Validate the form data
             if (ModelState.IsValid)
             {
-                // Check if customerId is null
+                // Check if the customerId is null
                 if (customerId == null)
                 {
                     TempData["ErrorMessage"] = "Customer information is missing.";
                     return RedirectToAction("Login", "Account");
                 }
 
-                // Set the customer_id to the current logged-in user's ID
+                // Assign the customer_id to the contact object
                 contact.customer_id = customerId.Value;
 
-                // Set the status and dates
+                // Set the status and date fields
                 contact.status = true;
                 contact.date_added = DateTime.Now;
                 contact.date_modified = DateTime.Now;
 
-                // Save to the database
+                // Add the contact to the database and save changes
                 _context.contacts.Add(contact);
                 _context.SaveChanges();
 
                 // Store a success message in TempData
                 TempData["SuccessMessage"] = "Your message has been successfully sent!";
 
-                // Redirect to a different action or stay on the current page
-                return RedirectToAction("Index", "Contact"); // Or stay on the same page to show the success message
+                // Redirect back to the Contact Index page
+                return RedirectToAction("Index", "Contact");
             }
 
-            // If the model is not valid, stay on the contact page and show validation errors
+            // If the form is not valid, stay on the contact page and show validation errors
             TempData["ErrorMessage"] = "There was an issue with your form submission. Please check the inputs.";
             return View("~/Views/Customer/Contact/Index.cshtml", contact);
         }
-
     }
 }

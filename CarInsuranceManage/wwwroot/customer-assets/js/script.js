@@ -550,27 +550,23 @@
       }
     );
   }
-  
-  
+
   /* ==========================================================================
    copyright year change
-   ========================================================================== */	
-	
-function walkText(node) {
-		
-	var	date = (new Date()).getFullYear();
+   ========================================================================== */
 
-  if (node.nodeType == 3) {
-    node.data = node.data.replace(/2021/g, date);
-  }
-  if (node.nodeType == 1 && node.nodeName != "SCRIPT") {
-    for (var i = 0; i < node.childNodes.length; i++) {
-      walkText(node.childNodes[i]);
+  function walkText(node) {
+    var date = new Date().getFullYear();
+
+    if (node.nodeType == 3) {
+      node.data = node.data.replace(/2021/g, date);
+    }
+    if (node.nodeType == 1 && node.nodeName != "SCRIPT") {
+      for (var i = 0; i < node.childNodes.length; i++) {
+        walkText(node.childNodes[i]);
+      }
     }
   }
-}
-var copyrightReplace = document.querySelector('.copyright');
-walkText(copyrightReplace);
-  
-  
+  var copyrightReplace = document.querySelector(".copyright");
+  walkText(copyrightReplace);
 })(window.jQuery);

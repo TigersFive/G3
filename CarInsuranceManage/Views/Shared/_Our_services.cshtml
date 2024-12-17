@@ -1,0 +1,57 @@
+@{
+    var services = ViewData["Services"] as List<CarInsuranceManage.Models.Services>;
+}
+
+<section class="services-section">
+  <div class="auto-container">
+    <!-- Sec Title -->
+    <div class="sec-title centered">
+      <div class="title">Our Services</div>
+      <h2>
+        We ensure the best insurance services <br />
+        for our clients.
+      </h2>
+    </div>
+    <!-- End Sec Title -->
+    <div class="inner-container">
+      <div class="section-icons-outer parallax-scene-3">
+        <div data-depth="0.20" class="icon-layer"
+          style="background-image: url('@Url.Content("~/customer-assets/images/icons/icon-1.png")')"></div>
+        <div data-depth="0.20" class="pattern-layer"
+          style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-3.png")')"></div>
+        <div data-depth="0.20" class="pattern-layer-two"
+          style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-4.png")')"></div>
+      </div>
+      
+      <div class="three-item-carousel owl-carousel owl-theme">
+        <!-- Lặp qua danh sách dịch vụ -->
+        @if (services != null && services.Any())
+        {
+            @foreach (var service in services)
+            {
+                <div class="service-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id">
+                                <img src="~/customer-assets/uploads/product/@service.image" alt="@service.title" />
+                            </a>
+                        </div>
+                        <div class="lower-content">
+                            <h4><a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id">@service.title</a></h4>
+                            <div class="text">
+                                @service.description
+                            </div>
+                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id" class="read-more">Read More</a>
+                        </div>  
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No services available.</p>
+        }
+      </div>
+    </div>
+  </div>
+</section>

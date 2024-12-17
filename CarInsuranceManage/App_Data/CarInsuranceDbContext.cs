@@ -19,13 +19,12 @@ namespace CarInsuranceManage.Database
         public DbSet<Payment> payments { get; set; }
         public DbSet<Claim> claims { get; set; }
         public DbSet<Report> reports { get; set; }
-        public DbSet<LoginLog> login_logs { get; set; }
         public DbSet<InsuranceHistory> insurance_histories { get; set; }
         public DbSet<SpecialInsuranceRequest> special_insurance_requests { get; set; }
         public DbSet<CustomerSupportRequest> customer_support_requests { get; set; }
         public DbSet<Notification> notifications { get; set; }
         public DbSet<Contact> contacts { get; set; }
-        public DbSet<Banner> banners { get; set; }
+        public DbSet<Services> services { get; set; }
         public DbSet<Comment> comments { get; set; }
         public object CustomerSupportRequest { get; internal set; }
 
@@ -39,7 +38,7 @@ namespace CarInsuranceManage.Database
                 {
                     user_id = 1,
                     username = "admin",
-                    password = "Vu@wk1162005", // Normally, you would hash the password
+                    password = "123", // Normally, you would hash the password
                     full_name = "Admin User",
                     email = "vunnth2307024@fpt.edu.vn",
                     phone_number = "0123456789",
@@ -53,7 +52,7 @@ namespace CarInsuranceManage.Database
                 {
                     user_id = 2,
                     username = "john_doe",
-                    password = "Vu@wk1162005",
+                    password = "123",
                     full_name = "John Doe",
                     email = "vusena3107@gmail.com",
                     phone_number = "0987654321",
@@ -157,53 +156,111 @@ namespace CarInsuranceManage.Database
                 }
             );
 
-            // 6. Seed Insurance Policies
             modelBuilder.Entity<InsurancePolicy>().HasData(
-                new InsurancePolicy
+                    new InsurancePolicy
+                    {
+                        policy_id = 1,
+                        customer_id = 2,
+                        vehicle_id = 1,
+                        policy_number = "POLICY12345",
+                        policy_start_date = DateTime.Now,
+                        policy_end_date = DateTime.Now.AddYears(1),
+                        policy_type = "Comprehensive",
+                        policy_amount = 50.00M,
+                        payment_status = "Paid"  // Trạng thái thanh toán của hợp đồng
+                    },
+                    new InsurancePolicy
+                    {
+                        policy_id = 2,
+                        customer_id = 1,
+                        vehicle_id = 2,
+                        policy_number = "POLICY67890",
+                        policy_start_date = DateTime.Now,
+                        policy_end_date = DateTime.Now.AddYears(1),
+                        policy_type = "Third-Party",
+                        policy_amount = 70.00M,
+                        payment_status = "Unpaid"  // Trạng thái thanh toán của hợp đồng
+                    },
+                    new InsurancePolicy
+                    {
+                        policy_id = 3,
+                        customer_id = 1,
+                        vehicle_id = 2,
+                        policy_number = "POLICY67890",
+                        policy_start_date = DateTime.Now,
+                        policy_end_date = DateTime.Now.AddYears(1),
+                        policy_type = "Third-Party",
+                        policy_amount = 90.00M,
+                        payment_status = "Pending"  // Trạng thái thanh toán của hợp đồng
+                    }
+                );
+            // 7. Seed Services
+            modelBuilder.Entity<Services>().HasData(
+                new Services
                 {
+                    id = 1,
                     policy_id = 1,
-                    customer_id = 2,
-                    vehicle_id = 1,
-                    policy_number = "POLICY12345",
-                    policy_start_date = DateTime.Now,
-                    policy_end_date = DateTime.Now.AddYears(1),
-                    policy_type = "Comprehensive",
-                    policy_amount = 1500.00M
+                    title = "Moto Insurance",
+                    image = "moto.jpg",
+                    description = "Full coverage for your vehicle.",
+                    sort_order = 1,
+                    status = true,
+                    startdate = DateTime.Now,
+                    enddate = DateTime.Now.AddMonths(12),
+                    CreatedAt = DateTime.Now
                 },
-                new InsurancePolicy
+                new Services
                 {
+                    id = 2,
                     policy_id = 2,
-                    customer_id = 1,
-                    vehicle_id = 2,
-                    policy_number = "POLICY67890",
-                    policy_start_date = DateTime.Now,
-                    policy_end_date = DateTime.Now.AddYears(1),
-                    policy_type = "Third-Party",
-                    policy_amount = 1000.00M
+                    title = "Car Insurance",
+                    image = "car.jpg",
+                    description = "Full coverage for your vehicle.",
+                    sort_order = 1,
+                    status = true,
+                    startdate = DateTime.Now,
+                    enddate = DateTime.Now.AddMonths(12),
+                    CreatedAt = DateTime.Now
+                },
+                new Services
+                {
+                    id = 3,
+                    policy_id = 3,
+                    title = "Truck Insurance",
+                    image = "truck.jpg",
+                    description = "Basic third-party coverage for your vehicle.",
+                    sort_order = 1,
+                    status = true,
+                    startdate = DateTime.Now,
+                    enddate = DateTime.Now.AddMonths(12),
+                    CreatedAt = DateTime.Now
                 }
             );
-
             // 7. Seed Payments
             modelBuilder.Entity<Payment>().HasData(
-                new Payment
-                {
-                    payment_id = 1,
-                    customer_id = 2,
-                    policy_id = 1,
-                    bill_number = "BILL12345",
-                    payment_date = DateTime.Now,
-                    payment_amount = 1500.00M
-                },
-                new Payment
-                {
-                    payment_id = 2,
-                    customer_id = 1,
-                    policy_id = 2,
-                    bill_number = "BILL67890",
-                    payment_date = DateTime.Now,
-                    payment_amount = 1000.00M
-                }
-            );
+                    new Payment
+                    {
+                        payment_id = 1,
+                        customer_id = 2,
+                        policy_id = 1,
+                        bill_number = "BILL12345",
+                        payment_date = DateTime.Now,
+                        payment_amount = 1500.00M,
+                        transaction_id = "TXN123456789",  // Mã giao dịch của thanh toán
+                        payment_status = "SUCCESS"  // Trạng thái thanh toán
+                    },
+                    new Payment
+                    {
+                        payment_id = 2,
+                        customer_id = 1,
+                        policy_id = 2,
+                        bill_number = "BILL67890",
+                        payment_date = DateTime.Now,
+                        payment_amount = 1000.00M,
+                        transaction_id = "TXN987654321",  // Mã giao dịch của thanh toán
+                        payment_status = "FAILED"  // Trạng thái thanh toán
+                    }
+                );
 
             // 8. Seed Claims
             modelBuilder.Entity<Claim>().HasData(
@@ -229,21 +286,7 @@ namespace CarInsuranceManage.Database
                 }
             );
 
-            // 9. Seed Banners
-            modelBuilder.Entity<Banner>().HasData(
-                new Banner
-                {
-                    id = 1,
-                    title = "Summer Sale - 20% Off",
-                    image = "summer_sale_banner.jpg",
-                    description = "Get 20% off on all car insurance policies this summer.",
-                    link = "https://carinsurance.com/summer-sale",
-                    sort_order = 1,
-                    status = true,
-                    startdate = DateTime.Now,
-                    enddate = DateTime.Now.AddMonths(2)
-                }
-            );
+
 
             // 10. Seed Comments
             modelBuilder.Entity<Comment>().HasData(
@@ -280,25 +323,6 @@ namespace CarInsuranceManage.Database
                 }
             );
 
-            // 12. Seed LoginLogs
-            modelBuilder.Entity<LoginLog>().HasData(
-                new LoginLog
-                {
-                    log_id = 1,
-                    user_id = 1,
-                    login_time = DateTime.Now,
-                    ip_address = "192.168.1.1"
-                },
-                new LoginLog
-                {
-                    log_id = 2,
-                    user_id = 2,
-                    login_time = DateTime.Now,
-                    ip_address = "192.168.1.2"
-                }
-            );
-
-            // 13. Seed InsuranceHistories
             modelBuilder.Entity<InsuranceHistory>().HasData(
                 new InsuranceHistory
                 {
@@ -369,6 +393,7 @@ namespace CarInsuranceManage.Database
                     status = true
                 }
             );
+
         }
     }
 }

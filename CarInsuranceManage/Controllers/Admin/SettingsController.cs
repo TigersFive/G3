@@ -4,9 +4,9 @@ namespace CarInsuranceManage.Controllers.Admin
 {
     public class SettingsController : Controller
     {
-       public IActionResult Banner()
+       public IActionResult Services()
         {
-            return View("~/Views/Admin/Settings/Banner.cshtml");  
+            return View("~/Views/Admin/Settings/Services.cshtml");  
         }
     }
 }
