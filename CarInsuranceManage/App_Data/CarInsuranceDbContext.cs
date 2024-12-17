@@ -13,14 +13,9 @@ namespace CarInsuranceManage.Database
         public DbSet<User> users { get; set; }
         public DbSet<Customer> customers { get; set; }
         public DbSet<Vehicle> vehicles { get; set; }
-        public DbSet<VehicleImage> vehicle_images { get; set; }
-        public DbSet<Estimate> estimates { get; set; }
         public DbSet<InsurancePolicy> insurance_policies { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<Claim> claims { get; set; }
-        public DbSet<Report> reports { get; set; }
-        public DbSet<InsuranceHistory> insurance_histories { get; set; }
-        public DbSet<SpecialInsuranceRequest> special_insurance_requests { get; set; }
         public DbSet<CustomerSupportRequest> customer_support_requests { get; set; }
         public DbSet<Notification> notifications { get; set; }
         public DbSet<Contact> contacts { get; set; }
@@ -109,53 +104,6 @@ namespace CarInsuranceManage.Database
                     vehicle_rate = 22000.00M
                 }
             );
-
-            // 4. Seed VehicleImages
-            modelBuilder.Entity<VehicleImage>().HasData(
-                new VehicleImage
-                {
-                    image_id = 1,
-                    vehicle_id = 1,
-                    image_type = "Vehicle",
-                    image_path = "images/vehicle1.jpg",
-                    description = "Toyota Camry front view",
-                    uploaded_at = DateTime.Now
-                },
-                new VehicleImage
-                {
-                    image_id = 2,
-                    vehicle_id = 2,
-                    image_type = "Vehicle",
-                    image_path = "images/vehicle2.jpg",
-                    description = "Honda Accord side view",
-                    uploaded_at = DateTime.Now
-                }
-            );
-
-            // 5. Seed Estimates
-            modelBuilder.Entity<Estimate>().HasData(
-                new Estimate
-                {
-                    estimate_id = 1,
-                    customer_id = 2,
-                    vehicle_id = 1,
-                    policy_type = "Comprehensive",
-                    warranty = "3 years",
-                    estimate_amount = 1500.00M,
-                    created_at = DateTime.Now
-                },
-                new Estimate
-                {
-                    estimate_id = 2,
-                    customer_id = 1,
-                    vehicle_id = 2,
-                    policy_type = "Third-Party",
-                    warranty = "1 year",
-                    estimate_amount = 1000.00M,
-                    created_at = DateTime.Now
-                }
-            );
-
             modelBuilder.Entity<InsurancePolicy>().HasData(
                     new InsurancePolicy
                     {
@@ -312,44 +260,9 @@ namespace CarInsuranceManage.Database
                 }
             );
 
-            // 11. Seed Reports
-            modelBuilder.Entity<Report>().HasData(
-                new Report
-                {
-                    report_id = 1,
-                    report_type = "Revenue Report",
-                    generated_at = DateTime.Now,
-                    description = "Monthly revenue report for car insurance sales."
-                }
-            );
+            
 
-            modelBuilder.Entity<InsuranceHistory>().HasData(
-                new InsuranceHistory
-                {
-                    history_id = 1,
-                    policy_id = 1,
-                    change_date = DateTime.Now,
-                    change_type = "Updated",
-                    old_value = "Initial",
-                    new_value = "Policy Active",
-                    changed_by = 1
-                }
-            );
-
-            // 14. Seed SpecialInsuranceRequests
-            modelBuilder.Entity<SpecialInsuranceRequest>().HasData(
-                new SpecialInsuranceRequest
-                {
-                    request_id = 1,
-                    customer_id = 2,
-                    vehicle_id = 1,
-                    request_type = "Extended Warranty",
-                    request_description = "Requesting additional 2 years of warranty.",
-                    request_date = DateTime.Now,
-                    status = "Pending"
-                }
-            );
-
+         
             // 15. Seed CustomerSupportRequests
             modelBuilder.Entity<CustomerSupportRequest>().HasData(
                 new CustomerSupportRequest

@@ -47,9 +47,6 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Add Momo Payment Service
-builder.Services.AddScoped<MomoPaymentService>();  // Register the MomoPaymentService
-
 var app = builder.Build();
 
 // Apply migrations to the DB if necessary

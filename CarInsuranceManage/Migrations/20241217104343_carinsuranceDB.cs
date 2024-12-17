@@ -18,24 +18,6 @@ namespace CarInsuranceManage.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "reports",
-                columns: table => new
-                {
-                    report_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    report_type = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    generated_at = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    description = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_reports", x => x.report_id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "users",
                 columns: table => new
                 {
@@ -252,39 +234,6 @@ namespace CarInsuranceManage.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "estimates",
-                columns: table => new
-                {
-                    estimate_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    customer_id = table.Column<int>(type: "int", nullable: false),
-                    vehicle_id = table.Column<int>(type: "int", nullable: false),
-                    policy_type = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    warranty = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    estimate_amount = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_estimates", x => x.estimate_id);
-                    table.ForeignKey(
-                        name: "FK_estimates_customers_customer_id",
-                        column: x => x.customer_id,
-                        principalTable: "customers",
-                        principalColumn: "customer_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_estimates_vehicles_vehicle_id",
-                        column: x => x.vehicle_id,
-                        principalTable: "vehicles",
-                        principalColumn: "vehicle_id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "insurance_policies",
                 columns: table => new
                 {
@@ -319,67 +268,6 @@ namespace CarInsuranceManage.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "special_insurance_requests",
-                columns: table => new
-                {
-                    request_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    customer_id = table.Column<int>(type: "int", nullable: false),
-                    vehicle_id = table.Column<int>(type: "int", nullable: false),
-                    request_type = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    request_description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    request_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    status = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_special_insurance_requests", x => x.request_id);
-                    table.ForeignKey(
-                        name: "FK_special_insurance_requests_customers_customer_id",
-                        column: x => x.customer_id,
-                        principalTable: "customers",
-                        principalColumn: "customer_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_special_insurance_requests_vehicles_vehicle_id",
-                        column: x => x.vehicle_id,
-                        principalTable: "vehicles",
-                        principalColumn: "vehicle_id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "vehicle_images",
-                columns: table => new
-                {
-                    image_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    vehicle_id = table.Column<int>(type: "int", nullable: false),
-                    image_type = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    image_path = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    uploaded_at = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_vehicle_images", x => x.image_id);
-                    table.ForeignKey(
-                        name: "FK_vehicle_images_vehicles_vehicle_id",
-                        column: x => x.vehicle_id,
-                        principalTable: "vehicles",
-                        principalColumn: "vehicle_id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "claims",
                 columns: table => new
                 {
@@ -403,40 +291,6 @@ namespace CarInsuranceManage.Migrations
                         column: x => x.policy_id,
                         principalTable: "insurance_policies",
                         principalColumn: "policy_id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "insurance_histories",
-                columns: table => new
-                {
-                    history_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    policy_id = table.Column<int>(type: "int", nullable: false),
-                    change_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    change_type = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    old_value = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    new_value = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    changed_by = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_insurance_histories", x => x.history_id);
-                    table.ForeignKey(
-                        name: "FK_insurance_histories_insurance_policies_policy_id",
-                        column: x => x.policy_id,
-                        principalTable: "insurance_policies",
-                        principalColumn: "policy_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_insurance_histories_users_changed_by",
-                        column: x => x.changed_by,
-                        principalTable: "users",
-                        principalColumn: "user_id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -508,17 +362,12 @@ namespace CarInsuranceManage.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.InsertData(
-                table: "reports",
-                columns: new[] { "report_id", "description", "generated_at", "report_type" },
-                values: new object[] { 1, "Monthly revenue report for car insurance sales.", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5946), "Revenue Report" });
-
-            migrationBuilder.InsertData(
                 table: "users",
                 columns: new[] { "user_id", "address", "avatar", "created_at", "email", "full_name", "password", "phone_number", "role", "user_logs", "username" },
                 values: new object[,]
                 {
-                    { 1, "123 Admin Street", "avatar.png", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5654), "vunnth2307024@fpt.edu.vn", "Admin User", "123", "0123456789", "admin", "Email", "admin" },
-                    { 2, "123 Main St, Cityville", "john_avatar.png", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5657), "vusena3107@gmail.com", "John Doe", "123", "0987654321", "customer", "Login logs", "john_doe" }
+                    { 1, "123 Admin Street", "avatar.png", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6517), "vunnth2307024@fpt.edu.vn", "Admin User", "123", "0123456789", "admin", "Email", "admin" },
+                    { 2, "123 Main St, Cityville", "john_avatar.png", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6520), "vusena3107@gmail.com", "John Doe", "123", "0987654321", "customer", "Login logs", "john_doe" }
                 });
 
             migrationBuilder.InsertData(
@@ -535,24 +384,24 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "comment_id", "comment_text", "created_at", "customer_id", "parent_comment_id", "rating", "status" },
                 values: new object[,]
                 {
-                    { 1, "Great service! Highly recommend this insurance.", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5930), 2, null, 5, "Active" },
-                    { 2, "Very affordable prices.", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5932), 1, null, 4, "Active" }
+                    { 1, "Great service! Highly recommend this insurance.", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6834), 2, null, 5, "Active" },
+                    { 2, "Very affordable prices.", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6836), 1, null, 4, "Active" }
                 });
 
             migrationBuilder.InsertData(
                 table: "contacts",
                 columns: new[] { "id", "customer_id", "date_added", "date_modified", "email", "full_name", "message", "phone", "status", "subject" },
-                values: new object[] { 1, 2, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(6056), new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(6056), "john.doe@example.com", "John Doe", "I want to inquire about renewing my insurance policy.", "0987654321", true, "Inquiry about policy renewal" });
+                values: new object[] { 1, 2, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6886), new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6891), "john.doe@example.com", "John Doe", "I want to inquire about renewing my insurance policy.", "0987654321", true, "Inquiry about policy renewal" });
 
             migrationBuilder.InsertData(
                 table: "customer_support_requests",
                 columns: new[] { "support_id", "created_at", "customer_id", "resolved_at", "resolved_by", "support_description", "support_payment", "support_status", "support_type" },
-                values: new object[] { 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(6020), 2, null, null, "Need assistance with billing", "Paid", "Open", "Billing" });
+                values: new object[] { 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6853), 2, null, null, "Need assistance with billing", "Paid", "Open", "Billing" });
 
             migrationBuilder.InsertData(
                 table: "notifications",
                 columns: new[] { "notification_id", "customer_id", "is_read", "message_content", "message_type", "sent_at" },
-                values: new object[] { 1, 2, false, "Your insurance policy is about to expire.", "Reminder", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(6039) });
+                values: new object[] { 1, 2, false, "Your insurance policy is about to expire.", "Reminder", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6868) });
 
             migrationBuilder.InsertData(
                 table: "vehicles",
@@ -564,36 +413,13 @@ namespace CarInsuranceManage.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "estimates",
-                columns: new[] { "estimate_id", "created_at", "customer_id", "estimate_amount", "policy_type", "vehicle_id", "warranty" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5811), 2, 1500.00m, "Comprehensive", 1, "3 years" },
-                    { 2, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5813), 1, 1000.00m, "Third-Party", 2, "1 year" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "insurance_policies",
                 columns: new[] { "policy_id", "customer_id", "payment_status", "policy_amount", "policy_end_date", "policy_number", "policy_start_date", "policy_type", "vehicle_id" },
                 values: new object[,]
                 {
-                    { 1, 2, "Paid", 50.00m, new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5833), "POLICY12345", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5830), "Comprehensive", 1 },
-                    { 2, 1, "Unpaid", 70.00m, new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5844), "POLICY67890", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5844), "Third-Party", 2 },
-                    { 3, 1, "Pending", 90.00m, new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5847), "POLICY67890", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5847), "Third-Party", 2 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "special_insurance_requests",
-                columns: new[] { "request_id", "customer_id", "request_date", "request_description", "request_type", "status", "vehicle_id" },
-                values: new object[] { 1, 2, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(6003), "Requesting additional 2 years of warranty.", "Extended Warranty", "Pending", 1 });
-
-            migrationBuilder.InsertData(
-                table: "vehicle_images",
-                columns: new[] { "image_id", "description", "image_path", "image_type", "uploaded_at", "vehicle_id" },
-                values: new object[,]
-                {
-                    { 1, "Toyota Camry front view", "images/vehicle1.jpg", "Vehicle", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5791), 1 },
-                    { 2, "Honda Accord side view", "images/vehicle2.jpg", "Vehicle", new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5793), 2 }
+                    { 1, 2, "Paid", 50.00m, new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6725), "POLICY12345", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6721), "Comprehensive", 1 },
+                    { 2, 1, "Unpaid", 70.00m, new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6734), "POLICY67890", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6733), "Third-Party", 2 },
+                    { 3, 1, "Pending", 90.00m, new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6737), "POLICY67890", new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6737), "Third-Party", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -601,22 +427,17 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "claim_id", "CreatedAt", "accident_date", "claim_number", "claimable_amount", "insured_amount", "place_of_accident", "policy_id" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5911), new DateTime(2024, 11, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5913), "CLAIM12345", 8000.00m, 10000.00m, "Downtown", 1 },
-                    { 2, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5915), new DateTime(2024, 10, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5915), "CLAIM67890", 4000.00m, 5000.00m, "Suburb", 2 }
+                    { 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6811), new DateTime(2024, 11, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6813), "CLAIM12345", 8000.00m, 10000.00m, "Downtown", 1 },
+                    { 2, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6815), new DateTime(2024, 10, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6816), "CLAIM67890", 4000.00m, 5000.00m, "Suburb", 2 }
                 });
-
-            migrationBuilder.InsertData(
-                table: "insurance_histories",
-                columns: new[] { "history_id", "change_date", "change_type", "changed_by", "new_value", "old_value", "policy_id" },
-                values: new object[] { 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5985), "Updated", 1, "Policy Active", "Initial", 1 });
 
             migrationBuilder.InsertData(
                 table: "payments",
                 columns: new[] { "payment_id", "bill_number", "customer_id", "payment_amount", "payment_date", "payment_status", "policy_id", "transaction_id" },
                 values: new object[,]
                 {
-                    { 1, "BILL12345", 2, 1500.00m, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5892), "SUCCESS", 1, "TXN123456789" },
-                    { 2, "BILL67890", 1, 1000.00m, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5895), "FAILED", 2, "TXN987654321" }
+                    { 1, "BILL12345", 2, 1500.00m, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6789), "SUCCESS", 1, "TXN123456789" },
+                    { 2, "BILL67890", 1, 1000.00m, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6791), "FAILED", 2, "TXN987654321" }
                 });
 
             migrationBuilder.InsertData(
@@ -624,9 +445,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "id", "CreatedAt", "UpdatedAt", "description", "enddate", "image", "policy_id", "sort_order", "startdate", "status", "title" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5870), null, "Full coverage for your vehicle.", new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5866), "moto.jpg", 1, 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5865), true, "Moto Insurance" },
-                    { 2, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5874), null, "Full coverage for your vehicle.", new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5873), "car.jpg", 2, 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5872), true, "Car Insurance" },
-                    { 3, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5877), null, "Basic third-party coverage for your vehicle.", new DateTime(2025, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5876), "truck.jpg", 3, 1, new DateTime(2024, 12, 16, 22, 34, 39, 291, DateTimeKind.Local).AddTicks(5875), true, "Truck Insurance" }
+                    { 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6767), null, "Full coverage for your vehicle.", new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6763), "moto.jpg", 1, 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6763), true, "Moto Insurance" },
+                    { 2, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6770), null, "Full coverage for your vehicle.", new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6770), "car.jpg", 2, 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6769), true, "Car Insurance" },
+                    { 3, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6773), null, "Basic third-party coverage for your vehicle.", new DateTime(2025, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6773), "truck.jpg", 3, 1, new DateTime(2024, 12, 17, 17, 43, 43, 586, DateTimeKind.Local).AddTicks(6772), true, "Truck Insurance" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -665,26 +486,6 @@ namespace CarInsuranceManage.Migrations
                 column: "user_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_estimates_customer_id",
-                table: "estimates",
-                column: "customer_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_estimates_vehicle_id",
-                table: "estimates",
-                column: "vehicle_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_insurance_histories_changed_by",
-                table: "insurance_histories",
-                column: "changed_by");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_insurance_histories_policy_id",
-                table: "insurance_histories",
-                column: "policy_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_insurance_policies_customer_id",
                 table: "insurance_policies",
                 column: "customer_id");
@@ -715,21 +516,6 @@ namespace CarInsuranceManage.Migrations
                 column: "policy_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_special_insurance_requests_customer_id",
-                table: "special_insurance_requests",
-                column: "customer_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_special_insurance_requests_vehicle_id",
-                table: "special_insurance_requests",
-                column: "vehicle_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_vehicle_images_vehicle_id",
-                table: "vehicle_images",
-                column: "vehicle_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_vehicles_customer_id",
                 table: "vehicles",
                 column: "customer_id");
@@ -751,28 +537,13 @@ namespace CarInsuranceManage.Migrations
                 name: "customer_support_requests");
 
             migrationBuilder.DropTable(
-                name: "estimates");
-
-            migrationBuilder.DropTable(
-                name: "insurance_histories");
-
-            migrationBuilder.DropTable(
                 name: "notifications");
 
             migrationBuilder.DropTable(
                 name: "payments");
 
             migrationBuilder.DropTable(
-                name: "reports");
-
-            migrationBuilder.DropTable(
                 name: "services");
-
-            migrationBuilder.DropTable(
-                name: "special_insurance_requests");
-
-            migrationBuilder.DropTable(
-                name: "vehicle_images");
 
             migrationBuilder.DropTable(
                 name: "insurance_policies");

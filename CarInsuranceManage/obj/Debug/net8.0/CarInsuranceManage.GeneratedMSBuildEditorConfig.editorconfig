@@ -202,8 +202,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/Forgot_Password.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxGb3Jnb3RfUGFzc3dvcmQuY3NodG1s
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/forgot_password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWNjb3VudFxmb3Jnb3RfcGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Account/Header_Profile.cshtml]
@@ -258,8 +258,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9kZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_insurance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9pbnN1cmFuY2UuY3NodG1s
+[C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Car_Insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zdXJhbmNlXENhcl9JbnN1cmFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/laragon/www/G3/CarInsuranceManage/Views/Customer/Insurance/Services.cshtml]

@@ -1,16 +1,11 @@
-User: Tạo người dùng với các thông tin về tên đăng nhập, mật khẩu, email, số điện thoại và vai trò (admin hoặc customer).
-Customer: Mỗi khách hàng có thể liên kết với một người dùng (user).
-Vehicle: Cung cấp thông tin về phương tiện của khách hàng, ví dụ như tên xe, số khung, số máy, và mức độ bảo hiểm.
-InsurancePolicy: Mỗi chính sách bảo hiểm sẽ liên kết với khách hàng và phương tiện.
-Claim: Khai báo các yêu cầu bồi thường liên quan đến chính sách bảo hiểm.
-Comment: Các bình luận từ khách hàng có thể có bình luận phụ.
-Contact: Yêu cầu hỗ trợ từ khách hàng.
-CustomerSupportRequest: Các yêu cầu hỗ trợ của khách hàng liên quan đến bảo hiểm.
-Estimate: Ước tính chi phí bảo hiểm cho khách hàng.
-InsuranceHistory: Lịch sử thay đổi của chính sách bảo hiểm.
-Notification: Thông báo cho khách hàng về các sự kiện quan trọng liên quan đến bảo hiểm.
-Payment: Các giao dịch thanh toán liên quan đến bảo hiểm.
-Report: Báo cáo về các giao dịch bảo hiểm, yêu cầu bồi thường.
-Services: Các dịch vụ liên quan đến chính sách bảo hiểm.
-SpecialInsuranceRequest: Các yêu cầu bảo hiểm đặc biệt từ khách hàng.
-VehicleImage: Ảnh của phương tiện hoặc tài liệu liên quan đến bảo hiểm.
+User: Chứa thông tin người dùng như tên đăng nhập, mật khẩu, email, và quyền (admin/customer).
+Customer: Thông tin của khách hàng, liên kết với bảng User.
+Vehicle: Thông tin xe của khách hàng, liên kết với Customer.
+InsurancePolicy: Các hợp đồng bảo hiểm, liên kết với Customer và Vehicle.
+Claim: Yêu cầu bồi thường bảo hiểm, liên kết với InsurancePolicy.
+Comment: Bình luận của khách hàng, có thể có các trả lời (cấp con).
+Contact: Thông tin liên lạc của khách hàng.
+CustomerSupportRequest: Yêu cầu hỗ trợ của khách hàng, liên kết với User (người giải quyết).
+Notification: Thông báo gửi cho khách hàng.
+Payment: Thông tin thanh toán của khách hàng cho hợp đồng bảo hiểm.
+Services: Các dịch vụ liên quan đến hợp đồng bảo hiểm.
