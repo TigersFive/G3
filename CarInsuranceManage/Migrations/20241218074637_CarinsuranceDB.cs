@@ -385,9 +385,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "service_id", "created_at", "description", "image_url", "is_active", "price", "service_name", "updated_at" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8227), "Basic vehicle insurance", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Moto Insurance", null },
-                    { 2, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8231), "Premium vehicle insurance with more benefits", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Car Insurance", null },
-                    { 3, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8235), "Comprehensive coverage for all types of damage", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Truck Insurance", null }
+                    { 1, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2103), "Basic vehicle insurance", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Moto Insurance", null },
+                    { 2, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2108), "Premium vehicle insurance with more benefits", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Car Insurance", null },
+                    { 3, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2111), "Comprehensive coverage for all types of damage", "customer-assets/uploads/product/moto.jpg", true, 50.00m, "Truck Insurance", null }
                 });
 
             migrationBuilder.InsertData(
@@ -395,9 +395,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "user_id", "address", "avatar", "created_at", "email", "full_name", "password", "phone_number", "role", "user_logs", "username" },
                 values: new object[,]
                 {
-                    { 1, "123 Admin Street", "admin_avatar.jpg", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7750), "admin@gmail.com", "Admin User", "admin123", "1234567890", "admin", "", "admin" },
-                    { 2, "123 User Street", "user1_avatar.jpg", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7756), "vunnth2307024@gmail.com", "User One", "user123", "1234567891", "customer", "", "user1" },
-                    { 3, "123 Another Street", "user2_avatar.jpg", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7760), "user2@example.com", "User Two", "user456", "1234567892", "customer", "", "user2" }
+                    { 1, "123 Admin Street", "admin_avatar.jpg", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1667), "admin@gmail.com", "Admin User", "admin123", "1234567890", "admin", "", "admin" },
+                    { 2, "123 User Street", "user1_avatar.jpg", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1672), "vunnth2307024@gmail.com", "User One", "user123", "1234567891", "customer", "", "user1" },
+                    { 3, "123 Another Street", "user2_avatar.jpg", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1677), "user2@example.com", "User Two", "user456", "1234567892", "customer", "", "user2" }
                 });
 
             migrationBuilder.InsertData(
@@ -415,9 +415,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "claim_id", "created_at", "customer_email", "customer_full_name", "customer_id", "customer_phone", "description", "status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8053), "admin@example.com", "Admin User", 1, "1234567890", "Claim for accident", 0 },
-                    { 2, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8058), "user1@example.com", "User One", 2, "1234567891", "Claim for windshield damage", 2 },
-                    { 3, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8061), "user2@example.com", "User Two", 3, "1234567892", "Claim for theft", 1 }
+                    { 1, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1940), "admin@example.com", "Admin User", 1, "1234567890", "Claim for accident", 0 },
+                    { 2, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1944), "user1@example.com", "User One", 2, "1234567891", "Claim for windshield damage", 2 },
+                    { 3, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1948), "user2@example.com", "User Two", 3, "1234567892", "Claim for theft", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -425,8 +425,8 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "comment_id", "comment_text", "created_at", "customer_id", "parent_comment_id", "rating", "status" },
                 values: new object[,]
                 {
-                    { 1, "Great service!", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8329), 1, null, 5, "Active" },
-                    { 3, "Service was okay.", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8336), 3, null, 3, "Active" }
+                    { 1, "Great service!", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2139), 1, null, 5, "Active" },
+                    { 3, "Service was okay.", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2148), 3, null, 3, "Active" }
                 });
 
             migrationBuilder.InsertData(
@@ -434,9 +434,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "id", "customer_id", "date_added", "date_modified", "email", "full_name", "message", "phone", "status", "subject" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8179), new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8179), "admin@example.com", "Admin User", "Can I upgrade my policy?", "1234567890", true, "Policy Details" },
-                    { 2, 2, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8185), new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8186), "user1@example.com", "User One", "I need help with my claim.", "1234567891", true, "Claim Issue" },
-                    { 3, 3, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8189), new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8190), "user2@example.com", "User Two", "I have a question about your services.", "1234567892", false, "General Inquiry" }
+                    { 1, 1, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2056), new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2057), "admin@example.com", "Admin User", "Can I upgrade my policy?", "1234567890", true, "Policy Details" },
+                    { 2, 2, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2063), new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2064), "user1@example.com", "User One", "I need help with my claim.", "1234567891", true, "Claim Issue" },
+                    { 3, 3, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2067), new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2068), "user2@example.com", "User Two", "I have a question about your services.", "1234567892", false, "General Inquiry" }
                 });
 
             migrationBuilder.InsertData(
@@ -444,9 +444,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "support_id", "created_at", "customer_id", "resolved_at", "resolved_by", "support_description", "support_payment", "support_status", "support_type" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8096), 1, null, null, "Help with insurance details.", "Free", "Pending", "General Inquiry" },
-                    { 2, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8098), 2, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8100), 1, "Issue with a claim.", "Paid", "Resolved", "Claim Support" },
-                    { 3, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8105), 3, null, null, "Renewal question.", "Free", "Closed", "Policy Inquiry" }
+                    { 1, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1983), 1, null, null, "Help with insurance details.", "Free", "Pending", "General Inquiry" },
+                    { 2, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1984), 2, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1987), 1, "Issue with a claim.", "Paid", "Resolved", "Claim Support" },
+                    { 3, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1991), 3, null, null, "Renewal question.", "Free", "Closed", "Policy Inquiry" }
                 });
 
             migrationBuilder.InsertData(
@@ -454,9 +454,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "history_id", "car_brand", "created_at", "customer_id", "email", "frame_number", "insurance_code", "insurance_end_date", "insurance_package", "insurance_price", "insurance_start_date", "machine_number", "number_plate", "phone", "registration_date", "username", "vehicle_line", "year_of_manufacture" },
                 values: new object[,]
                 {
-                    { 1, "Toyota", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8377), 1, "admin@example.com", "FRAME001", "INS001", new DateTime(2025, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8373), "Basic Plan", 500.00m, new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8372), "MACHINE001", "ABC123", "1234567890", new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8368), "admin", "Corolla", "2020" },
-                    { 2, "Honda", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8390), 2, "user1@example.com", "FRAME002", "INS002", new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8387), "Comprehensive Plan", 700.00m, new DateTime(2023, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8385), "MACHINE002", "XYZ456", "1234567891", new DateTime(2023, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8382), "user1", "Civic", "2019" },
-                    { 3, "Ford", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8401), 3, "user2@example.com", "FRAME003", "INS003", new DateTime(2025, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8398), "Premium Plan", 900.00m, new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8397), "MACHINE003", "DEF789", "1234567892", new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8395), "user2", "Focus", "2021" }
+                    { 1, "Toyota", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2184), 1, "admin@example.com", "FRAME001", "INS001", new DateTime(2025, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2180), "Basic Plan", 500.00m, new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2179), "MACHINE001", "ABC123", "1234567890", new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2176), "admin", "Corolla", "2020" },
+                    { 2, "Honda", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2196), 2, "user1@example.com", "FRAME002", "INS002", new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2193), "Comprehensive Plan", 700.00m, new DateTime(2023, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2191), "MACHINE002", "XYZ456", "1234567891", new DateTime(2023, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2189), "user1", "Civic", "2019" },
+                    { 3, "Ford", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2206), 3, "user2@example.com", "FRAME003", "INS003", new DateTime(2025, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2203), "Premium Plan", 900.00m, new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2202), "MACHINE003", "DEF789", "1234567892", new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2200), "user2", "Focus", "2021" }
                 });
 
             migrationBuilder.InsertData(
@@ -464,9 +464,9 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "insurance_info_id", "car_brand", "created_at", "customer_id", "email", "frame_number", "insurance_code", "insurance_end_date", "insurance_package", "insurance_price", "insurance_start_date", "machine_number", "number_plate", "phone", "registration_date", "username", "vehicle_line", "year_of_manufacture" },
                 values: new object[,]
                 {
-                    { 1, "Toyota", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8438), 1, "admin@example.com", "FRAME001", null, new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8434), "Basic Plan", 500.00m, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8434), "MACHINE001", "ABC123", "1234567890", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8432), "admin", "Corolla", "2020" },
-                    { 2, "Honda", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8449), 2, "user1@example.com", "FRAME002", null, new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8446), "Comprehensive Plan", 700.00m, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8446), "MACHINE002", "XYZ456", "1234567891", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8444), "user1", "Civic", "2019" },
-                    { 3, "Ford", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8457), 3, "user2@example.com", "FRAME003", null, new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8455), "Premium Plan", 900.00m, new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8455), "MACHINE003", "DEF789", "1234567892", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8454), "user2", "Focus", "2021" }
+                    { 1, "Toyota", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2241), 1, "admin@example.com", "FRAME001", null, new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2238), "Basic Plan", 500.00m, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2238), "MACHINE001", "ABC123", "1234567890", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2236), "admin", "Corolla", "2020" },
+                    { 2, "Honda", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2251), 2, "user1@example.com", "FRAME002", null, new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2249), "Comprehensive Plan", 700.00m, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2249), "MACHINE002", "XYZ456", "1234567891", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2247), "user1", "Civic", "2019" },
+                    { 3, "Ford", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2259), 3, "user2@example.com", "FRAME003", null, new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2257), "Premium Plan", 900.00m, new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2257), "MACHINE003", "DEF789", "1234567892", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2256), "user2", "Focus", "2021" }
                 });
 
             migrationBuilder.InsertData(
@@ -474,24 +474,24 @@ namespace CarInsuranceManage.Migrations
                 columns: new[] { "notification_id", "customer_id", "is_read", "message_content", "message_type", "sent_at" },
                 values: new object[,]
                 {
-                    { 1, 1, false, "Policy renewal reminder.", "Reminder", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8141) },
-                    { 2, 2, true, "Your claim has been processed.", "Claim Update", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8145) },
-                    { 3, 3, false, "Special discounts for renewals!", "Promotion", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8149) }
+                    { 1, 1, false, "Policy renewal reminder.", "Reminder", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2023) },
+                    { 2, 2, true, "Your claim has been processed.", "Claim Update", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2027) },
+                    { 3, 3, false, "Special discounts for renewals!", "Promotion", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2030) }
                 });
 
             migrationBuilder.InsertData(
                 table: "comments",
                 columns: new[] { "comment_id", "comment_text", "created_at", "customer_id", "parent_comment_id", "rating", "status" },
-                values: new object[] { 2, "I agree, excellent support.", new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8333), 2, 1, 4, "Active" });
+                values: new object[] { 2, "I agree, excellent support.", new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2144), 2, 1, 4, "Active" });
 
             migrationBuilder.InsertData(
                 table: "payments",
                 columns: new[] { "payment_id", "bill_number", "customer_id", "insurance_info_id", "payment_amount", "payment_date", "payment_status", "transaction_id" },
                 values: new object[,]
                 {
-                    { 1, "BILL001", 1, 1, 100.00m, new DateTime(2024, 11, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7982), "Completed", "TXN001" },
-                    { 2, "BILL002", 2, 2, 200.00m, new DateTime(2024, 10, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8007), "Pending", "TXN002" },
-                    { 3, "BILL003", 3, 3, 300.00m, new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8013), "Failed", "TXN003" }
+                    { 1, "BILL001", 1, 1, 100.00m, new DateTime(2024, 11, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1878), "Completed", "TXN001" },
+                    { 2, "BILL002", 2, 2, 200.00m, new DateTime(2024, 10, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1898), "Pending", "TXN002" },
+                    { 3, "BILL003", 3, 3, 300.00m, new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1903), "Failed", "TXN003" }
                 });
 
             migrationBuilder.CreateIndex(

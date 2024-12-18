@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0rOBbClQDweGp/5LoiCjt6Dpf9mLdbEDKZ+2S+l0HPY=",
+  "Hash": "1cIVJj1WjCGMHzhgHqB0uuOklb3gvyEZQAhaxCJ+8lo=",
   "Source": "CarInsuranceManage",
   "BasePath": "_content/CarInsuranceManage",
   "Mode": "Default",
@@ -13315,6 +13315,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\customer-assets\\uploads\\product\\4dc366f2ac9a8beac3232ba9443b0d57.png"
+    },
+    {
+      "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\603baf1d-8121-47a2-bed4-48a2000ead7b.jpg",
+      "SourceId": "CarInsuranceManage",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\",
+      "BasePath": "_content/CarInsuranceManage",
+      "RelativePath": "customer-assets/uploads/product/603baf1d-8121-47a2-bed4-48a2000ead7b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\customer-assets\\uploads\\product\\603baf1d-8121-47a2-bed4-48a2000ead7b.jpg"
     },
     {
       "Identity": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\uploads\\product\\647e191728440cecde9bd7922c851ced.png",

@@ -14,7 +14,7 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Đăng ký dịch vụ nền
 builder.Services.AddHostedService<InsuranceStatusService>();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
-
+builder.Services.AddSingleton<EmailService>();
 // Register HttpClientFactory
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<PayPalService>(provider =>

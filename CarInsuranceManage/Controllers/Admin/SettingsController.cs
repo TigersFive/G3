@@ -147,7 +147,7 @@ namespace CarInsuranceManage.Controllers.Admin
                             await avatar.CopyToAsync(stream);
                         }
 
-                        service.image_url = "/customer-assets/uploads/product/" + fileName;
+                        service.image_url = "customer-assets/uploads/product/" + fileName;
                     }
 
                     _context.Update(service);

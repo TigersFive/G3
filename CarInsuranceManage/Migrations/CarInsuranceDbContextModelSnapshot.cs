@@ -61,7 +61,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             claim_id = 1,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8053),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1940),
                             customer_email = "admin@example.com",
                             customer_full_name = "Admin User",
                             customer_id = 1,
@@ -72,7 +72,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             claim_id = 2,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8058),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1944),
                             customer_email = "user1@example.com",
                             customer_full_name = "User One",
                             customer_id = 2,
@@ -83,7 +83,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             claim_id = 3,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8061),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1948),
                             customer_email = "user2@example.com",
                             customer_full_name = "User Two",
                             customer_id = 3,
@@ -134,7 +134,7 @@ namespace CarInsuranceManage.Migrations
                         {
                             comment_id = 1,
                             comment_text = "Great service!",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8329),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2139),
                             customer_id = 1,
                             rating = 5,
                             status = "Active"
@@ -143,7 +143,7 @@ namespace CarInsuranceManage.Migrations
                         {
                             comment_id = 2,
                             comment_text = "I agree, excellent support.",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8333),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2144),
                             customer_id = 2,
                             parent_comment_id = 1,
                             rating = 4,
@@ -153,7 +153,7 @@ namespace CarInsuranceManage.Migrations
                         {
                             comment_id = 3,
                             comment_text = "Service was okay.",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8336),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2148),
                             customer_id = 3,
                             rating = 3,
                             status = "Active"
@@ -215,8 +215,8 @@ namespace CarInsuranceManage.Migrations
                         {
                             id = 1,
                             customer_id = 1,
-                            date_added = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8179),
-                            date_modified = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8179),
+                            date_added = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2056),
+                            date_modified = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2057),
                             email = "admin@example.com",
                             full_name = "Admin User",
                             message = "Can I upgrade my policy?",
@@ -228,8 +228,8 @@ namespace CarInsuranceManage.Migrations
                         {
                             id = 2,
                             customer_id = 2,
-                            date_added = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8185),
-                            date_modified = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8186),
+                            date_added = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2063),
+                            date_modified = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2064),
                             email = "user1@example.com",
                             full_name = "User One",
                             message = "I need help with my claim.",
@@ -241,8 +241,8 @@ namespace CarInsuranceManage.Migrations
                         {
                             id = 3,
                             customer_id = 3,
-                            date_added = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8189),
-                            date_modified = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8190),
+                            date_added = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2067),
+                            date_modified = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2068),
                             email = "user2@example.com",
                             full_name = "User Two",
                             message = "I have a question about your services.",
@@ -360,7 +360,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             support_id = 1,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8096),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1983),
                             customer_id = 1,
                             support_description = "Help with insurance details.",
                             support_payment = "Free",
@@ -370,9 +370,9 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             support_id = 2,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8098),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1984),
                             customer_id = 2,
-                            resolved_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8100),
+                            resolved_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1987),
                             resolved_by = 1,
                             support_description = "Issue with a claim.",
                             support_payment = "Paid",
@@ -382,7 +382,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             support_id = 3,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8105),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1991),
                             customer_id = 3,
                             support_description = "Renewal question.",
                             support_payment = "Free",
@@ -461,19 +461,19 @@ namespace CarInsuranceManage.Migrations
                         {
                             history_id = 1,
                             car_brand = "Toyota",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8377),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2184),
                             customer_id = 1,
                             email = "admin@example.com",
                             frame_number = "FRAME001",
                             insurance_code = "INS001",
-                            insurance_end_date = new DateTime(2025, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8373),
+                            insurance_end_date = new DateTime(2025, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2180),
                             insurance_package = "Basic Plan",
                             insurance_price = 500.00m,
-                            insurance_start_date = new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8372),
+                            insurance_start_date = new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2179),
                             machine_number = "MACHINE001",
                             number_plate = "ABC123",
                             phone = "1234567890",
-                            registration_date = new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8368),
+                            registration_date = new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2176),
                             username = "admin",
                             vehicle_line = "Corolla",
                             year_of_manufacture = "2020"
@@ -482,19 +482,19 @@ namespace CarInsuranceManage.Migrations
                         {
                             history_id = 2,
                             car_brand = "Honda",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8390),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2196),
                             customer_id = 2,
                             email = "user1@example.com",
                             frame_number = "FRAME002",
                             insurance_code = "INS002",
-                            insurance_end_date = new DateTime(2024, 6, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8387),
+                            insurance_end_date = new DateTime(2024, 6, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2193),
                             insurance_package = "Comprehensive Plan",
                             insurance_price = 700.00m,
-                            insurance_start_date = new DateTime(2023, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8385),
+                            insurance_start_date = new DateTime(2023, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2191),
                             machine_number = "MACHINE002",
                             number_plate = "XYZ456",
                             phone = "1234567891",
-                            registration_date = new DateTime(2023, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8382),
+                            registration_date = new DateTime(2023, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2189),
                             username = "user1",
                             vehicle_line = "Civic",
                             year_of_manufacture = "2019"
@@ -503,19 +503,19 @@ namespace CarInsuranceManage.Migrations
                         {
                             history_id = 3,
                             car_brand = "Ford",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8401),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2206),
                             customer_id = 3,
                             email = "user2@example.com",
                             frame_number = "FRAME003",
                             insurance_code = "INS003",
-                            insurance_end_date = new DateTime(2025, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8398),
+                            insurance_end_date = new DateTime(2025, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2203),
                             insurance_package = "Premium Plan",
                             insurance_price = 900.00m,
-                            insurance_start_date = new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8397),
+                            insurance_start_date = new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2202),
                             machine_number = "MACHINE003",
                             number_plate = "DEF789",
                             phone = "1234567892",
-                            registration_date = new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8395),
+                            registration_date = new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2200),
                             username = "user2",
                             vehicle_line = "Focus",
                             year_of_manufacture = "2021"
@@ -592,18 +592,18 @@ namespace CarInsuranceManage.Migrations
                         {
                             insurance_info_id = 1,
                             car_brand = "Toyota",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8438),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2241),
                             customer_id = 1,
                             email = "admin@example.com",
                             frame_number = "FRAME001",
-                            insurance_end_date = new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8434),
+                            insurance_end_date = new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2238),
                             insurance_package = "Basic Plan",
                             insurance_price = 500.00m,
-                            insurance_start_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8434),
+                            insurance_start_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2238),
                             machine_number = "MACHINE001",
                             number_plate = "ABC123",
                             phone = "1234567890",
-                            registration_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8432),
+                            registration_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2236),
                             username = "admin",
                             vehicle_line = "Corolla",
                             year_of_manufacture = "2020"
@@ -612,18 +612,18 @@ namespace CarInsuranceManage.Migrations
                         {
                             insurance_info_id = 2,
                             car_brand = "Honda",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8449),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2251),
                             customer_id = 2,
                             email = "user1@example.com",
                             frame_number = "FRAME002",
-                            insurance_end_date = new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8446),
+                            insurance_end_date = new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2249),
                             insurance_package = "Comprehensive Plan",
                             insurance_price = 700.00m,
-                            insurance_start_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8446),
+                            insurance_start_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2249),
                             machine_number = "MACHINE002",
                             number_plate = "XYZ456",
                             phone = "1234567891",
-                            registration_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8444),
+                            registration_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2247),
                             username = "user1",
                             vehicle_line = "Civic",
                             year_of_manufacture = "2019"
@@ -632,18 +632,18 @@ namespace CarInsuranceManage.Migrations
                         {
                             insurance_info_id = 3,
                             car_brand = "Ford",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8457),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2259),
                             customer_id = 3,
                             email = "user2@example.com",
                             frame_number = "FRAME003",
-                            insurance_end_date = new DateTime(2025, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8455),
+                            insurance_end_date = new DateTime(2025, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2257),
                             insurance_package = "Premium Plan",
                             insurance_price = 900.00m,
-                            insurance_start_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8455),
+                            insurance_start_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2257),
                             machine_number = "MACHINE003",
                             number_plate = "DEF789",
                             phone = "1234567892",
-                            registration_date = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8454),
+                            registration_date = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2256),
                             username = "user2",
                             vehicle_line = "Focus",
                             year_of_manufacture = "2021"
@@ -692,7 +692,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             service_id = 1,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8227),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2103),
                             description = "Basic vehicle insurance",
                             image_url = "customer-assets/uploads/product/moto.jpg",
                             is_active = true,
@@ -702,7 +702,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             service_id = 2,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8231),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2108),
                             description = "Premium vehicle insurance with more benefits",
                             image_url = "customer-assets/uploads/product/moto.jpg",
                             is_active = true,
@@ -712,7 +712,7 @@ namespace CarInsuranceManage.Migrations
                         new
                         {
                             service_id = 3,
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8235),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2111),
                             description = "Comprehensive coverage for all types of damage",
                             image_url = "customer-assets/uploads/product/moto.jpg",
                             is_active = true,
@@ -761,7 +761,7 @@ namespace CarInsuranceManage.Migrations
                             is_read = false,
                             message_content = "Policy renewal reminder.",
                             message_type = "Reminder",
-                            sent_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8141)
+                            sent_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2023)
                         },
                         new
                         {
@@ -770,7 +770,7 @@ namespace CarInsuranceManage.Migrations
                             is_read = true,
                             message_content = "Your claim has been processed.",
                             message_type = "Claim Update",
-                            sent_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8145)
+                            sent_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2027)
                         },
                         new
                         {
@@ -779,7 +779,7 @@ namespace CarInsuranceManage.Migrations
                             is_read = false,
                             message_content = "Special discounts for renewals!",
                             message_type = "Promotion",
-                            sent_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8149)
+                            sent_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(2030)
                         });
                 });
 
@@ -833,7 +833,7 @@ namespace CarInsuranceManage.Migrations
                             customer_id = 1,
                             insurance_info_id = 1,
                             payment_amount = 100.00m,
-                            payment_date = new DateTime(2024, 11, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7982),
+                            payment_date = new DateTime(2024, 11, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1878),
                             payment_status = "Completed",
                             transaction_id = "TXN001"
                         },
@@ -844,7 +844,7 @@ namespace CarInsuranceManage.Migrations
                             customer_id = 2,
                             insurance_info_id = 2,
                             payment_amount = 200.00m,
-                            payment_date = new DateTime(2024, 10, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8007),
+                            payment_date = new DateTime(2024, 10, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1898),
                             payment_status = "Pending",
                             transaction_id = "TXN002"
                         },
@@ -855,7 +855,7 @@ namespace CarInsuranceManage.Migrations
                             customer_id = 3,
                             insurance_info_id = 3,
                             payment_amount = 300.00m,
-                            payment_date = new DateTime(2024, 9, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(8013),
+                            payment_date = new DateTime(2024, 9, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1903),
                             payment_status = "Failed",
                             transaction_id = "TXN003"
                         });
@@ -922,7 +922,7 @@ namespace CarInsuranceManage.Migrations
                             user_id = 1,
                             address = "123 Admin Street",
                             avatar = "admin_avatar.jpg",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7750),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1667),
                             email = "admin@gmail.com",
                             full_name = "Admin User",
                             password = "admin123",
@@ -936,7 +936,7 @@ namespace CarInsuranceManage.Migrations
                             user_id = 2,
                             address = "123 User Street",
                             avatar = "user1_avatar.jpg",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7756),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1672),
                             email = "vunnth2307024@gmail.com",
                             full_name = "User One",
                             password = "user123",
@@ -950,7 +950,7 @@ namespace CarInsuranceManage.Migrations
                             user_id = 3,
                             address = "123 Another Street",
                             avatar = "user2_avatar.jpg",
-                            created_at = new DateTime(2024, 12, 18, 14, 42, 52, 422, DateTimeKind.Local).AddTicks(7760),
+                            created_at = new DateTime(2024, 12, 18, 14, 46, 36, 647, DateTimeKind.Local).AddTicks(1677),
                             email = "user2@example.com",
                             full_name = "User Two",
                             password = "user456",
