@@ -76,8 +76,6 @@ namespace CarInsuranceManage.Controllers.Customer
 
                 // Store user_id, username, email in session
                 HttpContext.Session.SetInt32("user_id", user.user_id); // Store user_id in session
-                HttpContext.Session.SetString("username", user.username); // Store username in session
-                HttpContext.Session.SetString("email", user.email); // Store email in session
 
                 // Retrieve customer information from the Customer table
                 var customerInfo = await _context.customers.FirstOrDefaultAsync(c => c.user_id == user.user_id);
@@ -85,7 +83,6 @@ namespace CarInsuranceManage.Controllers.Customer
                 {
                     // Store customer_id in session
                     HttpContext.Session.SetInt32("customer_id", customerInfo.customer_id);
-                    HttpContext.Session.SetString("customer_name", customerInfo.full_name); // Example of storing customer name
                 }
                 else
                 {

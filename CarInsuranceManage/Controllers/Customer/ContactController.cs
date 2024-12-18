@@ -22,14 +22,11 @@ namespace CarInsuranceManage.Controllers
         // GET: /Contact/Index
         [HttpGet]
         public async Task<IActionResult> Index()  // Make it async to use await
-        {
-            // Get the list of active services from the Services table
-            var services = await _context.services
-                .Where(s => s.status == true)  // Filter only active services
+        { // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
-
-            // Pass the services list to the ViewData
             ViewData["Services"] = services;
+
             return View("~/Views/Customer/Contact/Index.cshtml");
         }
 

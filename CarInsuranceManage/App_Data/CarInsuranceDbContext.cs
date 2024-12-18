@@ -1,312 +1,108 @@
-using CarInsuranceManage.Models;
 using Microsoft.EntityFrameworkCore;
+using CarInsuranceManage.Models;
 using System;
 
 namespace CarInsuranceManage.Database
 {
     public class CarInsuranceDbContext : DbContext
     {
-        public CarInsuranceDbContext(DbContextOptions<CarInsuranceDbContext> options) : base(options)
-        {
-        }
+        public CarInsuranceDbContext(DbContextOptions<CarInsuranceDbContext> options) : base(options) { }
 
         public DbSet<User> users { get; set; }
         public DbSet<Customer> customers { get; set; }
-        public DbSet<Vehicle> vehicles { get; set; }
-        public DbSet<InsurancePolicy> insurance_policies { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<Claim> claims { get; set; }
         public DbSet<CustomerSupportRequest> customer_support_requests { get; set; }
         public DbSet<Notification> notifications { get; set; }
         public DbSet<Contact> contacts { get; set; }
-        public DbSet<Services> services { get; set; }
+        public DbSet<InsuranceService> insurance_services { get; set; }
         public DbSet<Comment> comments { get; set; }
-        public object CustomerSupportRequest { get; internal set; }
+        public DbSet<History> histories { get; set; }
+        public DbSet<InsuranceInfo> insurances_info { get; set; }
+        public object InsuranceInfos { get; internal set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // 1. Seed Users
+            // Seed data for User
             modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    user_id = 1,
-                    username = "admin",
-                    password = "123", // Normally, you would hash the password
-                    full_name = "Admin User",
-                    email = "vunnth2307024@fpt.edu.vn",
-                    phone_number = "0123456789",
-                    address = "123 Admin Street",
-                    user_logs = "Email",
-                    avatar = "avatar.png",
-                    role = "admin",
-                    created_at = DateTime.Now
-                },
-                new User
-                {
-                    user_id = 2,
-                    username = "john_doe",
-                    password = "123",
-                    full_name = "John Doe",
-                    email = "vusena3107@gmail.com",
-                    phone_number = "0987654321",
-                    address = "123 Main St, Cityville",
-                    user_logs = "Login logs",
-                    avatar = "john_avatar.png",
-                    role = "customer",
-                    created_at = DateTime.Now
-                }
+                new User { user_id = 1, username = "admin", password = "admin123", full_name = "Admin User", email = "admin@gmail.com", phone_number = "1234567890", address = "123 Admin Street", avatar = "admin_avatar.jpg", role = "admin", user_logs = "", created_at = DateTime.Now },
+                new User { user_id = 2, username = "user1", password = "user123", full_name = "User One", email = "vunnth2307024@gmail.com", phone_number = "1234567891", address = "123 User Street", avatar = "user1_avatar.jpg", role = "customer", user_logs = "", created_at = DateTime.Now },
+                new User { user_id = 3, username = "user2", password = "user456", full_name = "User Two", email = "user2@example.com", phone_number = "1234567892", address = "123 Another Street", avatar = "user2_avatar.jpg", role = "customer", user_logs = "", created_at = DateTime.Now }
             );
 
-            // 2. Seed Customers
+            // Seed data for Customer
             modelBuilder.Entity<Customer>().HasData(
-                new Customer
-                {
-                    customer_id = 1,
-                    user_id = 1,
-                    full_name = "Admin User",
-                    phone_number = "0123456789",
-                    address = "123 Admin Street"
-                },
-                new Customer
-                {
-                    customer_id = 2,
-                    user_id = 2,
-                    full_name = "John Doe",
-                    phone_number = "0987654321",
-                    address = "456 Main St, Cityville"
-                }
+                new Customer { customer_id = 1, user_id = 1, full_name = "Admin User", phone_number = "1234567890", address = "123 Admin Street" },
+                new Customer { customer_id = 2, user_id = 2, full_name = "User One", phone_number = "1234567891", address = "123 User Street" },
+                new Customer { customer_id = 3, user_id = 3, full_name = "User Two", phone_number = "1234567892", address = "123 Another Street" }
             );
 
-            // 3. Seed Vehicles
-            modelBuilder.Entity<Vehicle>().HasData(
-                new Vehicle
-                {
-                    vehicle_id = 1,
-                    customer_id = 2,
-                    vehicle_name = "Toyota Camry",
-                    vehicle_model = "2022",
-                    vehicle_version = "SE",
-                    body_number = "ABC123XYZ",
-                    engine_number = "ENG123456789",
-                    vehicle_rate = 25000.00M
-                },
-                new Vehicle
-                {
-                    vehicle_id = 2,
-                    customer_id = 1,
-                    vehicle_name = "Honda Accord",
-                    vehicle_model = "2020",
-                    vehicle_version = "LX",
-                    body_number = "DEF456XYZ",
-                    engine_number = "ENG987654321",
-                    vehicle_rate = 22000.00M
-                }
-            );
-            modelBuilder.Entity<InsurancePolicy>().HasData(
-                    new InsurancePolicy
-                    {
-                        policy_id = 1,
-                        customer_id = 2,
-                        vehicle_id = 1,
-                        policy_number = "POLICY12345",
-                        policy_start_date = DateTime.Now,
-                        policy_end_date = DateTime.Now.AddYears(1),
-                        policy_type = "Comprehensive",
-                        policy_amount = 50.00M,
-                        payment_status = "Paid"  // Trạng thái thanh toán của hợp đồng
-                    },
-                    new InsurancePolicy
-                    {
-                        policy_id = 2,
-                        customer_id = 1,
-                        vehicle_id = 2,
-                        policy_number = "POLICY67890",
-                        policy_start_date = DateTime.Now,
-                        policy_end_date = DateTime.Now.AddYears(1),
-                        policy_type = "Third-Party",
-                        policy_amount = 70.00M,
-                        payment_status = "Unpaid"  // Trạng thái thanh toán của hợp đồng
-                    },
-                    new InsurancePolicy
-                    {
-                        policy_id = 3,
-                        customer_id = 1,
-                        vehicle_id = 2,
-                        policy_number = "POLICY67890",
-                        policy_start_date = DateTime.Now,
-                        policy_end_date = DateTime.Now.AddYears(1),
-                        policy_type = "Third-Party",
-                        policy_amount = 90.00M,
-                        payment_status = "Pending"  // Trạng thái thanh toán của hợp đồng
-                    }
-                );
-            // 7. Seed Services
-            modelBuilder.Entity<Services>().HasData(
-                new Services
-                {
-                    id = 1,
-                    policy_id = 1,
-                    title = "Moto Insurance",
-                    image = "moto.jpg",
-                    description = "Full coverage for your vehicle.",
-                    sort_order = 1,
-                    status = true,
-                    startdate = DateTime.Now,
-                    enddate = DateTime.Now.AddMonths(12),
-                    CreatedAt = DateTime.Now
-                },
-                new Services
-                {
-                    id = 2,
-                    policy_id = 2,
-                    title = "Car Insurance",
-                    image = "car.jpg",
-                    description = "Full coverage for your vehicle.",
-                    sort_order = 1,
-                    status = true,
-                    startdate = DateTime.Now,
-                    enddate = DateTime.Now.AddMonths(12),
-                    CreatedAt = DateTime.Now
-                },
-                new Services
-                {
-                    id = 3,
-                    policy_id = 3,
-                    title = "Truck Insurance",
-                    image = "truck.jpg",
-                    description = "Basic third-party coverage for your vehicle.",
-                    sort_order = 1,
-                    status = true,
-                    startdate = DateTime.Now,
-                    enddate = DateTime.Now.AddMonths(12),
-                    CreatedAt = DateTime.Now
-                }
-            );
-            // 7. Seed Payments
+            // Seed data for Payment
             modelBuilder.Entity<Payment>().HasData(
-                    new Payment
-                    {
-                        payment_id = 1,
-                        customer_id = 2,
-                        policy_id = 1,
-                        bill_number = "BILL12345",
-                        payment_date = DateTime.Now,
-                        payment_amount = 1500.00M,
-                        transaction_id = "TXN123456789",  // Mã giao dịch của thanh toán
-                        payment_status = "SUCCESS"  // Trạng thái thanh toán
-                    },
-                    new Payment
-                    {
-                        payment_id = 2,
-                        customer_id = 1,
-                        policy_id = 2,
-                        bill_number = "BILL67890",
-                        payment_date = DateTime.Now,
-                        payment_amount = 1000.00M,
-                        transaction_id = "TXN987654321",  // Mã giao dịch của thanh toán
-                        payment_status = "FAILED"  // Trạng thái thanh toán
-                    }
-                );
+                new Payment { payment_id = 1, customer_id = 1, insurance_info_id = 1, bill_number = "BILL001", payment_date = DateTime.Now.AddMonths(-1), payment_amount = 100.00m, transaction_id = "TXN001", payment_status = "Completed" },
+                new Payment { payment_id = 2, customer_id = 2, insurance_info_id = 2, bill_number = "BILL002", payment_date = DateTime.Now.AddMonths(-2), payment_amount = 200.00m, transaction_id = "TXN002", payment_status = "Pending" },
+                new Payment { payment_id = 3, customer_id = 3, insurance_info_id = 3, bill_number = "BILL003", payment_date = DateTime.Now.AddMonths(-3), payment_amount = 300.00m, transaction_id = "TXN003", payment_status = "Failed" }
+            );
 
-            // 8. Seed Claims
+            // Seed data for Claim
             modelBuilder.Entity<Claim>().HasData(
-                new Claim
-                {
-                    claim_id = 1,
-                    policy_id = 1,
-                    claim_number = "CLAIM12345",
-                    accident_date = DateTime.Now.AddMonths(-1),
-                    place_of_accident = "Downtown",
-                    insured_amount = 10000.00M,
-                    claimable_amount = 8000.00M
-                },
-                new Claim
-                {
-                    claim_id = 2,
-                    policy_id = 2,
-                    claim_number = "CLAIM67890",
-                    accident_date = DateTime.Now.AddMonths(-2),
-                    place_of_accident = "Suburb",
-                    insured_amount = 5000.00M,
-                    claimable_amount = 4000.00M
-                }
+                new Claim { claim_id = 1, customer_id = 1, customer_full_name = "Admin User", customer_email = "admin@example.com", customer_phone = "1234567890", description = "Claim for accident", status = ClaimStatus.Pending, created_at = DateTime.Now },
+                new Claim { claim_id = 2, customer_id = 2, customer_full_name = "User One", customer_email = "user1@example.com", customer_phone = "1234567891", description = "Claim for windshield damage", status = ClaimStatus.Resolved, created_at = DateTime.Now },
+                new Claim { claim_id = 3, customer_id = 3, customer_full_name = "User Two", customer_email = "user2@example.com", customer_phone = "1234567892", description = "Claim for theft", status = ClaimStatus.Rejected, created_at = DateTime.Now }
             );
 
-
-
-            // 10. Seed Comments
-            modelBuilder.Entity<Comment>().HasData(
-                new Comment
-                {
-                    comment_id = 1,
-                    customer_id = 2,
-                    parent_comment_id = null,
-                    comment_text = "Great service! Highly recommend this insurance.",
-                    rating = 5,
-                    created_at = DateTime.Now,
-                    status = "Active"
-                },
-                new Comment
-                {
-                    comment_id = 2,
-                    customer_id = 1,
-                    parent_comment_id = null,
-                    comment_text = "Very affordable prices.",
-                    rating = 4,
-                    created_at = DateTime.Now,
-                    status = "Active"
-                }
-            );
-
-            
-
-         
-            // 15. Seed CustomerSupportRequests
+            // Seed data for CustomerSupportRequest
             modelBuilder.Entity<CustomerSupportRequest>().HasData(
-                new CustomerSupportRequest
-                {
-                    support_id = 1,
-                    customer_id = 2,
-                    support_type = "Billing",
-                    support_description = "Need assistance with billing",
-                    support_payment = "Paid",
-                    support_status = "Open",
-                    created_at = DateTime.Now
-                }
+                new CustomerSupportRequest { support_id = 1, customer_id = 1, support_type = "General Inquiry", support_description = "Help with insurance details.", support_payment = "Free", support_status = "Pending", created_at = DateTime.Now },
+                new CustomerSupportRequest { support_id = 2, customer_id = 2, support_type = "Claim Support", support_description = "Issue with a claim.", support_payment = "Paid", support_status = "Resolved", resolved_at = DateTime.Now, resolved_by = 1 },
+                new CustomerSupportRequest { support_id = 3, customer_id = 3, support_type = "Policy Inquiry", support_description = "Renewal question.", support_payment = "Free", support_status = "Closed", created_at = DateTime.Now }
             );
 
-            // 16. Seed Notifications
+            // Seed data for Notification
             modelBuilder.Entity<Notification>().HasData(
-                new Notification
-                {
-                    notification_id = 1,
-                    customer_id = 2,
-                    message_type = "Reminder",
-                    message_content = "Your insurance policy is about to expire.",
-                    sent_at = DateTime.Now,
-                    is_read = false
-                }
+                new Notification { notification_id = 1, customer_id = 1, message_type = "Reminder", message_content = "Policy renewal reminder.", sent_at = DateTime.Now, is_read = false },
+                new Notification { notification_id = 2, customer_id = 2, message_type = "Claim Update", message_content = "Your claim has been processed.", sent_at = DateTime.Now, is_read = true },
+                new Notification { notification_id = 3, customer_id = 3, message_type = "Promotion", message_content = "Special discounts for renewals!", sent_at = DateTime.Now, is_read = false }
             );
 
-            // 17. Seed Contacts
+            // Seed data for Contact
             modelBuilder.Entity<Contact>().HasData(
-                new Contact
-                {
-                    id = 1,
-                    customer_id = 2,
-                    full_name = "John Doe",
-                    email = "john.doe@example.com",
-                    phone = "0987654321",
-                    subject = "Inquiry about policy renewal",
-                    message = "I want to inquire about renewing my insurance policy.",
-                    date_added = DateTime.Now,
-                    date_modified = DateTime.Now,
-                    status = true
-                }
+                new Contact { id = 1, customer_id = 1, full_name = "Admin User", email = "admin@example.com", phone = "1234567890", subject = "Policy Details", message = "Can I upgrade my policy?", status = true },
+                new Contact { id = 2, customer_id = 2, full_name = "User One", email = "user1@example.com", phone = "1234567891", subject = "Claim Issue", message = "I need help with my claim.", status = true },
+                new Contact { id = 3, customer_id = 3, full_name = "User Two", email = "user2@example.com", phone = "1234567892", subject = "General Inquiry", message = "I have a question about your services.", status = false }
             );
 
+            // Dữ liệu mẫu cho bảng InsuranceService
+            modelBuilder.Entity<InsuranceService>().HasData(
+                new InsuranceService { service_id = 1, service_name = "Moto Insurance", description = "Basic vehicle insurance", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now },
+                new InsuranceService { service_id = 2, service_name = "Car Insurance", description = "Premium vehicle insurance with more benefits", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now },
+                new InsuranceService { service_id = 3, service_name = "Truck Insurance", description = "Comprehensive coverage for all types of damage", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now }
+            );
+
+
+
+            // Seed data for Comment
+            modelBuilder.Entity<Comment>().HasData(
+                new Comment { comment_id = 1, customer_id = 1, parent_comment_id = null, comment_text = "Great service!", rating = 5, status = "Active", created_at = DateTime.Now },
+                new Comment { comment_id = 2, customer_id = 2, parent_comment_id = 1, comment_text = "I agree, excellent support.", rating = 4, status = "Active", created_at = DateTime.Now },
+                new Comment { comment_id = 3, customer_id = 3, parent_comment_id = null, comment_text = "Service was okay.", rating = 3, status = "Active", created_at = DateTime.Now }
+            );
+
+            // Seed data for History
+            modelBuilder.Entity<History>().HasData(
+                new History { history_id = 1, customer_id = 1, username = "admin", email = "admin@example.com", phone = "1234567890", car_brand = "Toyota", vehicle_line = "Corolla", year_of_manufacture = "2020", registration_date = DateTime.Now.AddMonths(-6), number_plate = "ABC123", frame_number = "FRAME001", machine_number = "MACHINE001", insurance_start_date = DateTime.Now.AddMonths(-6), insurance_end_date = DateTime.Now.AddMonths(6), insurance_package = "Basic Plan", insurance_code = "INS001", insurance_price = 500.00m, created_at = DateTime.Now },
+                new History { history_id = 2, customer_id = 2, username = "user1", email = "user1@example.com", phone = "1234567891", car_brand = "Honda", vehicle_line = "Civic", year_of_manufacture = "2019", registration_date = DateTime.Now.AddMonths(-12), number_plate = "XYZ456", frame_number = "FRAME002", machine_number = "MACHINE002", insurance_start_date = DateTime.Now.AddMonths(-12), insurance_end_date = DateTime.Now.AddMonths(-6), insurance_package = "Comprehensive Plan", insurance_code = "INS002", insurance_price = 700.00m, created_at = DateTime.Now },
+                new History { history_id = 3, customer_id = 3, username = "user2", email = "user2@example.com", phone = "1234567892", car_brand = "Ford", vehicle_line = "Focus", year_of_manufacture = "2021", registration_date = DateTime.Now.AddMonths(-3), number_plate = "DEF789", frame_number = "FRAME003", machine_number = "MACHINE003", insurance_start_date = DateTime.Now.AddMonths(-3), insurance_end_date = DateTime.Now.AddMonths(9), insurance_package = "Premium Plan", insurance_code = "INS003", insurance_price = 900.00m, created_at = DateTime.Now }
+            );
+
+            // Seed data for InsuranceInfo
+            modelBuilder.Entity<InsuranceInfo>().HasData(
+                new InsuranceInfo { insurance_info_id = 1, customer_id = 1, username = "admin", email = "admin@example.com", phone = "1234567890", car_brand = "Toyota", vehicle_line = "Corolla", year_of_manufacture = "2020", registration_date = DateTime.Now, number_plate = "ABC123", frame_number = "FRAME001", machine_number = "MACHINE001", insurance_start_date = DateTime.Now, insurance_end_date = null, insurance_package = "Basic Plan", insurance_price = 500.00m, created_at = DateTime.Now },
+                new InsuranceInfo { insurance_info_id = 2, customer_id = 2, username = "user1", email = "user1@example.com", phone = "1234567891", car_brand = "Honda", vehicle_line = "Civic", year_of_manufacture = "2019", registration_date = DateTime.Now, number_plate = "XYZ456", frame_number = "FRAME002", machine_number = "MACHINE002", insurance_start_date = DateTime.Now, insurance_end_date = null, insurance_package = "Comprehensive Plan", insurance_price = 700.00m, created_at = DateTime.Now },
+                new InsuranceInfo { insurance_info_id = 3, customer_id = 3, username = "user2", email = "user2@example.com", phone = "1234567892", car_brand = "Ford", vehicle_line = "Focus", year_of_manufacture = "2021", registration_date = DateTime.Now, number_plate = "DEF789", frame_number = "FRAME003", machine_number = "MACHINE003", insurance_start_date = DateTime.Now, insurance_end_date = null, insurance_package = "Premium Plan", insurance_price = 900.00m, created_at = DateTime.Now }
+            );
         }
     }
+
 }

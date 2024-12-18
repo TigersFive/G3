@@ -1,5 +1,5 @@
 @{
-    var services = ViewData["Services"] as List<CarInsuranceManage.Models.Services>;
+    var services = ViewData["Services"] as List<CarInsuranceManage.Models.InsuranceService>;
 }
 
 <section class="services-section">
@@ -32,16 +32,16 @@
                 <div class="service-block">
                     <div class="inner-box">
                         <div class="image">
-                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id">
-                                <img src="~/customer-assets/uploads/product/@service.image" alt="@service.title" />
+                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.service_id">
+                                <img src="~/customer-assets/uploads/product/@service.image_url" alt="@service.service_name" />
                             </a>
                         </div>
                         <div class="lower-content">
-                            <h4><a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id">@service.title</a></h4>
+                            <h4><a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.service_id">@service.service_name</a></h4>
                             <div class="text">
                                 @service.description
                             </div>
-                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.id" class="read-more">Read More</a>
+                            <a asp-controller="Insurance" asp-action="Car_Details" asp-route-id="@service.service_id" class="read-more">Read More</a>
                         </div>  
                     </div>
                 </div>

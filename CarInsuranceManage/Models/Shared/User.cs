@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarInsuranceManage.Models
 {
-    public class User
-    {
+    public class User    {
         [Key]
         public int user_id { get; set; }
 
@@ -37,7 +36,7 @@ namespace CarInsuranceManage.Models
         public string? avatar { get; set; } // Avatar field to store the avatar image path or URL
         [Required]
         [StringLength(50)]
-        public string? role { get; set; } // Role field to distinguish customer or admin
+        public string? role { get; set; } // Role field to distinguish Customer or admin
 
         public DateTime created_at { get; set; } = DateTime.Now;
     }

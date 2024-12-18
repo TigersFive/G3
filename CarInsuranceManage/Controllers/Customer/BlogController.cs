@@ -28,11 +28,11 @@ namespace CarInsuranceManage.Controllers.Customer
                 .Where(c => c.status == "Active")       // Lọc bình luận có trạng thái "Active"
                 .OrderByDescending(c => c.created_at)   // Sắp xếp theo thời gian tạo
                 .ToListAsync();
-            // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+             // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
+
             return View("~/Views/Customer/Blog/Index.cshtml", comments);
         }
 

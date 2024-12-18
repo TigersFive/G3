@@ -83,5 +83,81 @@ namespace CarInsuranceManage.Controllers.Admin
 
             return RedirectToAction("ProfileForAdmin    ", "Account"); // Redirect to the profile page of the impersonated user
         }
+        [HttpGet]
+        [Route("admin/account/edit/{userId}")]
+        public async Task<IActionResult> EditUser(int userId)
+        {
+            var user = await _context.users.FindAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            // Trả về view chỉnh sửa với thông tin người dùng hiện tại
+            return View("~/Views/Admin/Account/EditUser.cshtml", user);
+        }
+
+        [HttpPost]
+        [Route("admin/account/edit/{userId}")]
+        public async Task<IActionResult> EditUser(int userId, IFormFile avatar, string fullName, string email, string phoneNumber, string password, string address, string role)
+        {
+            var user = await _context.users.FindAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            // Cập nhật thông tin người dùng
+            user.full_name = fullName;
+            user.email = email;
+            user.phone_number = phoneNumber;
+            user.address = address;
+            user.role = role;
+
+            // Nếu có mật khẩu mới, cập nhật mật khẩu (không mã hóa mật khẩu theo yêu cầu)
+            if (!string.IsNullOrEmpty(password))
+            {
+                user.password = password;
+            }
+
+            // Nếu có ảnh đại diện mới, lưu ảnh và cập nhật đường dẫn
+            if (avatar != null)
+            {
+                string avatarPath = await SaveAvatarAsync(avatar);
+                user.avatar = avatarPath;
+            }
+
+            // Cập nhật thông tin vào cơ sở dữ liệu
+            _context.users.Update(user);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("ProfileForAdmin"); // Quay lại trang hồ sơ người dùng sau khi cập nhật
+        }
+
+        private async Task<string> SaveAvatarAsync(IFormFile avatar)
+        {
+            // Xác định thư mục lưu trữ ảnh
+            var uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+            if (!Directory.Exists(uploadDirectory))
+            {
+                Directory.CreateDirectory(uploadDirectory);
+            }
+
+            // Tạo tên tệp ngẫu nhiên cho ảnh để tránh xung đột
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(avatar.FileName);
+            var filePath = Path.Combine(uploadDirectory, fileName);
+
+            // Lưu ảnh vào thư mục
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await avatar.CopyToAsync(stream);
+            }
+
+            // Trả về đường dẫn ảnh đã lưu
+            return $"/images/{fileName}";
+        }
+
+
+
     }
 }

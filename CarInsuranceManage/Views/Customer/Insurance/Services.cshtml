@@ -1,3 +1,5 @@
+@model List<CarInsuranceManage.Models.InsuranceService>
+
 <section class="page-title">
   <div class="background-container">
     <img class="left-image" src="~/customer-assets/images/background/header-left-bg.png" alt="" />
@@ -26,9 +28,10 @@
       <h2>We ensure best insurance services</h2>
       <div class="text">
         We are a professional and creative company and we <br />
-        offer you a trusty insurance on your veicle.
+        offer you a trusty insurance on your vehicle.
       </div>
     </div>
+
     <div class="inner-container">
       <div class="section-icons-outer parallax-scene-2">
         <div data-depth="0.20" class="icon-layer"
@@ -38,29 +41,28 @@
         <div data-depth="0.20" class="pattern-layer-two style-two"
           style="background-image: url('@Url.Content("~/customer-assets/images/background/pattern-4.png")')"></div>
       </div>
-      @model List<CarInsuranceManage.Models.Services>
 
       <div class="row clearfix">
         <div class="container">
           <div class="row">
             @if (Model != null && Model.Any())
-              {
+            {
               @foreach (var service in Model)
               {
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="card">
                     <div class="card-body">
                       <div class="image">
-                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.id">
-                          <img src="~/customer-assets/uploads/product/@service.image" class="card-img-top"
-                            alt="@service.title" />
+                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.service_id">
+                          <img src="~/customer-assets/uploads/product/@service.image_url" class="card-img-top"
+                            alt="@service.service_name" />
                         </a>
                       </div>
                       <div class="lower-content">
                         <h4><a asp-action="Car_details" asp-controller="Insurance"
-                            asp-route-id="@service.id">@service.title</a></h4>
+                            asp-route-id="@service.service_id">@service.service_name</a></h4>
                         <p class="text">@service.description</p>
-                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.id"
+                        <a asp-action="Car_details" asp-controller="Insurance" asp-route-id="@service.service_id"
                           class="read-more">Read More</a>
                       </div>
                     </div>
@@ -70,16 +72,15 @@
             }
             else
             {
-            <p>No services available.</p> <!-- Hiển thị khi không có dữ liệu -->
+              <p>No services available.</p> <!-- Hiển thị khi không có dữ liệu -->
             }
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </section>
+
 <section class="experiance-section">
   <div class="auto-container">
     <!-- End Sec Title -->

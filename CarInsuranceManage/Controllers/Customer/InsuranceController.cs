@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CarInsuranceManage.Database;
 using Microsoft.EntityFrameworkCore;
+using CarInsuranceManage.Models;
 
 namespace CarInsuranceManage.Controllers.Customer
 {
@@ -14,24 +15,25 @@ namespace CarInsuranceManage.Controllers.Customer
         }
 
         [HttpGet]
+        // Action để hiển thị dịch vụ bảo hiểm
         public async Task<IActionResult> Services()
         {
             // Lấy danh sách các dịch vụ từ bảng Services
-            var services = await _context.services
-                .Where(s => s.status == true) // Lọc các dịch vụ có trạng thái "active"
+            var services = await _context.insurance_services
+                .Where(s => s.is_active == true) // Lọc các dịch vụ có trạng thái "active"
                 .ToListAsync();
             ViewData["Services"] = services;
 
             return View("~/Views/Customer/Insurance/services.cshtml", services);  // Trả về danh sách dịch vụ cho view
         }
 
+
         [HttpGet]
         public async Task<IActionResult> Car_Details(int id)
         {
             // Lấy thông tin chi tiết dịch vụ từ database theo id
-            var service = await _context.services
-                .Include(s => s.InsurancePolicy)  // Eager loading để lấy thông tin InsurancePolicy liên quan
-                .Where(s => s.id == id)
+            var service = await _context.insurance_services
+                .Where(s => s.service_id == id)
                 .FirstOrDefaultAsync();
 
             if (service == null)
@@ -41,19 +43,20 @@ namespace CarInsuranceManage.Controllers.Customer
             }
 
             // Kiểm tra nếu InsurancePolicy đã được load từ Include()
-            if (service.InsurancePolicy == null)
+            if (service.service_id == null)
             {
                 ViewBag.PolicyAmount = "Không tìm thấy thông tin gói bảo hiểm.";
             }
             else
             {
                 // Truyền giá trị giá tiền của gói bảo hiểm vào ViewBag để hiển thị
-                ViewBag.PolicyAmount = service.InsurancePolicy.policy_amount.ToString("C2");  // Định dạng tiền tệ
+                ViewBag.PolicyAmount = service.price?.ToString("C") ?? string.Empty
+;  // Định dạng tiền tệ
             }
 
-            // Lấy danh sách các dịch vụ từ cơ sở dữ liệu
-            var services = await _context.services
-                .Where(s => s.status == true)  // Lọc các dịch vụ có trạng thái "active"
+            // Lấy danh sách các dịch vụ từ cơ sở dữ liệu (lấy tất cả các dịch vụ đang hoạt động)
+            var services = await _context.insurance_services
+                .Where(s => s.is_active == true)  // Lọc các dịch vụ có trạng thái "active"
                 .ToListAsync();
 
             // Truyền danh sách các dịch vụ vào ViewData
@@ -66,12 +69,14 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public async Task<IActionResult> Car_Insurance(int id)
         {
-            var service = await _context.services
-                .Where(s => s.id == id && s.status == true)
+            // Lấy dịch vụ bảo hiểm từ cơ sở dữ liệu
+            var service = await _context.insurance_services
+                .Where(s => s.service_id == id && s.is_active == true)
                 .FirstOrDefaultAsync();
 
-            var services = await _context.services
-                .Where(s => s.status == true) // Lọc các dịch vụ có trạng thái "active"
+            // Lấy danh sách các dịch vụ từ cơ sở dữ liệu (lấy tất cả các dịch vụ đang hoạt động)
+            var services = await _context.insurance_services
+                .Where(s => s.is_active == true) // Lọc các dịch vụ có trạng thái "active"
                 .ToListAsync();
 
             if (service == null)
@@ -85,7 +90,5 @@ namespace CarInsuranceManage.Controllers.Customer
 
             return View("~/Views/Customer/Insurance/Car_insurance.cshtml");
         }
-
-
     }
 }

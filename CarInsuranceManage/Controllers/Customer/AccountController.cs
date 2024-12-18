@@ -22,8 +22,7 @@ namespace CarInsuranceManage.Controllers.Customer
         public async Task<IActionResult> Login_phone()
         {
             // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
 
@@ -33,11 +32,11 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public async Task<IActionResult> Verify_phone()
         {
-            // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+          // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
+
 
             return View("~/Views/Customer/Account/Verify_phone.cshtml");
         }
@@ -46,10 +45,10 @@ namespace CarInsuranceManage.Controllers.Customer
         public async Task<IActionResult> Login()
         {
             // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
+
 
             return View("~/Views/Customer/Account/Login.cshtml");
         }
@@ -57,9 +56,8 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public async Task<IActionResult> Forgot_Password()
         {
-            // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+           // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
 
@@ -70,10 +68,11 @@ namespace CarInsuranceManage.Controllers.Customer
         public async Task<IActionResult> Register()
         {
             // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
+
+
 
             return View("~/Views/Customer/Account/Register.cshtml");
         }
@@ -81,10 +80,10 @@ namespace CarInsuranceManage.Controllers.Customer
         [HttpGet]
         public async Task<IActionResult> Blog()
         {
-            // Fetch active services from the Services table
-            var services = await _context.services
-                .Where(s => s.status == true)
+            // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
+            ViewData["Services"] = services;
 
             // Pass the services data to the ViewData
             ViewData["Services"] = services;
@@ -106,11 +105,10 @@ namespace CarInsuranceManage.Controllers.Customer
             {
                 return NotFound();
             }
-
-            // Fetch active services from the Services table
-            var services = await _context.services
-                .Where(s => s.status == true)
+ // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
+            ViewData["Services"] = services;
 
             // Pass the services data to the ViewData
             ViewData["Services"] = services;
@@ -160,9 +158,8 @@ namespace CarInsuranceManage.Controllers.Customer
                 return NotFound();
             }
 
-            // Fetch active services for the view
-            var services = await _context.services
-                .Where(s => s.status == true)
+           // Fetch active services for the view
+            var services = await _context.insurance_services
                 .ToListAsync();
             ViewData["Services"] = services;
 

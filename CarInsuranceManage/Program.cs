@@ -1,18 +1,29 @@
 using CarInsuranceManage.Database;
+using CarInsuranceManage.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Net.Http;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+// Đăng ký dịch vụ nền
+builder.Services.AddHostedService<InsuranceStatusService>();
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
 // Register HttpClientFactory
 builder.Services.AddHttpClient();
+builder.Services.AddSingleton<PayPalService>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    return new PayPalService(configuration);
+});
+
+
 
 // Configure DbContext for MySQL
 builder.Services.AddDbContext<CarInsuranceDbContext>(options =>

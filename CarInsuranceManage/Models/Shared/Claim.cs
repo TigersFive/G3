@@ -8,25 +8,31 @@ namespace CarInsuranceManage.Models
         [Key]
         public int claim_id { get; set; }
 
-        [ForeignKey("InsurancePolicy")]
-        public int policy_id { get; set; }
+        // Foreign Key to the Customer entity
+        [ForeignKey("Customer")]
+        public int? customer_id { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string? claim_number { get; set; }
+        public string? customer_full_name { get; set; }
 
-        public DateTime accident_date { get; set; }
+        public string? customer_email { get; set; }
 
-        [StringLength(255)]
-        public string? place_of_accident { get; set; }
+        public string? customer_phone { get; set; }
 
-        public decimal insured_amount { get; set; }
+        public string? description { get; set; }
 
-        public decimal claimable_amount { get; set; }
+        // Trường trạng thái
+        public ClaimStatus status { get; set; } = ClaimStatus.Pending;
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime created_at { get; set; } = DateTime.Now;
 
-        public virtual InsurancePolicy ?InsurancePolicy { get; set; }
+        public virtual Customer? Customer { get; set; }
     }
 
+    // Enum cho trạng thái của yêu cầu bồi thường
+    public enum ClaimStatus
+    {
+        Pending,     // Đang xử lý
+        Rejected,    // Từ chối
+        Resolved     // Đã giải quyết
+    }
 }

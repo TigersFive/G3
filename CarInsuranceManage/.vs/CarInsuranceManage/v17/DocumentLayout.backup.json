@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\laragon\\www\\G3\\CarInsuranceManage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\paymoneycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\paymoneycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\paypalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\paypalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\views\\customer\\paypal\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\customer\\paypal\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\views\\customer\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\customer\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\services\\paypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:services\\paypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\loginphonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\loginphonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\views\\shared\\_form_pay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -80,18 +104,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:controllers\\customer\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\views\\customer\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:views\\customer\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\controllers\\customer\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -324,8 +336,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Customer\\Insurance\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|c:\\laragon\\www\\g3\\carinsurancemanage\\app_data\\db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{FD4DCD93-AA06-413C-9EF5-9B9430B494AA}|CarInsuranceManage.csproj|solutionrelative:app_data\\db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\laragon\\www\\G3\\CarInsuranceManage\\Momo\\Config\\MomoConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Momo\\Config\\MomoConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -335,11 +347,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "Data_Table.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Table\\Data_Table.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Table\\Data_Table.cshtml",
@@ -349,28 +361,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "pay.js",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\pay.js",
-              "RelativeDocumentMoniker": "wwwroot\\customer-assets\\js\\pay.js",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\pay.js",
-              "RelativeToolTip": "wwwroot\\customer-assets\\js\\pay.js",
-              "ViewState": "AgIAABgAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-16T19:19:37.452Z",
+              "DocumentIndex": 1,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\PayPal\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\PayPal\\Checkout.cshtml",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\PayPal\\Checkout.cshtml",
+              "RelativeToolTip": "Views\\Customer\\PayPal\\Checkout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T22:52:58.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "js.js",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\js.js",
-              "RelativeDocumentMoniker": "wwwroot\\customer-assets\\js\\js.js",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\js.js",
-              "RelativeToolTip": "wwwroot\\customer-assets\\js\\js.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-16T19:19:25.777Z",
+              "DocumentIndex": 0,
+              "Title": "PayPalController.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\PayPalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Customer\\PayPalController.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\PayPalController.cs",
+              "RelativeToolTip": "Controllers\\Customer\\PayPalController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T22:50:29.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PayPalService.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Services\\PayPalService.cs",
+              "RelativeDocumentMoniker": "Services\\PayPalService.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Services\\PayPalService.cs",
+              "RelativeToolTip": "Services\\PayPalService.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAgwAwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T22:49:37.848Z",
               "EditorCaption": ""
             },
             {
@@ -383,69 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "db.sql ",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\db.sql",
-              "RelativeDocumentMoniker": "App_Data\\db.sql",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\db.sql",
-              "RelativeToolTip": "App_Data\\db.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-16T18:34:57.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CarInsuranceDbContext.cs",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\CarInsuranceDbContext.cs",
-              "RelativeDocumentMoniker": "App_Data\\CarInsuranceDbContext.cs",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\CarInsuranceDbContext.cs",
-              "RelativeToolTip": "App_Data\\CarInsuranceDbContext.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAYwAUBAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:25:06.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Models\\Shared\\Payment.cs",
-              "RelativeDocumentMoniker": "Models\\Shared\\Payment.cs",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Models\\Shared\\Payment.cs",
-              "RelativeToolTip": "Models\\Shared\\Payment.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA8wCAAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:15:09.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PaymoneyController.cs",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\PaymoneyController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Customer\\PaymoneyController.cs",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\PaymoneyController.cs",
-              "RelativeToolTip": "Controllers\\Customer\\PaymoneyController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAADwvxwAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:14:53.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Form_pay.cshtml",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Shared\\_Form_pay.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Form_pay.cshtml",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Shared\\_Form_pay.cshtml*",
-              "RelativeToolTip": "Views\\Shared\\_Form_pay.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T18:08:53.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Inbox.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Admin\\Email\\Inbox.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Email\\Inbox.cshtml",
@@ -457,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Admin\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin\\AccountController.cs",
@@ -469,7 +432,133 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-23T19:26:33.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\About\\Index.cshtml",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\About\\Index.cshtml",
+              "RelativeToolTip": "Views\\Customer\\About\\Index.cshtml",
+              "ViewState": "AgIAAPICAAAAAAAAAAAYwAYDAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T10:54:23.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\AboutController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Customer\\AboutController.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\AboutController.cs",
+              "RelativeToolTip": "Controllers\\Customer\\AboutController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T10:54:14.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Form_pay.cshtml",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Shared\\_Form_pay.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Form_pay.cshtml",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Shared\\_Form_pay.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Form_pay.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T18:08:53.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Models\\Shared\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Shared\\Payment.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Models\\Shared\\Payment.cs",
+              "RelativeToolTip": "Models\\Shared\\Payment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA8wCAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:15:09.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "db.sql",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\db.sql",
+              "RelativeDocumentMoniker": "App_Data\\db.sql",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\db.sql",
+              "RelativeToolTip": "App_Data\\db.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-16T18:34:57.353Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginPhoneController.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\LoginPhoneController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Customer\\LoginPhoneController.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\LoginPhoneController.cs",
+              "RelativeToolTip": "Controllers\\Customer\\LoginPhoneController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T22:13:06.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CarInsuranceDbContext.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\CarInsuranceDbContext.cs",
+              "RelativeDocumentMoniker": "App_Data\\CarInsuranceDbContext.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\App_Data\\CarInsuranceDbContext.cs",
+              "RelativeToolTip": "App_Data\\CarInsuranceDbContext.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAYwAUBAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:25:06.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "js.js",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\js.js",
+              "RelativeDocumentMoniker": "wwwroot\\customer-assets\\js\\js.js",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\js.js",
+              "RelativeToolTip": "wwwroot\\customer-assets\\js\\js.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-16T19:19:25.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "pay.js",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\pay.js",
+              "RelativeDocumentMoniker": "wwwroot\\customer-assets\\js\\pay.js",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\wwwroot\\customer-assets\\js\\pay.js",
+              "RelativeToolTip": "wwwroot\\customer-assets\\js\\pay.js",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-16T19:19:37.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ChartsController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Admin\\ChartsController.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin\\ChartsController.cs",
@@ -481,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -493,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "_LayoutAdmin.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LayoutAdmin.cshtml",
@@ -505,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Lock_Screen.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Admin\\Account\\Lock_Screen.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Account\\Lock_Screen.cshtml",
@@ -517,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Admin\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Account\\Profile.cshtml",
@@ -529,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Home\\Index.cshtml",
@@ -541,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -553,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 98,
               "Title": "AppController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Admin\\AppController.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin\\AppController.cs",
@@ -565,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\Customer\\AccountController.cs",
@@ -577,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -589,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "_Layout.html",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Views\\Shared\\_Layout.html",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Views\\Shared\\_Layout.html",
@@ -598,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 94,
               "Title": "ContactControllercs.cs",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\ContactControllercs.cs",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\ContactControllercs.cs",
@@ -608,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 93,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\HomeController.cs",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\HomeController.cs",
@@ -618,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -630,43 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AboutController.cs",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\AboutController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Customer\\AboutController.cs",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\AboutController.cs",
-              "RelativeToolTip": "Controllers\\Customer\\AboutController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T10:54:14.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\About\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Customer\\About\\Index.cshtml",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\About\\Index.cshtml",
-              "RelativeToolTip": "Views\\Customer\\About\\Index.cshtml",
-              "ViewState": "AgIAAPICAAAAAAAAAAAYwAYDAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T10:54:23.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-23T19:26:33.467Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 95,
               "Title": "ProfileUserController.cs",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\ProfileUserController.cs",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Controllers\\Customer\\ProfileUserController.cs",
@@ -676,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 96,
               "Title": "privacy.cshtml",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Views\\Customer\\Home\\privacy.cshtml",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Views\\Customer\\Home\\privacy.cshtml",
@@ -686,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Services.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Insurance\\Services.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Insurance\\Services.cshtml",
@@ -698,7 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 99,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Insurance\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Insurance\\Index.cshtml",
@@ -710,7 +763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "InsuranceController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\InsuranceController.cs",
               "RelativeDocumentMoniker": "Controllers\\Customer\\InsuranceController.cs",
@@ -722,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "BlogController.cs",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Controllers\\Customer\\BlogController.cs",
               "RelativeDocumentMoniker": "Controllers\\Customer\\BlogController.cs",
@@ -734,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Contact\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Contact\\Index.cshtml",
@@ -746,7 +799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Account\\Register.cshtml",
@@ -758,7 +811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Views\\Customer\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Customer\\Account\\Login.cshtml",
@@ -770,7 +823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 97,
               "Title": "Blog.cshtml",
               "DocumentMoniker": "D:\\G3\\CarInsuranceManage\\Views\\Customer\\Account\\Blog.cshtml",
               "ToolTip": "D:\\G3\\CarInsuranceManage\\Views\\Customer\\Account\\Blog.cshtml",
@@ -780,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "Form_Validation.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Forms\\Form_Validation.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Forms\\Form_Validation.cshtml",
@@ -790,7 +843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "Editor.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Forms\\Editor.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Forms\\Editor.cshtml",
@@ -800,7 +853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "Toastr.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Toastr.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Toastr.cshtml",
@@ -810,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "Sweet_Alert.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Sweet_Alert.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Sweet_Alert.cshtml",
@@ -820,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "Noui_Slider.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Noui_Slider.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Noui_Slider.cshtml",
@@ -830,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "Modal.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Modal.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Modal.cshtml",
@@ -840,7 +893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "Nestedable.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Nestedable.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Components\\Nestedable.cshtml",
@@ -850,7 +903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Typography.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Typography.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Typography.cshtml",
@@ -860,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "Tab.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Tab.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Tab.cshtml",
@@ -870,7 +923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "Progressbar.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Progressbar.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Progressbar.cshtml",
@@ -880,7 +933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "Popover.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Popover.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Popover.cshtml",
@@ -890,7 +943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Pagination.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Pagination.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Pagination.cshtml",
@@ -900,7 +953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Media_Object.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Media_Object.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Media_Object.cshtml",
@@ -910,7 +963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "List_Group.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\List_Group.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\List_Group.cshtml",
@@ -920,7 +973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "Dropdown.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Dropdown.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Dropdown.cshtml",
@@ -930,7 +983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Carousel.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Carousel.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Carousel.cshtml",
@@ -940,7 +993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "Cards.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Cards.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Cards.cshtml",
@@ -950,7 +1003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "Button_Group.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Button_Group.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Button_Group.cshtml",
@@ -960,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Button.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Button.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Button.cshtml",
@@ -970,7 +1023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Badge.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Badge.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Badge.cshtml",
@@ -980,7 +1033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "Alert.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Alert.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Alert.cshtml",
@@ -990,7 +1043,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "Accordion.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Accordion.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\UIComponents\\Accordion.cshtml",
@@ -1000,7 +1053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "ui-accordion.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\ui-accordion.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\ui-accordion.html",
@@ -1010,7 +1063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "Peity.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Peity.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Peity.cshtml",
@@ -1020,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "Chartist.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Chartist.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Chartist.cshtml",
@@ -1030,7 +1083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "Chartjs.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Chartjs.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Chartjs.cshtml",
@@ -1040,7 +1093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "Morris.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Morris.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Morris.cshtml",
@@ -1050,7 +1103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "Flot.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Flot.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Flot.cshtml",
@@ -1060,7 +1113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "Sparkline.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Sparkline.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Charts\\Sparkline.cshtml",
@@ -1070,7 +1123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "Calender.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\App\\Calender.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\App\\Calender.cshtml",
@@ -1080,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\App\\Profile.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\App\\Profile.cshtml",
@@ -1090,7 +1143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "page-error-404.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\page-error-404.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\page-error-404.html",
@@ -1100,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "PageController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\PageController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\PageController.cs",
@@ -1110,7 +1163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "TableController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\TableController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\TableController.cs",
@@ -1120,7 +1173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "FormsController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\FormsController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\FormsController.cs",
@@ -1130,7 +1183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 72,
               "Title": "ComponentsController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\ComponentsController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\ComponentsController.cs",
@@ -1140,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 73,
               "Title": "UIComponentsController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\UIComponentsController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\UIComponentsController.cs",
@@ -1150,7 +1203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 74,
               "Title": "ChartsController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\ChartsController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\ChartsController.cs",
@@ -1160,7 +1213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 75,
               "Title": "AppController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\AppController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\AppController.cs",
@@ -1170,7 +1223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 76,
               "Title": "email-compose.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-compose.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-compose.html",
@@ -1180,7 +1233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 77,
               "Title": "Compose.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Compose.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Compose.cshtml",
@@ -1190,7 +1243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 78,
               "Title": "EmailController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\EmailController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\EmailController.cs",
@@ -1200,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 79,
               "Title": "email-read.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-read.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-read.html",
@@ -1210,7 +1263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 80,
               "Title": "Read.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Read.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Read.cshtml",
@@ -1220,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 81,
               "Title": "email-inbox.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-inbox.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\email-inbox.html",
@@ -1230,7 +1283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 82,
               "Title": "Inbox.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Inbox.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Email\\Inbox.cshtml",
@@ -1240,7 +1293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 83,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Layout\\Index.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Layout\\Index.cshtml",
@@ -1250,7 +1303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 84,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Views\\Home\\Index.cshtml",
@@ -1260,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 85,
               "Title": "layout-two-column.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\layout-two-column.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\layout-two-column.html",
@@ -1270,7 +1323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 86,
               "Title": "LayoutController.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Controllers\\LayoutController.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Controllers\\LayoutController.cs",
@@ -1280,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 87,
               "Title": "index.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\index.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\index.html",
@@ -1290,7 +1343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 88,
               "Title": "chart-chartjs.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\chart-chartjs.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\chart-chartjs.html",
@@ -1300,7 +1353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 89,
               "Title": "logo.png",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\logo.png",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\logo.png",
@@ -1309,7 +1362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 90,
               "Title": "favicon.png",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\favicon.png",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\favicon.png",
@@ -1318,7 +1371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 91,
               "Title": "logo-compact.png",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\logo-compact.png",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\AdminCarInsurance\\images\\logo-compact.png",
@@ -1327,7 +1380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 92,
               "Title": "20241123201119_carinsurance.cs",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Migrations\\20241123201119_carinsurance.cs",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Migrations\\20241123201119_carinsurance.cs",
@@ -1337,7 +1390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "buttons.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Admin\\buttons.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Admin\\buttons.html",
@@ -1347,7 +1400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "404.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Admin\\404.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Admin\\404.html",
@@ -1357,7 +1410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "activity_stream.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Admin\\activity_stream.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Admin\\activity_stream.html",
@@ -1366,7 +1419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "500.html",
               "DocumentMoniker": "D:\\T2307A\\CarInsuranceManage\\Admin\\500.html",
               "ToolTip": "D:\\T2307A\\CarInsuranceManage\\Admin\\500.html",
@@ -1375,8 +1428,16 @@
               "WhenOpened": "2024-11-23T21:09:31.315Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "MomoConfig.cs",
+              "DocumentMoniker": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Momo\\Config\\MomoConfig.cs",
+              "RelativeDocumentMoniker": "Momo\\Config\\MomoConfig.cs",
+              "ToolTip": "C:\\laragon\\www\\G3\\CarInsuranceManage\\Momo\\Config\\MomoConfig.cs",
+              "RelativeToolTip": "Momo\\Config\\MomoConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:59:10.558Z"
             }
           ]
         }

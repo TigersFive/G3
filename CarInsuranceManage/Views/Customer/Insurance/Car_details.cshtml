@@ -1,4 +1,4 @@
-@model CarInsuranceManage.Models.Services
+@model CarInsuranceManage.Models.InsuranceService
 
 <head>
     <link href="~/customer-assets/css/bootstrap.min2.css" rel="stylesheet" />
@@ -18,13 +18,13 @@
     <div class="banner_ca_nhan">
         <div class="container">
             <div class="wap_banner">
-                <img class="w-100 pc" src="~/customer-assets/uploads/product/@Model.image" />
-                <img class="w-100 mb" src="~/customer-assets/uploads/product/@Model.image" />
+                <img class="w-100 pc" src="~/customer-assets/uploads/product/@Model.image_url" />
+                <img class="w-100 mb" src="~/customer-assets/uploads/product/@Model.image_url" />
                 <div class="banner_bot">
                     <div class="row no-gutters justify-content-between">
                         <div class="col-lg-7">
                             <div class="d-lg-flex">
-                                <div class="banner_title">Compulsory @Model.title CIS - Accidents in cars</div>
+                                <div class="banner_title">Compulsory @Model.service_name CIS - Accidents in cars</div>
                                 <div class="ml-lg-5 lh_1">
                                     <div class="d-flex align-items-center h-100">
                                     </div>
@@ -41,7 +41,8 @@
                             <div class="d-flex d-lg-block mb-2">
                                 <div class="clearfix lh_1 fs_14 mb-lg-2">
                                     <span class="mr-3">Insurance from:</span><strong
-                                        class="price_bh">$@Model.InsurancePolicy.policy_amount.ToString("0")</strong>
+                                        class="price_bh">$@(Model.price?.ToString("C") ?? string.Empty)
+</strong>
 
                                 </div>
                             </div>
@@ -53,7 +54,7 @@
                         <div class="col-lg-auto order-lg-1">
                             <div class="wap_btn wap_btn_new mt-2 mt-lg-0">
 
-                                <a asp-controller="Insurance" asp-action="Car_Insurance" asp-route-id="@Model.id"
+                                <a asp-controller="Insurance" asp-action="Car_Insurance" asp-route-id="@Model.service_id"
                                     class="btn_tht">Charge</a>
                             </div>
                         </div>
