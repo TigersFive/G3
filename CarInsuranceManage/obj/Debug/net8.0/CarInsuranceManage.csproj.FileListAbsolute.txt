@@ -106,7 +106,6 @@ C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.csproj.
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.MvcApplicationPartsAssemblyInfo.cache
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.RazorAssemblyInfo.cache
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.RazorAssemblyInfo.cs
-C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.sourcelink.json
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets.build.json
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets.development.json
 C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\staticwebassets\msbuild.CarInsuranceManage.Microsoft.AspNetCore.StaticWebAssets.props
@@ -368,3 +367,4 @@ C:\Users\VAN NGUYEN\Downloads\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranc
 C:\Users\VAN NGUYEN\Downloads\G3\CarInsuranceManage\obj\Debug\net8.0\ref\CarInsuranceManage.dll
 C:\Users\VAN NGUYEN\Downloads\G3\CarInsuranceManage\bin\Debug\net8.0\UserData.json
 C:\laragon\www\G3\CarInsuranceManage\bin\Debug\net8.0\UserData.json
+C:\laragon\www\G3\CarInsuranceManage\obj\Debug\net8.0\CarInsuranceManage.sourcelink.json

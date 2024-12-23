@@ -15,7 +15,7 @@ namespace CarInsuranceManage.Controllers
         private readonly PayPalService _payPalService;
 
 
-                private readonly EmailService _emailService;
+        private readonly EmailService _emailService;
         private readonly CarInsuranceDbContext _dbContext;
 
 
@@ -46,121 +46,118 @@ namespace CarInsuranceManage.Controllers
         }
 
 
-      [HttpPost]
-public async Task<IActionResult> Checkout(decimal insurance_price, string description, InsuranceInfo insuranceDetails)
-{
-    // Ghi log dữ liệu nhận được từ form
-    Console.WriteLine("Received data from form:");
-    Console.WriteLine($"Insurance Price: {insurance_price}");
-    Console.WriteLine($"Description: {description}");
-    Console.WriteLine($"Insurance Details: {JsonConvert.SerializeObject(insuranceDetails)}");
-
-
-    string insuranceData = JsonConvert.SerializeObject(insuranceDetails);
-    string returnUrl = Url.Action("Success", "PayPal", new { insuranceData }, Request.Scheme);
-    string cancelUrl = Url.Action("Cancel", "PayPal", null, Request.Scheme);
-
-
-    try
-    {
-        // Create payment
-        var approvalUrl = await _payPalService.CreatePayment(insurance_price, "USD", description, returnUrl, cancelUrl);
-
-
-        return Redirect(approvalUrl);
-    }
-    catch (Exception ex)
-    {
-        // Handle error and display message
-        TempData["WarningMessage"] = "Có lỗi xảy ra khi tạo thanh toán: " + ex.Message;
-        return RedirectToAction("Login", "Account");
-    }
-}
-
-
-       [HttpGet]
-public async Task<IActionResult> SuccessAlternative(string paymentId, string PayerID, string insuranceData)
-{
-    // Ghi log dữ liệu nhận được từ URL
-    Console.WriteLine("Received data from URL:");
-    Console.WriteLine($"Payment ID: {paymentId}");
-    Console.WriteLine($"Payer ID: {PayerID}");
-    Console.WriteLine($"Insurance Data: {insuranceData}");
-
-
-    // Execute PayPal payment
-    var result = await _payPalService.ExecutePayment(paymentId, PayerID);
-
-
-    // Retrieve customer_id from session
-    var customerId = HttpContext.Session.GetInt32("customer_id");
-    if (customerId == null)
-    {
-        TempData["WarningMessage"] = "Vui lòng đăng nhập để thực hiện.";
-        return RedirectToAction("Login", "Account");
-    }
-
-
-    // Kiểm tra insuranceData
-    InsuranceInfo insuranceDetails = null;
-    if (!string.IsNullOrEmpty(insuranceData))
-    {
-        try
+        [HttpPost]
+        public async Task<IActionResult> Checkout(decimal insurance_price, string description, InsuranceInfo insuranceDetails)
         {
-            insuranceDetails = JsonConvert.DeserializeObject<InsuranceInfo>(insuranceData);
+            // Ghi log dữ liệu nhận được từ form
+            Console.WriteLine("Received data from form:");
+            Console.WriteLine($"Insurance Price: {insurance_price}");
+            Console.WriteLine($"Description: {description}");
+            Console.WriteLine($"Insurance Details: {JsonConvert.SerializeObject(insuranceDetails)}");
+
+
+            string insuranceData = JsonConvert.SerializeObject(insuranceDetails);
+            string returnUrl = Url.Action("Success", "PayPal", new { insuranceData }, Request.Scheme);
+            string cancelUrl = Url.Action("Cancel", "PayPal", null, Request.Scheme);
+
+
+            try
+            {
+                // Create payment
+                var approvalUrl = await _payPalService.CreatePayment(insurance_price, "USD", description, returnUrl, cancelUrl);
+
+
+                return Redirect(approvalUrl);
+            }
+            catch (Exception ex)
+            {
+                // Handle error and display message
+                TempData["WarningMessage"] = "Có lỗi xảy ra khi tạo thanh toán: " + ex.Message;
+                return RedirectToAction("Login", "Account");
+            }
         }
-        catch
+
+
+        [HttpGet]
+        public async Task<IActionResult> SuccessAlternative(string paymentId, string PayerID, string insuranceData)
         {
-            insuranceDetails = new InsuranceInfo(); // Gán đối tượng trống nếu lỗi
-        }
-    }
-    else
-    {
-        insuranceDetails = new InsuranceInfo(); // Gán đối tượng trống nếu null
-    }
+            // Ghi log dữ liệu nhận được từ URL
+            Console.WriteLine("Received data from URL:");
+            Console.WriteLine($"Payment ID: {paymentId}");
+            Console.WriteLine($"Payer ID: {PayerID}");
+            Console.WriteLine($"Insurance Data: {insuranceData}");
 
 
-    // Lưu dữ liệu JSON vào file
-    var jsonData = JsonConvert.SerializeObject(insuranceDetails);
-    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "UserData.json");
-    await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+            // Execute PayPal payment
+            var result = await _payPalService.ExecutePayment(paymentId, PayerID);
 
 
-   
+            // Retrieve customer_id from session
+            var customerId = HttpContext.Session.GetInt32("customer_id");
+            if (customerId == null)
+            {
+                TempData["WarningMessage"] = "Vui lòng đăng nhập để thực hiện.";
+                return RedirectToAction("Login", "Account");
+            }
 
 
-    // Tạo giá trị ngẫu nhiên cho insurance_code
-    string insuranceCode = GenerateUniqueCode();
+            // Kiểm tra insuranceData
+            InsuranceInfo insuranceDetails = null;
+            if (!string.IsNullOrEmpty(insuranceData))
+            {
+                try
+                {
+                    insuranceDetails = JsonConvert.DeserializeObject<InsuranceInfo>(insuranceData);
+                }
+                catch
+                {
+                    insuranceDetails = new InsuranceInfo(); // Gán đối tượng trống nếu lỗi
+                }
+            }
+            else
+            {
+                insuranceDetails = new InsuranceInfo(); // Gán đối tượng trống nếu null
+            }
 
 
-    // Save insurance record to the database
-    var insuranceRecord = new InsuranceInfo
-    {
-        customer_id = customerId.Value,
-        username = insuranceDetails?.username ?? null,
-        email = insuranceDetails?.email ?? null,
-        phone = insuranceDetails?.phone ?? null,
-        car_brand = insuranceDetails?.car_brand ?? null,
-        vehicle_line = insuranceDetails?.vehicle_line ?? null,
-        year_of_manufacture = insuranceDetails?.year_of_manufacture ?? null,
-        registration_date = insuranceDetails?.registration_date ?? null,
-        number_plate = insuranceDetails?.number_plate ?? null,
-        frame_number = insuranceDetails?.frame_number ?? null,
-        machine_number = insuranceDetails?.machine_number ?? null,
-        insurance_package = insuranceDetails?.insurance_package ?? null,
-        insurance_price = insuranceDetails?.insurance_price ?? 0, // Giá trị mặc định là 0
-        insurance_code = insuranceCode,
+            // Lưu dữ liệu JSON vào file
+            var jsonData = JsonConvert.SerializeObject(insuranceDetails);
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "UserData.json");
+            await System.IO.File.WriteAllTextAsync(filePath, jsonData);
 
 
-        created_at = DateTime.Now
-    };
+            // Tạo giá trị ngẫu nhiên cho insurance_code
+            string insuranceCode = GenerateUniqueCode();
 
 
-    _dbContext.insurances_info.Add(insuranceRecord);
-    await _dbContext.SaveChangesAsync();
+            // Save insurance record to the database
+            var insuranceRecord = new InsuranceInfo
+            {
+                customer_id = customerId.Value,
+                username = insuranceDetails?.username ?? null,
+                email = insuranceDetails?.email ?? null,
+                phone = insuranceDetails?.phone ?? null,
+                car_brand = insuranceDetails?.car_brand ?? null,
+                vehicle_line = insuranceDetails?.vehicle_line ?? null,
+                year_of_manufacture = insuranceDetails?.year_of_manufacture ?? null,
+                registration_date = insuranceDetails?.registration_date ?? null,
+                number_plate = insuranceDetails?.number_plate ?? null,
+                frame_number = insuranceDetails?.frame_number ?? null,
+                machine_number = insuranceDetails?.machine_number ?? null,
+                insurance_package = insuranceDetails?.insurance_package ?? null,
+                insurance_price = insuranceDetails?.insurance_price ?? 0, // Giá trị mặc định là 0
+                insurance_code = insuranceCode,
 
 
-      // Gửi email thông báo bảo hiểm mới
+                created_at = DateTime.Now
+            };
+
+
+            _dbContext.insurances_info.Add(insuranceRecord);
+            await _dbContext.SaveChangesAsync();
+
+
+            // Gửi email thông báo bảo hiểm mới
             await _emailService.SendEmailAsync(insuranceRecord.username, insuranceRecord.email, "New Insurance Record Created",
                 $"Dear {insuranceRecord.username},\n\n" +
                 $"Your insurance record has been created successfully.\n" +
@@ -175,24 +172,33 @@ public async Task<IActionResult> SuccessAlternative(string paymentId, string Pay
 
 
 
-    // Create and save notification
-    var notification = new Notification
-    {
-        customer_id = customerId.Value,
-        message_type = "Payment Success",
-        message_content = $"Your payment for the {insuranceDetails?.insurance_package ?? "Unknown"} package was successful. Amount: ${insuranceDetails?.insurance_price ?? 0:F2}.",
-        sent_at = DateTime.Now,
-        is_read = false
-    };
+            // Create and save notification
+            var notification = new Notification
+            {
+                customer_id = customerId.Value,
+                message_type = "Payment Success",
+                message_content = $"Your payment for the {insuranceDetails?.insurance_package ?? "Unknown"} package was successful. Amount: ${insuranceDetails?.insurance_price ?? 0:F2}.",
+                sent_at = DateTime.Now,
+                is_read = false
+            };
 
 
-    _dbContext.notifications.Add(notification);
-    await _dbContext.SaveChangesAsync();
+            _dbContext.notifications.Add(notification);
+            await _dbContext.SaveChangesAsync();
+
+            // Create and save notification
+            var Payment = new Payment
+            {
+                
+            };
 
 
-    ViewData["Result"] = result;
-    return View("~/Views/Customer/Payment/PaymentSuccess.cshtml");
-}
+            _dbContext.notifications.Add(notification);
+            await _dbContext.SaveChangesAsync();
+
+            ViewData["Result"] = result;
+            return View("~/Views/Customer/Payment/PaymentSuccess.cshtml");
+        }
         [HttpGet]
         public async Task<IActionResult> Success(string paymentId, string PayerID, string insuranceData)
         {
@@ -226,10 +232,6 @@ public async Task<IActionResult> SuccessAlternative(string paymentId, string Pay
             {
                 insuranceDetails = new InsuranceInfo(); // Gán đối tượng trống nếu null
             }
-
-
-           
-
 
             // Lưu dữ liệu JSON vào file
             var jsonData = JsonConvert.SerializeObject(insuranceDetails);
@@ -335,7 +337,7 @@ public async Task<IActionResult> SuccessAlternative(string paymentId, string Pay
             // Kết hợp hai phần lại
             return new string(charPart) + new string(digitPart);
         }
-   
+
 
 
         [HttpGet]

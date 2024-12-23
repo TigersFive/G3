@@ -75,13 +75,10 @@ namespace CarInsuranceManage.Database
 
             // Dữ liệu mẫu cho bảng InsuranceService
             modelBuilder.Entity<InsuranceService>().HasData(
-                new InsuranceService { service_id = 1, service_name = "Moto Insurance", description = "Basic vehicle insurance", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now },
-                new InsuranceService { service_id = 2, service_name = "Car Insurance", description = "Premium vehicle insurance with more benefits", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now },
-                new InsuranceService { service_id = 3, service_name = "Truck Insurance", description = "Comprehensive coverage for all types of damage", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now }
+                new InsuranceService { service_id = 1, insurance_info_id = 1, service_name = "Moto Insurance", description = "Basic vehicle insurance", price = 50.00m, image_url = "customer-assets/uploads/product/moto.jpg", created_at = DateTime.Now },
+                new InsuranceService { service_id = 2, insurance_info_id = 2, service_name = "Car Insurance", description = "Premium vehicle insurance with more benefits", price = 50.00m, image_url = "customer-assets/uploads/product/car.jpg", created_at = DateTime.Now },
+                new InsuranceService { service_id = 3, insurance_info_id = 3, service_name = "Truck Insurance", description = "Comprehensive coverage for all types of damage", price = 50.00m, image_url = "customer-assets/uploads/product/truck.jpg", created_at = DateTime.Now }
             );
-
-
-
             // Seed data for Comment
             modelBuilder.Entity<Comment>().HasData(
                 new Comment { comment_id = 1, customer_id = 1, parent_comment_id = null, comment_text = "Great service!", rating = 5, status = "Active", created_at = DateTime.Now },

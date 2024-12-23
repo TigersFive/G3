@@ -21,15 +21,17 @@ namespace CarInsuranceManage.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // Lấy danh sách các dịch vụ có trạng thái "active" và chỉ lấy các trường cần thiết
             var services = await _context.insurance_services
-                .Where(service => service.is_active)  // Chỉ lấy dịch vụ đang active
-                .Select(service => new
-                {
-                    service_id = service.service_id,
-                    service_name = service.service_name
-                })
-                .ToListAsync();
+        .Where(service => service.is_active)  // Lọc chỉ lấy dịch vụ đang hoạt động
+        .Select(service => new InsuranceService
+        {
+            service_id = service.service_id,
+            service_name = service.service_name,
+            description = service.description,
+            price = service.price,
+            image_url = service.image_url
+        })
+        .ToListAsync();
 
             // Truyền danh sách dịch vụ vào ViewData
             ViewData["Services"] = services;

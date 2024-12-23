@@ -12,7 +12,8 @@ namespace CarInsuranceManage.Models
         [Required]
         [StringLength(100)]
         public string? service_name { get; set; }  // Tên dịch vụ bảo hiểm
-
+        [ForeignKey("InsuranceInfo")]
+        public int? insurance_info_id { get; set; }
         [Required]
         public string? description { get; set; }  // Mô tả dịch vụ bảo hiểm
 
